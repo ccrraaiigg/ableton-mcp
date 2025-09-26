@@ -1,0 +1,3999 @@
+{
+    "tools": [
+        {
+            "name": "live_get_child_attributes",
+            "description": "Get the read-only and observable attributes for a specific child of any Ableton Live object.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID of the parent object"
+                    },
+                    "childName": {
+                        "type": "string",
+                        "description": "name of the child to query"
+                    }
+                },
+                "required": [
+                    "objectId",
+                    "childName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "childName": {
+                        "type": "string",
+                        "description": "name of the child"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the child exists"
+                    },
+                    "readOnly": {
+                        "type": "boolean",
+                        "description": "whether the child is read-only"
+                    },
+                    "observable": {
+                        "type": "boolean",
+                        "description": "whether the child is observable"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_class_children",
+            "description": "Get all child names defined by a given Ableton Live class (specified by name).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "className": {
+                        "type": "string",
+                        "description": "name of the class to query"
+                    }
+                },
+                "required": [
+                    "className"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "className": {
+                        "type": "string",
+                        "description": "name of the class"
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of child names defined by the class"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the class exists"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_class_properties",
+            "description": "Get all property names defined by a given Ableton Live class (specified by name).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "className": {
+                        "type": "string",
+                        "description": "name of the class to query"
+                    }
+                },
+                "required": [
+                    "className"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "className": {
+                        "type": "string",
+                        "description": "name of the class"
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of property names defined by the class"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the class exists"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_live_classes",
+            "description": "Get the names of all Ableton Live classes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "classes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of all Ableton Live class names"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_object_children",
+            "description": "Get all child names defined by the class of a given Ableton Live object (specified by ID).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID to query"
+                    }
+                },
+                "required": [
+                    "objectId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID"
+                    },
+                    "className": {
+                        "type": "string",
+                        "description": "class name of the object"
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of child names defined by the object's class"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the object exists"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_object_properties",
+            "description": "Get all property names defined by the class of a given Ableton Live object (specified by ID).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID to query"
+                    }
+                },
+                "required": [
+                    "objectId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID"
+                    },
+                    "className": {
+                        "type": "string",
+                        "description": "class name of the object"
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of property names defined by the object's class"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the object exists"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_property_attributes",
+            "description": "Get the read-only and observable attributes for a specific property of any Ableton Live object.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID of the object"
+                    },
+                    "propertyName": {
+                        "type": "string",
+                        "description": "name of the property to query"
+                    }
+                },
+                "required": [
+                    "objectId",
+                    "propertyName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "propertyName": {
+                        "type": "string",
+                        "description": "name of the property"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the property exists"
+                    },
+                    "readOnly": {
+                        "type": "boolean",
+                        "description": "whether the property is read-only"
+                    },
+                    "observable": {
+                        "type": "boolean",
+                        "description": "whether the property is observable"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_children_getControlSurfaces",
+            "description": "Get the list of control surfaces currently selected in Live's Preferences.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurfaces": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of control surface IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_children_getView",
+            "description": "Get the view child of the Application object.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewId": {
+                        "type": "string",
+                        "description": "object ID of the view",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_getAverageProcessUsage",
+            "description": "Get Live's average CPU load. Note that Live's CPU meter shows the audio processing load but not Live's overall CPU usage.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "averageProcessUsage": {
+                        "type": "number",
+                        "description": "average CPU load as percentage",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_getCurrentDialogButtonCount",
+            "description": "Get the number of buttons in the current message box.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "currentDialogButtonCount": {
+                        "type": "integer",
+                        "description": "number of buttons in current dialog",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_getCurrentDialogMessage",
+            "description": "Get the text of the current message box (empty if no message box is currently shown).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "currentDialogMessage": {
+                        "type": "string",
+                        "description": "text of current dialog message",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_getOpenDialogCount",
+            "description": "Get the number of dialog boxes shown.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "openDialogCount": {
+                        "type": "integer",
+                        "description": "number of open dialogs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_getPeakProcessUsage",
+            "description": "Get Live's peak CPU load. Note that Live's CPU meter shows the audio processing load but not Live's overall CPU usage.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "peakProcessUsage": {
+                        "type": "number",
+                        "description": "peak CPU load as percentage",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getBugfixVersion",
+            "description": "Get the bugfix version number (the 2 in Live 9.1.2).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "bugfixVersion": {
+                        "type": "integer",
+                        "description": "bugfix version number"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getDocument",
+            "description": "Get the current Live Set.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "documentId": {
+                        "type": "string",
+                        "description": "object ID of the current Live Set"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getMajorVersion",
+            "description": "Get the major version number (the 9 in Live 9.1.2).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "majorVersion": {
+                        "type": "integer",
+                        "description": "major version number"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getMinorVersion",
+            "description": "Get the minor version number (the 1 in Live 9.1.2).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "minorVersion": {
+                        "type": "integer",
+                        "description": "minor version number"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getVersionString",
+            "description": "Get the complete version string (e.g., 9.1.2 in Live 9.1.2).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "versionString": {
+                        "type": "string",
+                        "description": "complete version string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_pressCurrentDialogButton",
+            "description": "Press the button with the given index in the current dialog box.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "index": {
+                        "type": "integer",
+                        "description": "index of the button to press"
+                    }
+                },
+                "required": [
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the button was pressed successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_properties_getBrowseMode",
+            "description": "Get whether Hot-Swap Mode is active.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "browseMode": {
+                        "type": "boolean",
+                        "description": "whether Hot-Swap Mode is active",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_properties_getFocusedDocumentView",
+            "description": "Get the name of the currently visible view in the focused Live window.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "focusedDocumentView": {
+                        "type": "string",
+                        "description": "name of the currently visible view",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_availableMainViews",
+            "description": "Get a list of available main view names.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "views": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of available view names"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_focusView",
+            "description": "Show and focus on a named view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to focus"
+                    }
+                },
+                "required": [
+                    "viewName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was focused successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_hideView",
+            "description": "Hide the named view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to hide"
+                    }
+                },
+                "required": [
+                    "viewName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was hidden successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_isViewVisible",
+            "description": "Check if a view is visible.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to check"
+                    }
+                },
+                "required": [
+                    "viewName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "visible": {
+                        "type": "boolean",
+                        "description": "whether the view is visible"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_scrollView",
+            "description": "Scroll a view in a specified direction.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "direction": {
+                        "type": "string",
+                        "description": "direction to scroll (up, down, left, right)"
+                    },
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to scroll"
+                    },
+                    "modifierPressed": {
+                        "type": "boolean",
+                        "description": "whether a modifier key is pressed"
+                    }
+                },
+                "required": [
+                    "direction",
+                    "viewName",
+                    "modifierPressed"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was scrolled successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_showView",
+            "description": "Show a named view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to show"
+                    }
+                },
+                "required": [
+                    "viewName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was shown successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_toggleBrowse",
+            "description": "Toggle the display of the device chain and browser, activating/deactivating Hot-Swap Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether browse mode was toggled successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_zoomView",
+            "description": "Zoom a view in a specified direction.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "direction": {
+                        "type": "string",
+                        "description": "direction to zoom (in, out)"
+                    },
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to zoom"
+                    },
+                    "modifierPressed": {
+                        "type": "boolean",
+                        "description": "whether a modifier key is pressed"
+                    }
+                },
+                "required": [
+                    "direction",
+                    "viewName",
+                    "modifierPressed"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was zoomed successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_children_getDevices",
+            "description": "Get all devices in the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "devices": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of device IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_children_getMixerDevice",
+            "description": "Get the mixer device of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "iD of the mixer device",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getColor",
+            "description": "Get the RGB value of the chain's color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "color": {
+                        "type": "integer",
+                        "description": "rGB value of the chain's color",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getColorIndex",
+            "description": "Get the color index of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "colorIndex": {
+                        "type": "integer",
+                        "description": "color index of the chain",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getHasAudioInput",
+            "description": "Get whether the chain has audio input.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasAudioInput": {
+                        "type": "boolean",
+                        "description": "whether the chain has audio input",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getHasAudioOutput",
+            "description": "Get whether the chain has audio output.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasAudioOutput": {
+                        "type": "boolean",
+                        "description": "whether the chain has audio output",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getHasMidiInput",
+            "description": "Get whether the chain has MIDI input.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasMidiInput": {
+                        "type": "boolean",
+                        "description": "whether the chain has MIDI input",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getHasMidiOutput",
+            "description": "Get whether the chain has MIDI output.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasMidiOutput": {
+                        "type": "boolean",
+                        "description": "whether the chain has MIDI output",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getIsAutoColored",
+            "description": "Get whether the chain will always have the color of the containing track or chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isAutoColored": {
+                        "type": "boolean",
+                        "description": "whether the chain is auto-colored",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getMute",
+            "description": "Get whether the chain is muted.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mute": {
+                        "type": "boolean",
+                        "description": "whether the chain is muted",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getMutedViaSolo",
+            "description": "Get whether the chain is muted due to another chain being soloed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mutedViaSolo": {
+                        "type": "boolean",
+                        "description": "whether the chain is muted via solo",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getName",
+            "description": "Get the name of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the chain",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_getSolo",
+            "description": "Get whether the chain is soloed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "solo": {
+                        "type": "boolean",
+                        "description": "whether the chain is soloed",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_setColor",
+            "description": "Set the RGB value of the chain's color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "rGB color value"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether color was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_setColorIndex",
+            "description": "Set the color index of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "color index value"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether color index was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_setIsAutoColored",
+            "description": "Set whether the chain will always have the color of the containing track or chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "boolean",
+                        "description": "auto-colored setting"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether auto-colored was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_setMute",
+            "description": "Set whether the chain is muted.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "boolean",
+                        "description": "mute setting"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether mute was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_setName",
+            "description": "Set the name of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "new name for the chain"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether name was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_setSolo",
+            "description": "Set whether the chain is soloed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "boolean",
+                        "description": "solo setting"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether solo was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_functions_deleteDevice",
+            "description": "Delete the device at the given index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "index": {
+                        "type": "integer",
+                        "description": "index of the device to delete"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether device was deleted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_children_getCuePoints",
+            "description": "Get all cue points in the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "cuePoints": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of cue point IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_children_getGroovePool",
+            "description": "Get the groove pool.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "groovePool": {
+                        "type": "string",
+                        "description": "groove pool ID",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_children_getMasterTrack",
+            "description": "Get the master track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "masterTrack": {
+                        "type": "string",
+                        "description": "master track ID",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_children_getReturnTracks",
+            "description": "Get all return tracks in the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "returnTracks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of return track IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_children_getScenes",
+            "description": "Get all scenes in the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "scenes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of scene IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_children_getTracks",
+            "description": "Get all tracks in the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "tracks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of track IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_children_getTuningSystem",
+            "description": "Get the tuning system.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "tuningSystem": {
+                        "type": "string",
+                        "description": "tuning system ID",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_children_getView",
+            "description": "Get the song view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "view": {
+                        "type": "string",
+                        "description": "song view ID",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_children_getVisibleTracks",
+            "description": "Get all visible tracks in the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "visibleTracks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of visible track IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getAppointedDevice",
+            "description": "Get the appointed device.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "appointedDevice": {
+                        "type": "string",
+                        "description": "iD of the appointed device",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getArrangementOverdub",
+            "description": "Get whether arrangement overdub is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "arrangementOverdub": {
+                        "type": "boolean",
+                        "description": "whether arrangement overdub is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getBackToArranger",
+            "description": "Get whether back to arranger is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "backToArranger": {
+                        "type": "boolean",
+                        "description": "whether back to arranger is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getCanCaptureMidi",
+            "description": "Get whether MIDI can be captured.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canCaptureMidi": {
+                        "type": "boolean",
+                        "description": "whether MIDI can be captured",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getCanJumpToNextCue",
+            "description": "Get whether it's possible to jump to the next cue.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canJumpToNextCue": {
+                        "type": "boolean",
+                        "description": "whether it's possible to jump to the next cue",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getCanJumpToPrevCue",
+            "description": "Get whether it's possible to jump to the previous cue.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canJumpToPrevCue": {
+                        "type": "boolean",
+                        "description": "whether it's possible to jump to the previous cue",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getCanRedo",
+            "description": "Get whether redo is possible.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canRedo": {
+                        "type": "boolean",
+                        "description": "whether redo is possible",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getCanUndo",
+            "description": "Get whether undo is possible.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canUndo": {
+                        "type": "boolean",
+                        "description": "whether undo is possible",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getClipTriggerQuantization",
+            "description": "Get the clip trigger quantization setting.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipTriggerQuantization": {
+                        "type": "integer",
+                        "description": "clip trigger quantization value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getCountInDuration",
+            "description": "Get the count-in duration.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "countInDuration": {
+                        "type": "integer",
+                        "description": "count-in duration value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getCurrentSongTime",
+            "description": "Get the current playback position in beats.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "currentSongTime": {
+                        "type": "number",
+                        "description": "current playback position in beats",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getCuePoints",
+            "description": "Get all cue points.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "cuePoints": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of cue point IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getExclusiveArm",
+            "description": "Get whether exclusive arm is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "exclusiveArm": {
+                        "type": "boolean",
+                        "description": "whether exclusive arm is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getExclusiveSolo",
+            "description": "Get whether exclusive solo is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "exclusiveSolo": {
+                        "type": "boolean",
+                        "description": "whether exclusive solo is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getGrooveAmount",
+            "description": "Get the groove amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "grooveAmount": {
+                        "type": "number",
+                        "description": "groove amount value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getIsCountingIn",
+            "description": "Get whether count-in is currently active.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isCountingIn": {
+                        "type": "boolean",
+                        "description": "whether count-in is currently active",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getIsPlaying",
+            "description": "Get whether the song is currently playing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isPlaying": {
+                        "type": "boolean",
+                        "description": "whether the song is playing",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getLastEventTime",
+            "description": "Get the last event time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "lastEventTime": {
+                        "type": "number",
+                        "description": "last event time in beats",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getLoop",
+            "description": "Get whether loop is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "loop": {
+                        "type": "boolean",
+                        "description": "whether loop is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getLoopLength",
+            "description": "Get the loop length.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "loopLength": {
+                        "type": "number",
+                        "description": "loop length in beats",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getLoopStart",
+            "description": "Get the loop start position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "loopStart": {
+                        "type": "number",
+                        "description": "loop start position in beats",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getMasterTrack",
+            "description": "Get the master track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "masterTrack": {
+                        "type": "string",
+                        "description": "iD of the master track",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getMetronome",
+            "description": "Get whether metronome is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "metronome": {
+                        "type": "boolean",
+                        "description": "whether metronome is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getMidiRecordingQuantization",
+            "description": "Get the MIDI recording quantization setting.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "midiRecordingQuantization": {
+                        "type": "integer",
+                        "description": "mIDI recording quantization value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getNudgeDown",
+            "description": "Get nudge down state.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "nudgeDown": {
+                        "type": "boolean",
+                        "description": "nudge down state",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getNudgeUp",
+            "description": "Get nudge up state.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "nudgeUp": {
+                        "type": "boolean",
+                        "description": "nudge up state",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getOverdub",
+            "description": "Get whether overdub is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "overdub": {
+                        "type": "boolean",
+                        "description": "whether overdub is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getPunchIn",
+            "description": "Get whether punch-in recording is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "punchIn": {
+                        "type": "boolean",
+                        "description": "whether punch-in recording is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getPunchOut",
+            "description": "Get whether punch-out recording is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "punchOut": {
+                        "type": "boolean",
+                        "description": "whether punch-out recording is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getReEnableAutomationEnabled",
+            "description": "Get whether re-enable automation is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "reEnableAutomationEnabled": {
+                        "type": "boolean",
+                        "description": "whether re-enable automation is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getRecordMode",
+            "description": "Get whether record mode is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "recordMode": {
+                        "type": "boolean",
+                        "description": "whether record mode is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getReturnTracks",
+            "description": "Get all return tracks.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "returnTracks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of return track IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getRootNote",
+            "description": "Get the root note for scale.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "rootNote": {
+                        "type": "integer",
+                        "description": "root note value (0-11, where C=0)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getScaleIntervals",
+            "description": "Get the scale intervals.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "scaleIntervals": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "scale intervals",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getScaleMode",
+            "description": "Get whether scale mode is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "scaleMode": {
+                        "type": "boolean",
+                        "description": "whether scale mode is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getScaleName",
+            "description": "Get the scale name.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "scaleName": {
+                        "type": "string",
+                        "description": "scale name (e.g., 'Major', 'Minor', etc.)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getScenes",
+            "description": "Get all scenes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "scenes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of scene IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getSelectedScene",
+            "description": "Get the currently selected scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedScene": {
+                        "type": "string",
+                        "description": "iD of the selected scene",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getSelectedTrack",
+            "description": "Get the currently selected track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedTrack": {
+                        "type": "string",
+                        "description": "iD of the selected track",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getSessionAutomationRecord",
+            "description": "Get whether session automation recording is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sessionAutomationRecord": {
+                        "type": "boolean",
+                        "description": "whether session automation recording is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getSessionRecord",
+            "description": "Get whether session recording is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sessionRecord": {
+                        "type": "boolean",
+                        "description": "whether session recording is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getSessionRecordStatus",
+            "description": "Get the session recording status.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sessionRecordStatus": {
+                        "type": "integer",
+                        "description": "session recording status value",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getSignatureDenominator",
+            "description": "Get the time signature denominator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "signatureDenominator": {
+                        "type": "integer",
+                        "description": "time signature denominator (e.g., 4 for 4/4 time)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getSignatureNumerator",
+            "description": "Get the time signature numerator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "signatureNumerator": {
+                        "type": "integer",
+                        "description": "time signature numerator (e.g., 4 for 4/4 time)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getSongLength",
+            "description": "Get the song length.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "songLength": {
+                        "type": "number",
+                        "description": "song length in beats",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getStartTime",
+            "description": "Get the start time position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "startTime": {
+                        "type": "number",
+                        "description": "start time position in beats",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getSwingAmount",
+            "description": "Get the swing amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "swingAmount": {
+                        "type": "number",
+                        "description": "swing amount value (0.0 to 1.0)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getTempo",
+            "description": "Get the current tempo of the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "tempo": {
+                        "type": "number",
+                        "description": "current tempo in BPM",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getTempoFollowerEnabled",
+            "description": "Get whether tempo follower is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "tempoFollowerEnabled": {
+                        "type": "boolean",
+                        "description": "whether tempo follower is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_getVisibleTracks",
+            "description": "Get all visible tracks.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "visibleTracks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of visible track IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setAppointedDevice",
+            "description": "Set the appointed device.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "description": "device ID to appoint"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether appointed device was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setArrangementOverdub",
+            "description": "Set whether arrangement overdub is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable arrangement overdub"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether arrangement overdub was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setBackToArranger",
+            "description": "Set whether back to arranger is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable back to arranger"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether back to arranger was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setClipTriggerQuantization",
+            "description": "Set the clip trigger quantization.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "integer",
+                        "description": "clip trigger quantization value"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether clip trigger quantization was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setCountInDuration",
+            "description": "Set the count-in duration.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "integer",
+                        "description": "count-in duration value"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether count-in duration was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setCurrentSongTime",
+            "description": "Set the current playback position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "playback position in beats"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether playback position was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setExclusiveArm",
+            "description": "Set whether exclusive arm is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable exclusive arm"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether exclusive arm was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setExclusiveSolo",
+            "description": "Set whether exclusive solo is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable exclusive solo"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether exclusive solo was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setGrooveAmount",
+            "description": "Set the groove amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "groove amount value"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether groove amount was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setLoop",
+            "description": "Set whether loop is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable loop"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether loop was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setLoopLength",
+            "description": "Set the loop length.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "loop length in beats"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether loop length was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setLoopStart",
+            "description": "Set the loop start position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "loop start position in beats"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether loop start was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setMetronome",
+            "description": "Set whether metronome is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable metronome"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether metronome setting was updated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setMidiRecordingQuantization",
+            "description": "Set the MIDI recording quantization.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "integer",
+                        "description": "mIDI recording quantization value"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether MIDI recording quantization was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setNudgeDown",
+            "description": "Set nudge down state.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "nudge down state"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether nudge down was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setNudgeUp",
+            "description": "Set nudge up state.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "nudge up state"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether nudge up was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setOverdub",
+            "description": "Set whether overdub is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable overdub"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether overdub setting was updated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setPunchIn",
+            "description": "Set whether punch-in recording is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable punch-in recording"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether punch-in setting was updated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setPunchOut",
+            "description": "Set whether punch-out recording is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable punch-out recording"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether punch-out setting was updated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setRecordMode",
+            "description": "Set whether record mode is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable record mode"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether record mode was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setRootNote",
+            "description": "Set the root note for scale.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "integer",
+                        "description": "root note value (0-11, where C=0)"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether root note was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setScaleMode",
+            "description": "Set whether scale mode is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable scale mode"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether scale mode was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setScaleName",
+            "description": "Set the scale name.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "description": "scale name (e.g., 'Major', 'Minor', etc.)"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether scale name was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setSessionAutomationRecord",
+            "description": "Set whether session automation recording is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable session automation recording"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether session automation recording was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setSessionRecord",
+            "description": "Set whether session recording is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable session recording"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether session recording was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setSignatureDenominator",
+            "description": "Set the time signature denominator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "integer",
+                        "description": "time signature denominator (e.g., 4 for 4/4 time)"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether signature denominator was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setSignatureNumerator",
+            "description": "Set the time signature numerator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "integer",
+                        "description": "time signature numerator (e.g., 4 for 4/4 time)"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether signature numerator was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setStartTime",
+            "description": "Set the start time position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "start time position in beats"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether start time was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setSwingAmount",
+            "description": "Set the swing amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "swing amount value (0.0 to 1.0)"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether swing amount was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setTempo",
+            "description": "Set the tempo of the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "tempo value in BPM"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether tempo was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_properties_setTempoFollowerEnabled",
+            "description": "Set whether tempo follower is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "boolean",
+                        "description": "enable or disable tempo follower"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether tempo follower setting was updated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_captureAndInsertScene",
+            "description": "Capture and insert a scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneIndex": {
+                        "type": "integer",
+                        "description": "index where to insert the scene"
+                    }
+                },
+                "required": [
+                    "sceneIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether scene was captured and inserted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_captureMidi",
+            "description": "Capture MIDI from the session.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether MIDI was captured successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_continuePlaying",
+            "description": "Continue playback of the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether playback continued successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_createAudioTrack",
+            "description": "Create a new audio track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "index": {
+                        "type": "integer",
+                        "description": "index where to insert the track"
+                    }
+                },
+                "required": [
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackId": {
+                        "type": "string",
+                        "description": "iD of the created audio track"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_createMidiTrack",
+            "description": "Create a new MIDI track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "index": {
+                        "type": "integer",
+                        "description": "index where to insert the track"
+                    }
+                },
+                "required": [
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackId": {
+                        "type": "string",
+                        "description": "iD of the created MIDI track"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_createReturnTrack",
+            "description": "Create a new return track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackId": {
+                        "type": "string",
+                        "description": "iD of the created return track"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_createScene",
+            "description": "Create a new scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "index": {
+                        "type": "integer",
+                        "description": "index where to insert the scene"
+                    }
+                },
+                "required": [
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "iD of the created scene"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_deleteReturnTrack",
+            "description": "Delete a return track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackIndex": {
+                        "type": "integer",
+                        "description": "index of the return track to delete"
+                    }
+                },
+                "required": [
+                    "trackIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether return track was deleted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_deleteScene",
+            "description": "Delete a scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneIndex": {
+                        "type": "integer",
+                        "description": "index of the scene to delete"
+                    }
+                },
+                "required": [
+                    "sceneIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether scene was deleted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_deleteTrack",
+            "description": "Delete a track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackIndex": {
+                        "type": "integer",
+                        "description": "index of the track to delete"
+                    }
+                },
+                "required": [
+                    "trackIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether track was deleted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_duplicateScene",
+            "description": "Duplicate a scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneIndex": {
+                        "type": "integer",
+                        "description": "index of the scene to duplicate"
+                    }
+                },
+                "required": [
+                    "sceneIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "iD of the duplicated scene"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_duplicateTrack",
+            "description": "Duplicate a track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackIndex": {
+                        "type": "integer",
+                        "description": "index of the track to duplicate"
+                    }
+                },
+                "required": [
+                    "trackIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackId": {
+                        "type": "string",
+                        "description": "iD of the duplicated track"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_findDevicePosition",
+            "description": "Find the position of a device.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceId": {
+                        "type": "string",
+                        "description": "iD of the device to find"
+                    }
+                },
+                "required": [
+                    "deviceId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackIndex": {
+                        "type": "integer",
+                        "description": "track index containing the device"
+                    },
+                    "deviceIndex": {
+                        "type": "integer",
+                        "description": "device index within the track"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_forceLinkBeatTime",
+            "description": "Force Link beat time synchronization.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "beatTime": {
+                        "type": "number",
+                        "description": "beat time to force"
+                    }
+                },
+                "required": [
+                    "beatTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether Link beat time was forced successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_getBeatsLoopLength",
+            "description": "Get the loop length in beats.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "beatsLoopLength": {
+                        "type": "number",
+                        "description": "loop length in beats"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_getBeatsLoopStart",
+            "description": "Get the loop start position in beats.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "beatsLoopStart": {
+                        "type": "number",
+                        "description": "loop start position in beats"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_getCurrentBeatsSongTime",
+            "description": "Get the current song position in beats.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "currentBeatsSongTime": {
+                        "type": "number",
+                        "description": "current song position in beats"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_getCurrentSmpteSongTime",
+            "description": "Get the current song position in SMPTE time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "currentSmpteSongTime": {
+                        "type": "object",
+                        "description": "current song position in SMPTE format"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_isCuePointSelected",
+            "description": "Check if a cue point is selected.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selected": {
+                        "type": "boolean",
+                        "description": "whether a cue point is selected"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_jumpBy",
+            "description": "Jump by a specified amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "type": "number",
+                        "description": "amount to jump by in beats"
+                    }
+                },
+                "required": [
+                    "amount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether jump was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_jumpToNextCue",
+            "description": "Jump to the next cue point.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether jump to next cue was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_jumpToPrevCue",
+            "description": "Jump to the previous cue point.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether jump to previous cue was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_moveDevice",
+            "description": "Move a device to a different position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceId": {
+                        "type": "string",
+                        "description": "iD of the device to move"
+                    },
+                    "targetTrackIndex": {
+                        "type": "integer",
+                        "description": "target track index"
+                    },
+                    "targetDeviceIndex": {
+                        "type": "integer",
+                        "description": "target device index"
+                    }
+                },
+                "required": [
+                    "deviceId",
+                    "targetTrackIndex",
+                    "targetDeviceIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether device was moved successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_playSelection",
+            "description": "Play the current selection.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether selection playback started successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_reEnableAutomation",
+            "description": "Re-enable automation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether automation was re-enabled successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_redo",
+            "description": "Redo the last undone action.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether redo was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_scrubBy",
+            "description": "Scrub by a specified amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "type": "number",
+                        "description": "amount to scrub by in beats"
+                    }
+                },
+                "required": [
+                    "amount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether scrub was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_setOrDeleteCue",
+            "description": "Set or delete a cue point.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "position": {
+                        "type": "number",
+                        "description": "position in beats for the cue point"
+                    },
+                    "delete": {
+                        "type": "boolean",
+                        "description": "whether to delete the cue point instead of setting it"
+                    }
+                },
+                "required": [
+                    "position"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether cue was set or deleted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_startPlaying",
+            "description": "Start playback of the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether playback started successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_stopAllClips",
+            "description": "Stop all currently playing clips.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether all clips were stopped successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_stopPlaying",
+            "description": "Stop playback of the song.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether playback stopped successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_tapTempo",
+            "description": "Tap tempo to adjust the song tempo.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether tempo tap was registered successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_triggerSessionRecord",
+            "description": "Trigger session recording.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether session recording was triggered successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "song_functions_undo",
+            "description": "Undo the last action.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether undo was successful"
+                    }
+                }
+            }
+        }
+    ]
+}
