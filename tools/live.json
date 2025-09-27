@@ -1,0 +1,261 @@
+{
+    "tools": [
+        {
+            "name": "live_get_child_attributes",
+            "description": "Get the read-only and observable attributes for a specific child of any Ableton Live object.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID of the parent object"
+                    },
+                    "childName": {
+                        "type": "string",
+                        "description": "name of the child to query"
+                    }
+                },
+                "required": [
+                    "objectId",
+                    "childName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "childName": {
+                        "type": "string",
+                        "description": "name of the child"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the child exists"
+                    },
+                    "readOnly": {
+                        "type": "boolean",
+                        "description": "whether the child is read-only"
+                    },
+                    "observable": {
+                        "type": "boolean",
+                        "description": "whether the child is observable"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_class_children",
+            "description": "Get all child names defined by a given Ableton Live class (specified by name).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "className": {
+                        "type": "string",
+                        "description": "name of the class to query"
+                    }
+                },
+                "required": [
+                    "className"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "className": {
+                        "type": "string",
+                        "description": "name of the class"
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of child names defined by the class"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the class exists"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_class_properties",
+            "description": "Get all property names defined by a given Ableton Live class (specified by name).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "className": {
+                        "type": "string",
+                        "description": "name of the class to query"
+                    }
+                },
+                "required": [
+                    "className"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "className": {
+                        "type": "string",
+                        "description": "name of the class"
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of property names defined by the class"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the class exists"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_live_classes",
+            "description": "Get the names of all Ableton Live classes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "classes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of all Ableton Live class names"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_object_children",
+            "description": "Get all child names defined by the class of a given Ableton Live object (specified by ID).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID to query"
+                    }
+                },
+                "required": [
+                    "objectId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID"
+                    },
+                    "className": {
+                        "type": "string",
+                        "description": "class name of the object"
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of child names defined by the object's class"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the object exists"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_object_properties",
+            "description": "Get all property names defined by the class of a given Ableton Live object (specified by ID).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID to query"
+                    }
+                },
+                "required": [
+                    "objectId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID"
+                    },
+                    "className": {
+                        "type": "string",
+                        "description": "class name of the object"
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of property names defined by the object's class"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the object exists"
+                    }
+                }
+            }
+        },
+        {
+            "name": "live_get_property_attributes",
+            "description": "Get the read-only and observable attributes for a specific property of any Ableton Live object.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "objectId": {
+                        "type": "string",
+                        "description": "object ID of the object"
+                    },
+                    "propertyName": {
+                        "type": "string",
+                        "description": "name of the property to query"
+                    }
+                },
+                "required": [
+                    "objectId",
+                    "propertyName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "propertyName": {
+                        "type": "string",
+                        "description": "name of the property"
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "whether the property exists"
+                    },
+                    "readOnly": {
+                        "type": "boolean",
+                        "description": "whether the property is read-only"
+                    },
+                    "observable": {
+                        "type": "boolean",
+                        "description": "whether the property is observable"
+                    }
+                }
+            }
+        }
+    ]
+}

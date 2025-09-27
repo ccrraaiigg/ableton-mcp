@@ -1,0 +1,253 @@
+{
+    "tools": [
+        {
+            "name": "applicationView_properties_get_browseMode",
+            "description": "Get whether Hot-Swap Mode is active.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "browseMode": {
+                        "type": "boolean",
+                        "description": "whether Hot-Swap Mode is active",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_properties_get_focusedDocumentView",
+            "description": "Get the name of the currently visible view in the focused Live window.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "focusedDocumentView": {
+                        "type": "string",
+                        "description": "name of the currently visible view",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_availableMainViews",
+            "description": "Get a list of available main view names.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "views": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of available view names"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_focusView",
+            "description": "Show and focus on a named view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to focus"
+                    }
+                },
+                "required": [
+                    "viewName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was focused successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_hideView",
+            "description": "Hide the named view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to hide"
+                    }
+                },
+                "required": [
+                    "viewName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was hidden successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_isViewVisible",
+            "description": "Check if a view is visible.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to check"
+                    }
+                },
+                "required": [
+                    "viewName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "visible": {
+                        "type": "boolean",
+                        "description": "whether the view is visible"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_scrollView",
+            "description": "Scroll a view in a specified direction.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "direction": {
+                        "type": "string",
+                        "description": "direction to scroll (up, down, left, right)"
+                    },
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to scroll"
+                    },
+                    "modifierPressed": {
+                        "type": "boolean",
+                        "description": "whether a modifier key is pressed"
+                    }
+                },
+                "required": [
+                    "direction",
+                    "viewName",
+                    "modifierPressed"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was scrolled successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_showView",
+            "description": "Show a named view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to show"
+                    }
+                },
+                "required": [
+                    "viewName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was shown successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_toggleBrowse",
+            "description": "Toggle the display of the device chain and browser, activating/deactivating Hot-Swap Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether browse mode was toggled successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "applicationView_functions_zoomView",
+            "description": "Zoom a view in a specified direction.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "direction": {
+                        "type": "string",
+                        "description": "direction to zoom (in, out)"
+                    },
+                    "viewName": {
+                        "type": "string",
+                        "description": "name of the view to zoom"
+                    },
+                    "modifierPressed": {
+                        "type": "boolean",
+                        "description": "whether a modifier key is pressed"
+                    }
+                },
+                "required": [
+                    "direction",
+                    "viewName",
+                    "modifierPressed"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the view was zoomed successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

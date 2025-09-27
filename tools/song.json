@@ -1,1321 +1,7 @@
 {
     "tools": [
         {
-            "name": "live_get_child_attributes",
-            "description": "Get the read-only and observable attributes for a specific child of any Ableton Live object.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "objectId": {
-                        "type": "string",
-                        "description": "object ID of the parent object"
-                    },
-                    "childName": {
-                        "type": "string",
-                        "description": "name of the child to query"
-                    }
-                },
-                "required": [
-                    "objectId",
-                    "childName"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "childName": {
-                        "type": "string",
-                        "description": "name of the child"
-                    },
-                    "exists": {
-                        "type": "boolean",
-                        "description": "whether the child exists"
-                    },
-                    "readOnly": {
-                        "type": "boolean",
-                        "description": "whether the child is read-only"
-                    },
-                    "observable": {
-                        "type": "boolean",
-                        "description": "whether the child is observable"
-                    }
-                }
-            }
-        },
-        {
-            "name": "live_get_class_children",
-            "description": "Get all child names defined by a given Ableton Live class (specified by name).",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "className": {
-                        "type": "string",
-                        "description": "name of the class to query"
-                    }
-                },
-                "required": [
-                    "className"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "className": {
-                        "type": "string",
-                        "description": "name of the class"
-                    },
-                    "children": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "list of child names defined by the class"
-                    },
-                    "exists": {
-                        "type": "boolean",
-                        "description": "whether the class exists"
-                    }
-                }
-            }
-        },
-        {
-            "name": "live_get_class_properties",
-            "description": "Get all property names defined by a given Ableton Live class (specified by name).",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "className": {
-                        "type": "string",
-                        "description": "name of the class to query"
-                    }
-                },
-                "required": [
-                    "className"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "className": {
-                        "type": "string",
-                        "description": "name of the class"
-                    },
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "list of property names defined by the class"
-                    },
-                    "exists": {
-                        "type": "boolean",
-                        "description": "whether the class exists"
-                    }
-                }
-            }
-        },
-        {
-            "name": "live_get_live_classes",
-            "description": "Get the names of all Ableton Live classes.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "classes": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "list of all Ableton Live class names"
-                    }
-                }
-            }
-        },
-        {
-            "name": "live_get_object_children",
-            "description": "Get all child names defined by the class of a given Ableton Live object (specified by ID).",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "objectId": {
-                        "type": "string",
-                        "description": "object ID to query"
-                    }
-                },
-                "required": [
-                    "objectId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "objectId": {
-                        "type": "string",
-                        "description": "object ID"
-                    },
-                    "className": {
-                        "type": "string",
-                        "description": "class name of the object"
-                    },
-                    "children": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "list of child names defined by the object's class"
-                    },
-                    "exists": {
-                        "type": "boolean",
-                        "description": "whether the object exists"
-                    }
-                }
-            }
-        },
-        {
-            "name": "live_get_object_properties",
-            "description": "Get all property names defined by the class of a given Ableton Live object (specified by ID).",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "objectId": {
-                        "type": "string",
-                        "description": "object ID to query"
-                    }
-                },
-                "required": [
-                    "objectId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "objectId": {
-                        "type": "string",
-                        "description": "object ID"
-                    },
-                    "className": {
-                        "type": "string",
-                        "description": "class name of the object"
-                    },
-                    "properties": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "list of property names defined by the object's class"
-                    },
-                    "exists": {
-                        "type": "boolean",
-                        "description": "whether the object exists"
-                    }
-                }
-            }
-        },
-        {
-            "name": "live_get_property_attributes",
-            "description": "Get the read-only and observable attributes for a specific property of any Ableton Live object.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "objectId": {
-                        "type": "string",
-                        "description": "object ID of the object"
-                    },
-                    "propertyName": {
-                        "type": "string",
-                        "description": "name of the property to query"
-                    }
-                },
-                "required": [
-                    "objectId",
-                    "propertyName"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "propertyName": {
-                        "type": "string",
-                        "description": "name of the property"
-                    },
-                    "exists": {
-                        "type": "boolean",
-                        "description": "whether the property exists"
-                    },
-                    "readOnly": {
-                        "type": "boolean",
-                        "description": "whether the property is read-only"
-                    },
-                    "observable": {
-                        "type": "boolean",
-                        "description": "whether the property is observable"
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_children_getControlSurfaces",
-            "description": "Get the list of control surfaces currently selected in Live's Preferences.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "controlSurfaces": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "list of control surface IDs",
-                        "readOnly": true,
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_children_getView",
-            "description": "Get the view child of the Application object.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "viewId": {
-                        "type": "string",
-                        "description": "object ID of the view",
-                        "readOnly": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_properties_getAverageProcessUsage",
-            "description": "Get Live's average CPU load. Note that Live's CPU meter shows the audio processing load but not Live's overall CPU usage.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "averageProcessUsage": {
-                        "type": "number",
-                        "description": "average CPU load as percentage",
-                        "readOnly": true,
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_properties_getCurrentDialogButtonCount",
-            "description": "Get the number of buttons in the current message box.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "currentDialogButtonCount": {
-                        "type": "integer",
-                        "description": "number of buttons in current dialog",
-                        "readOnly": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_properties_getCurrentDialogMessage",
-            "description": "Get the text of the current message box (empty if no message box is currently shown).",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "currentDialogMessage": {
-                        "type": "string",
-                        "description": "text of current dialog message",
-                        "readOnly": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_properties_getOpenDialogCount",
-            "description": "Get the number of dialog boxes shown.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "openDialogCount": {
-                        "type": "integer",
-                        "description": "number of open dialogs",
-                        "readOnly": true,
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_properties_getPeakProcessUsage",
-            "description": "Get Live's peak CPU load. Note that Live's CPU meter shows the audio processing load but not Live's overall CPU usage.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "peakProcessUsage": {
-                        "type": "number",
-                        "description": "peak CPU load as percentage",
-                        "readOnly": true,
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_functions_getBugfixVersion",
-            "description": "Get the bugfix version number (the 2 in Live 9.1.2).",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "bugfixVersion": {
-                        "type": "integer",
-                        "description": "bugfix version number"
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_functions_getDocument",
-            "description": "Get the current Live Set.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "documentId": {
-                        "type": "string",
-                        "description": "object ID of the current Live Set"
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_functions_getMajorVersion",
-            "description": "Get the major version number (the 9 in Live 9.1.2).",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "majorVersion": {
-                        "type": "integer",
-                        "description": "major version number"
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_functions_getMinorVersion",
-            "description": "Get the minor version number (the 1 in Live 9.1.2).",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "minorVersion": {
-                        "type": "integer",
-                        "description": "minor version number"
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_functions_getVersionString",
-            "description": "Get the complete version string (e.g., 9.1.2 in Live 9.1.2).",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "versionString": {
-                        "type": "string",
-                        "description": "complete version string"
-                    }
-                }
-            }
-        },
-        {
-            "name": "application_functions_pressCurrentDialogButton",
-            "description": "Press the button with the given index in the current dialog box.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "index": {
-                        "type": "integer",
-                        "description": "index of the button to press"
-                    }
-                },
-                "required": [
-                    "index"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether the button was pressed successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_properties_getBrowseMode",
-            "description": "Get whether Hot-Swap Mode is active.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "browseMode": {
-                        "type": "boolean",
-                        "description": "whether Hot-Swap Mode is active",
-                        "readOnly": true,
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_properties_getFocusedDocumentView",
-            "description": "Get the name of the currently visible view in the focused Live window.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "focusedDocumentView": {
-                        "type": "string",
-                        "description": "name of the currently visible view",
-                        "readOnly": true,
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_functions_availableMainViews",
-            "description": "Get a list of available main view names.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "views": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "list of available view names"
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_functions_focusView",
-            "description": "Show and focus on a named view.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "viewName": {
-                        "type": "string",
-                        "description": "name of the view to focus"
-                    }
-                },
-                "required": [
-                    "viewName"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether the view was focused successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_functions_hideView",
-            "description": "Hide the named view.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "viewName": {
-                        "type": "string",
-                        "description": "name of the view to hide"
-                    }
-                },
-                "required": [
-                    "viewName"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether the view was hidden successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_functions_isViewVisible",
-            "description": "Check if a view is visible.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "viewName": {
-                        "type": "string",
-                        "description": "name of the view to check"
-                    }
-                },
-                "required": [
-                    "viewName"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "visible": {
-                        "type": "boolean",
-                        "description": "whether the view is visible"
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_functions_scrollView",
-            "description": "Scroll a view in a specified direction.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "direction": {
-                        "type": "string",
-                        "description": "direction to scroll (up, down, left, right)"
-                    },
-                    "viewName": {
-                        "type": "string",
-                        "description": "name of the view to scroll"
-                    },
-                    "modifierPressed": {
-                        "type": "boolean",
-                        "description": "whether a modifier key is pressed"
-                    }
-                },
-                "required": [
-                    "direction",
-                    "viewName",
-                    "modifierPressed"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether the view was scrolled successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_functions_showView",
-            "description": "Show a named view.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "viewName": {
-                        "type": "string",
-                        "description": "name of the view to show"
-                    }
-                },
-                "required": [
-                    "viewName"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether the view was shown successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_functions_toggleBrowse",
-            "description": "Toggle the display of the device chain and browser, activating/deactivating Hot-Swap Mode.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {},
-                "required": []
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether browse mode was toggled successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "applicationView_functions_zoomView",
-            "description": "Zoom a view in a specified direction.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "direction": {
-                        "type": "string",
-                        "description": "direction to zoom (in, out)"
-                    },
-                    "viewName": {
-                        "type": "string",
-                        "description": "name of the view to zoom"
-                    },
-                    "modifierPressed": {
-                        "type": "boolean",
-                        "description": "whether a modifier key is pressed"
-                    }
-                },
-                "required": [
-                    "direction",
-                    "viewName",
-                    "modifierPressed"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether the view was zoomed successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_children_getDevices",
-            "description": "Get all devices in the chain.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "devices": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "list of device IDs",
-                        "readOnly": true,
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_children_getMixerDevice",
-            "description": "Get the mixer device of the chain.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "mixerDevice": {
-                        "type": "string",
-                        "description": "iD of the mixer device",
-                        "readOnly": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getColor",
-            "description": "Get the RGB value of the chain's color.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "color": {
-                        "type": "integer",
-                        "description": "rGB value of the chain's color",
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getColorIndex",
-            "description": "Get the color index of the chain.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "colorIndex": {
-                        "type": "integer",
-                        "description": "color index of the chain",
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getHasAudioInput",
-            "description": "Get whether the chain has audio input.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "hasAudioInput": {
-                        "type": "boolean",
-                        "description": "whether the chain has audio input",
-                        "readOnly": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getHasAudioOutput",
-            "description": "Get whether the chain has audio output.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "hasAudioOutput": {
-                        "type": "boolean",
-                        "description": "whether the chain has audio output",
-                        "readOnly": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getHasMidiInput",
-            "description": "Get whether the chain has MIDI input.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "hasMidiInput": {
-                        "type": "boolean",
-                        "description": "whether the chain has MIDI input",
-                        "readOnly": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getHasMidiOutput",
-            "description": "Get whether the chain has MIDI output.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "hasMidiOutput": {
-                        "type": "boolean",
-                        "description": "whether the chain has MIDI output",
-                        "readOnly": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getIsAutoColored",
-            "description": "Get whether the chain will always have the color of the containing track or chain.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "isAutoColored": {
-                        "type": "boolean",
-                        "description": "whether the chain is auto-colored",
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getMute",
-            "description": "Get whether the chain is muted.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "mute": {
-                        "type": "boolean",
-                        "description": "whether the chain is muted",
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getMutedViaSolo",
-            "description": "Get whether the chain is muted due to another chain being soloed.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "mutedViaSolo": {
-                        "type": "boolean",
-                        "description": "whether the chain is muted via solo",
-                        "readOnly": true,
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getName",
-            "description": "Get the name of the chain.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "name of the chain",
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_getSolo",
-            "description": "Get whether the chain is soloed.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    }
-                },
-                "required": [
-                    "chainId"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "solo": {
-                        "type": "boolean",
-                        "description": "whether the chain is soloed",
-                        "observable": true
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_setColor",
-            "description": "Set the RGB value of the chain's color.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    },
-                    "value": {
-                        "type": "integer",
-                        "description": "rGB color value"
-                    }
-                },
-                "required": [
-                    "chainId",
-                    "value"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether color was set successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_setColorIndex",
-            "description": "Set the color index of the chain.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    },
-                    "value": {
-                        "type": "integer",
-                        "description": "color index value"
-                    }
-                },
-                "required": [
-                    "chainId",
-                    "value"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether color index was set successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_setIsAutoColored",
-            "description": "Set whether the chain will always have the color of the containing track or chain.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    },
-                    "value": {
-                        "type": "boolean",
-                        "description": "auto-colored setting"
-                    }
-                },
-                "required": [
-                    "chainId",
-                    "value"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether auto-colored was set successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_setMute",
-            "description": "Set whether the chain is muted.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    },
-                    "value": {
-                        "type": "boolean",
-                        "description": "mute setting"
-                    }
-                },
-                "required": [
-                    "chainId",
-                    "value"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether mute was set successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_setName",
-            "description": "Set the name of the chain.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    },
-                    "value": {
-                        "type": "string",
-                        "description": "new name for the chain"
-                    }
-                },
-                "required": [
-                    "chainId",
-                    "value"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether name was set successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_properties_setSolo",
-            "description": "Set whether the chain is soloed.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    },
-                    "value": {
-                        "type": "boolean",
-                        "description": "solo setting"
-                    }
-                },
-                "required": [
-                    "chainId",
-                    "value"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether solo was set successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "chain_functions_deleteDevice",
-            "description": "Delete the device at the given index.",
-            "inputSchema": {
-                "type": "object",
-                "properties": {
-                    "chainId": {
-                        "type": "string",
-                        "description": "iD of the chain"
-                    },
-                    "index": {
-                        "type": "integer",
-                        "description": "index of the device to delete"
-                    }
-                },
-                "required": [
-                    "chainId",
-                    "index"
-                ]
-            },
-            "outputSchema": {
-                "type": "object",
-                "properties": {
-                    "success": {
-                        "type": "boolean",
-                        "description": "whether device was deleted successfully"
-                    }
-                }
-            }
-        },
-        {
-            "name": "song_children_getCuePoints",
+            "name": "song_children_get_cuePoints",
             "description": "Get all cue points in the song.",
             "inputSchema": {
                 "type": "object",
@@ -1338,7 +24,7 @@
             }
         },
         {
-            "name": "song_children_getGroovePool",
+            "name": "song_children_get_groovePool",
             "description": "Get the groove pool.",
             "inputSchema": {
                 "type": "object",
@@ -1357,7 +43,7 @@
             }
         },
         {
-            "name": "song_children_getMasterTrack",
+            "name": "song_children_get_masterTrack",
             "description": "Get the master track.",
             "inputSchema": {
                 "type": "object",
@@ -1376,7 +62,7 @@
             }
         },
         {
-            "name": "song_children_getReturnTracks",
+            "name": "song_children_get_returnTracks",
             "description": "Get all return tracks in the song.",
             "inputSchema": {
                 "type": "object",
@@ -1399,7 +85,7 @@
             }
         },
         {
-            "name": "song_children_getScenes",
+            "name": "song_children_get_scenes",
             "description": "Get all scenes in the song.",
             "inputSchema": {
                 "type": "object",
@@ -1422,7 +108,7 @@
             }
         },
         {
-            "name": "song_children_getTracks",
+            "name": "song_children_get_tracks",
             "description": "Get all tracks in the song.",
             "inputSchema": {
                 "type": "object",
@@ -1445,7 +131,7 @@
             }
         },
         {
-            "name": "song_children_getTuningSystem",
+            "name": "song_children_get_tuningSystem",
             "description": "Get the tuning system.",
             "inputSchema": {
                 "type": "object",
@@ -1464,7 +150,7 @@
             }
         },
         {
-            "name": "song_children_getView",
+            "name": "song_children_get_view",
             "description": "Get the song view.",
             "inputSchema": {
                 "type": "object",
@@ -1483,7 +169,7 @@
             }
         },
         {
-            "name": "song_children_getVisibleTracks",
+            "name": "song_children_get_visibleTracks",
             "description": "Get all visible tracks in the song.",
             "inputSchema": {
                 "type": "object",
@@ -1506,7 +192,7 @@
             }
         },
         {
-            "name": "song_properties_getAppointedDevice",
+            "name": "song_properties_get_appointedDevice",
             "description": "Get the appointed device.",
             "inputSchema": {
                 "type": "object",
@@ -1525,7 +211,7 @@
             }
         },
         {
-            "name": "song_properties_getArrangementOverdub",
+            "name": "song_properties_get_arrangementOverdub",
             "description": "Get whether arrangement overdub is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -1544,7 +230,7 @@
             }
         },
         {
-            "name": "song_properties_getBackToArranger",
+            "name": "song_properties_get_backToArranger",
             "description": "Get whether back to arranger is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -1563,7 +249,7 @@
             }
         },
         {
-            "name": "song_properties_getCanCaptureMidi",
+            "name": "song_properties_get_canCaptureMidi",
             "description": "Get whether MIDI can be captured.",
             "inputSchema": {
                 "type": "object",
@@ -1583,7 +269,7 @@
             }
         },
         {
-            "name": "song_properties_getCanJumpToNextCue",
+            "name": "song_properties_get_canJumpToNextCue",
             "description": "Get whether it's possible to jump to the next cue.",
             "inputSchema": {
                 "type": "object",
@@ -1603,7 +289,7 @@
             }
         },
         {
-            "name": "song_properties_getCanJumpToPrevCue",
+            "name": "song_properties_get_canJumpToPrevCue",
             "description": "Get whether it's possible to jump to the previous cue.",
             "inputSchema": {
                 "type": "object",
@@ -1623,7 +309,7 @@
             }
         },
         {
-            "name": "song_properties_getCanRedo",
+            "name": "song_properties_get_canRedo",
             "description": "Get whether redo is possible.",
             "inputSchema": {
                 "type": "object",
@@ -1643,7 +329,7 @@
             }
         },
         {
-            "name": "song_properties_getCanUndo",
+            "name": "song_properties_get_canUndo",
             "description": "Get whether undo is possible.",
             "inputSchema": {
                 "type": "object",
@@ -1663,7 +349,7 @@
             }
         },
         {
-            "name": "song_properties_getClipTriggerQuantization",
+            "name": "song_properties_get_clipTriggerQuantization",
             "description": "Get the clip trigger quantization setting.",
             "inputSchema": {
                 "type": "object",
@@ -1682,7 +368,7 @@
             }
         },
         {
-            "name": "song_properties_getCountInDuration",
+            "name": "song_properties_get_countInDuration",
             "description": "Get the count-in duration.",
             "inputSchema": {
                 "type": "object",
@@ -1701,7 +387,7 @@
             }
         },
         {
-            "name": "song_properties_getCurrentSongTime",
+            "name": "song_properties_get_currentSongTime",
             "description": "Get the current playback position in beats.",
             "inputSchema": {
                 "type": "object",
@@ -1721,7 +407,7 @@
             }
         },
         {
-            "name": "song_properties_getCuePoints",
+            "name": "song_properties_get_cuePoints",
             "description": "Get all cue points.",
             "inputSchema": {
                 "type": "object",
@@ -1744,7 +430,7 @@
             }
         },
         {
-            "name": "song_properties_getExclusiveArm",
+            "name": "song_properties_get_exclusiveArm",
             "description": "Get whether exclusive arm is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -1763,7 +449,7 @@
             }
         },
         {
-            "name": "song_properties_getExclusiveSolo",
+            "name": "song_properties_get_exclusiveSolo",
             "description": "Get whether exclusive solo is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -1782,7 +468,7 @@
             }
         },
         {
-            "name": "song_properties_getGrooveAmount",
+            "name": "song_properties_get_grooveAmount",
             "description": "Get the groove amount.",
             "inputSchema": {
                 "type": "object",
@@ -1801,7 +487,7 @@
             }
         },
         {
-            "name": "song_properties_getIsCountingIn",
+            "name": "song_properties_get_isCountingIn",
             "description": "Get whether count-in is currently active.",
             "inputSchema": {
                 "type": "object",
@@ -1821,7 +507,7 @@
             }
         },
         {
-            "name": "song_properties_getIsPlaying",
+            "name": "song_properties_get_isPlaying",
             "description": "Get whether the song is currently playing.",
             "inputSchema": {
                 "type": "object",
@@ -1841,7 +527,7 @@
             }
         },
         {
-            "name": "song_properties_getLastEventTime",
+            "name": "song_properties_get_lastEventTime",
             "description": "Get the last event time.",
             "inputSchema": {
                 "type": "object",
@@ -1861,7 +547,7 @@
             }
         },
         {
-            "name": "song_properties_getLoop",
+            "name": "song_properties_get_loop",
             "description": "Get whether loop is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -1880,7 +566,7 @@
             }
         },
         {
-            "name": "song_properties_getLoopLength",
+            "name": "song_properties_get_loopLength",
             "description": "Get the loop length.",
             "inputSchema": {
                 "type": "object",
@@ -1899,7 +585,7 @@
             }
         },
         {
-            "name": "song_properties_getLoopStart",
+            "name": "song_properties_get_loopStart",
             "description": "Get the loop start position.",
             "inputSchema": {
                 "type": "object",
@@ -1918,7 +604,7 @@
             }
         },
         {
-            "name": "song_properties_getMasterTrack",
+            "name": "song_properties_get_masterTrack",
             "description": "Get the master track.",
             "inputSchema": {
                 "type": "object",
@@ -1937,7 +623,7 @@
             }
         },
         {
-            "name": "song_properties_getMetronome",
+            "name": "song_properties_get_metronome",
             "description": "Get whether metronome is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -1956,7 +642,7 @@
             }
         },
         {
-            "name": "song_properties_getMidiRecordingQuantization",
+            "name": "song_properties_get_midiRecordingQuantization",
             "description": "Get the MIDI recording quantization setting.",
             "inputSchema": {
                 "type": "object",
@@ -1975,7 +661,7 @@
             }
         },
         {
-            "name": "song_properties_getNudgeDown",
+            "name": "song_properties_get_nudgeDown",
             "description": "Get nudge down state.",
             "inputSchema": {
                 "type": "object",
@@ -1994,7 +680,7 @@
             }
         },
         {
-            "name": "song_properties_getNudgeUp",
+            "name": "song_properties_get_nudgeUp",
             "description": "Get nudge up state.",
             "inputSchema": {
                 "type": "object",
@@ -2013,7 +699,7 @@
             }
         },
         {
-            "name": "song_properties_getOverdub",
+            "name": "song_properties_get_overdub",
             "description": "Get whether overdub is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2032,7 +718,7 @@
             }
         },
         {
-            "name": "song_properties_getPunchIn",
+            "name": "song_properties_get_punchIn",
             "description": "Get whether punch-in recording is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2051,7 +737,7 @@
             }
         },
         {
-            "name": "song_properties_getPunchOut",
+            "name": "song_properties_get_punchOut",
             "description": "Get whether punch-out recording is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2070,7 +756,7 @@
             }
         },
         {
-            "name": "song_properties_getReEnableAutomationEnabled",
+            "name": "song_properties_get_reEnableAutomationEnabled",
             "description": "Get whether re-enable automation is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2089,7 +775,7 @@
             }
         },
         {
-            "name": "song_properties_getRecordMode",
+            "name": "song_properties_get_recordMode",
             "description": "Get whether record mode is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2108,7 +794,7 @@
             }
         },
         {
-            "name": "song_properties_getReturnTracks",
+            "name": "song_properties_get_returnTracks",
             "description": "Get all return tracks.",
             "inputSchema": {
                 "type": "object",
@@ -2131,7 +817,7 @@
             }
         },
         {
-            "name": "song_properties_getRootNote",
+            "name": "song_properties_get_rootNote",
             "description": "Get the root note for scale.",
             "inputSchema": {
                 "type": "object",
@@ -2150,7 +836,7 @@
             }
         },
         {
-            "name": "song_properties_getScaleIntervals",
+            "name": "song_properties_get_scaleIntervals",
             "description": "Get the scale intervals.",
             "inputSchema": {
                 "type": "object",
@@ -2172,7 +858,7 @@
             }
         },
         {
-            "name": "song_properties_getScaleMode",
+            "name": "song_properties_get_scaleMode",
             "description": "Get whether scale mode is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2191,7 +877,7 @@
             }
         },
         {
-            "name": "song_properties_getScaleName",
+            "name": "song_properties_get_scaleName",
             "description": "Get the scale name.",
             "inputSchema": {
                 "type": "object",
@@ -2210,7 +896,7 @@
             }
         },
         {
-            "name": "song_properties_getScenes",
+            "name": "song_properties_get_scenes",
             "description": "Get all scenes.",
             "inputSchema": {
                 "type": "object",
@@ -2233,7 +919,7 @@
             }
         },
         {
-            "name": "song_properties_getSelectedScene",
+            "name": "song_properties_get_selectedScene",
             "description": "Get the currently selected scene.",
             "inputSchema": {
                 "type": "object",
@@ -2252,7 +938,7 @@
             }
         },
         {
-            "name": "song_properties_getSelectedTrack",
+            "name": "song_properties_get_selectedTrack",
             "description": "Get the currently selected track.",
             "inputSchema": {
                 "type": "object",
@@ -2271,7 +957,7 @@
             }
         },
         {
-            "name": "song_properties_getSessionAutomationRecord",
+            "name": "song_properties_get_sessionAutomationRecord",
             "description": "Get whether session automation recording is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2290,7 +976,7 @@
             }
         },
         {
-            "name": "song_properties_getSessionRecord",
+            "name": "song_properties_get_sessionRecord",
             "description": "Get whether session recording is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2309,7 +995,7 @@
             }
         },
         {
-            "name": "song_properties_getSessionRecordStatus",
+            "name": "song_properties_get_sessionRecordStatus",
             "description": "Get the session recording status.",
             "inputSchema": {
                 "type": "object",
@@ -2329,7 +1015,7 @@
             }
         },
         {
-            "name": "song_properties_getSignatureDenominator",
+            "name": "song_properties_get_signatureDenominator",
             "description": "Get the time signature denominator.",
             "inputSchema": {
                 "type": "object",
@@ -2348,7 +1034,7 @@
             }
         },
         {
-            "name": "song_properties_getSignatureNumerator",
+            "name": "song_properties_get_signatureNumerator",
             "description": "Get the time signature numerator.",
             "inputSchema": {
                 "type": "object",
@@ -2367,7 +1053,7 @@
             }
         },
         {
-            "name": "song_properties_getSongLength",
+            "name": "song_properties_get_songLength",
             "description": "Get the song length.",
             "inputSchema": {
                 "type": "object",
@@ -2387,7 +1073,7 @@
             }
         },
         {
-            "name": "song_properties_getStartTime",
+            "name": "song_properties_get_startTime",
             "description": "Get the start time position.",
             "inputSchema": {
                 "type": "object",
@@ -2406,7 +1092,7 @@
             }
         },
         {
-            "name": "song_properties_getSwingAmount",
+            "name": "song_properties_get_swingAmount",
             "description": "Get the swing amount.",
             "inputSchema": {
                 "type": "object",
@@ -2425,7 +1111,7 @@
             }
         },
         {
-            "name": "song_properties_getTempo",
+            "name": "song_properties_get_tempo",
             "description": "Get the current tempo of the song.",
             "inputSchema": {
                 "type": "object",
@@ -2444,7 +1130,7 @@
             }
         },
         {
-            "name": "song_properties_getTempoFollowerEnabled",
+            "name": "song_properties_get_tempoFollowerEnabled",
             "description": "Get whether tempo follower is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2463,7 +1149,7 @@
             }
         },
         {
-            "name": "song_properties_getVisibleTracks",
+            "name": "song_properties_get_visibleTracks",
             "description": "Get all visible tracks.",
             "inputSchema": {
                 "type": "object",
@@ -2486,7 +1172,7 @@
             }
         },
         {
-            "name": "song_properties_setAppointedDevice",
+            "name": "song_properties_set_appointedDevice",
             "description": "Set the appointed device.",
             "inputSchema": {
                 "type": "object",
@@ -2511,7 +1197,7 @@
             }
         },
         {
-            "name": "song_properties_setArrangementOverdub",
+            "name": "song_properties_set_arrangementOverdub",
             "description": "Set whether arrangement overdub is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2536,7 +1222,7 @@
             }
         },
         {
-            "name": "song_properties_setBackToArranger",
+            "name": "song_properties_set_backToArranger",
             "description": "Set whether back to arranger is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2561,7 +1247,7 @@
             }
         },
         {
-            "name": "song_properties_setClipTriggerQuantization",
+            "name": "song_properties_set_clipTriggerQuantization",
             "description": "Set the clip trigger quantization.",
             "inputSchema": {
                 "type": "object",
@@ -2586,7 +1272,7 @@
             }
         },
         {
-            "name": "song_properties_setCountInDuration",
+            "name": "song_properties_set_countInDuration",
             "description": "Set the count-in duration.",
             "inputSchema": {
                 "type": "object",
@@ -2611,7 +1297,7 @@
             }
         },
         {
-            "name": "song_properties_setCurrentSongTime",
+            "name": "song_properties_set_currentSongTime",
             "description": "Set the current playback position.",
             "inputSchema": {
                 "type": "object",
@@ -2636,7 +1322,7 @@
             }
         },
         {
-            "name": "song_properties_setExclusiveArm",
+            "name": "song_properties_set_exclusiveArm",
             "description": "Set whether exclusive arm is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2661,7 +1347,7 @@
             }
         },
         {
-            "name": "song_properties_setExclusiveSolo",
+            "name": "song_properties_set_exclusiveSolo",
             "description": "Set whether exclusive solo is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2686,7 +1372,7 @@
             }
         },
         {
-            "name": "song_properties_setGrooveAmount",
+            "name": "song_properties_set_grooveAmount",
             "description": "Set the groove amount.",
             "inputSchema": {
                 "type": "object",
@@ -2711,7 +1397,7 @@
             }
         },
         {
-            "name": "song_properties_setLoop",
+            "name": "song_properties_set_loop",
             "description": "Set whether loop is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2736,7 +1422,7 @@
             }
         },
         {
-            "name": "song_properties_setLoopLength",
+            "name": "song_properties_set_loopLength",
             "description": "Set the loop length.",
             "inputSchema": {
                 "type": "object",
@@ -2761,7 +1447,7 @@
             }
         },
         {
-            "name": "song_properties_setLoopStart",
+            "name": "song_properties_set_loopStart",
             "description": "Set the loop start position.",
             "inputSchema": {
                 "type": "object",
@@ -2786,7 +1472,7 @@
             }
         },
         {
-            "name": "song_properties_setMetronome",
+            "name": "song_properties_set_metronome",
             "description": "Set whether metronome is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2811,7 +1497,7 @@
             }
         },
         {
-            "name": "song_properties_setMidiRecordingQuantization",
+            "name": "song_properties_set_midiRecordingQuantization",
             "description": "Set the MIDI recording quantization.",
             "inputSchema": {
                 "type": "object",
@@ -2836,7 +1522,7 @@
             }
         },
         {
-            "name": "song_properties_setNudgeDown",
+            "name": "song_properties_set_nudgeDown",
             "description": "Set nudge down state.",
             "inputSchema": {
                 "type": "object",
@@ -2861,7 +1547,7 @@
             }
         },
         {
-            "name": "song_properties_setNudgeUp",
+            "name": "song_properties_set_nudgeUp",
             "description": "Set nudge up state.",
             "inputSchema": {
                 "type": "object",
@@ -2886,7 +1572,7 @@
             }
         },
         {
-            "name": "song_properties_setOverdub",
+            "name": "song_properties_set_overdub",
             "description": "Set whether overdub is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2911,7 +1597,7 @@
             }
         },
         {
-            "name": "song_properties_setPunchIn",
+            "name": "song_properties_set_punchIn",
             "description": "Set whether punch-in recording is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2936,7 +1622,7 @@
             }
         },
         {
-            "name": "song_properties_setPunchOut",
+            "name": "song_properties_set_punchOut",
             "description": "Set whether punch-out recording is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2961,7 +1647,7 @@
             }
         },
         {
-            "name": "song_properties_setRecordMode",
+            "name": "song_properties_set_recordMode",
             "description": "Set whether record mode is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -2986,7 +1672,7 @@
             }
         },
         {
-            "name": "song_properties_setRootNote",
+            "name": "song_properties_set_rootNote",
             "description": "Set the root note for scale.",
             "inputSchema": {
                 "type": "object",
@@ -3011,7 +1697,7 @@
             }
         },
         {
-            "name": "song_properties_setScaleMode",
+            "name": "song_properties_set_scaleMode",
             "description": "Set whether scale mode is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -3036,7 +1722,7 @@
             }
         },
         {
-            "name": "song_properties_setScaleName",
+            "name": "song_properties_set_scaleName",
             "description": "Set the scale name.",
             "inputSchema": {
                 "type": "object",
@@ -3061,7 +1747,7 @@
             }
         },
         {
-            "name": "song_properties_setSessionAutomationRecord",
+            "name": "song_properties_set_sessionAutomationRecord",
             "description": "Set whether session automation recording is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -3086,7 +1772,7 @@
             }
         },
         {
-            "name": "song_properties_setSessionRecord",
+            "name": "song_properties_set_sessionRecord",
             "description": "Set whether session recording is enabled.",
             "inputSchema": {
                 "type": "object",
@@ -3111,7 +1797,7 @@
             }
         },
         {
-            "name": "song_properties_setSignatureDenominator",
+            "name": "song_properties_set_signatureDenominator",
             "description": "Set the time signature denominator.",
             "inputSchema": {
                 "type": "object",
@@ -3136,7 +1822,7 @@
             }
         },
         {
-            "name": "song_properties_setSignatureNumerator",
+            "name": "song_properties_set_signatureNumerator",
             "description": "Set the time signature numerator.",
             "inputSchema": {
                 "type": "object",
@@ -3161,7 +1847,7 @@
             }
         },
         {
-            "name": "song_properties_setStartTime",
+            "name": "song_properties_set_startTime",
             "description": "Set the start time position.",
             "inputSchema": {
                 "type": "object",
@@ -3186,7 +1872,7 @@
             }
         },
         {
-            "name": "song_properties_setSwingAmount",
+            "name": "song_properties_set_swingAmount",
             "description": "Set the swing amount.",
             "inputSchema": {
                 "type": "object",
@@ -3211,7 +1897,7 @@
             }
         },
         {
-            "name": "song_properties_setTempo",
+            "name": "song_properties_set_tempo",
             "description": "Set the tempo of the song.",
             "inputSchema": {
                 "type": "object",
@@ -3236,7 +1922,7 @@
             }
         },
         {
-            "name": "song_properties_setTempoFollowerEnabled",
+            "name": "song_properties_set_tempoFollowerEnabled",
             "description": "Set whether tempo follower is enabled.",
             "inputSchema": {
                 "type": "object",

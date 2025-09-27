@@ -1,0 +1,557 @@
+{
+    "tools": [
+        {
+            "name": "chain_children_get_devices",
+            "description": "Get all devices in the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "devices": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of device IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_children_get_mixerDevice",
+            "description": "Get the mixer device of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "iD of the mixer device",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_color",
+            "description": "Get the RGB value of the chain's color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "color": {
+                        "type": "integer",
+                        "description": "rGB value of the chain's color",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_colorIndex",
+            "description": "Get the color index of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "colorIndex": {
+                        "type": "integer",
+                        "description": "color index of the chain",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_hasAudioInput",
+            "description": "Get whether the chain has audio input.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasAudioInput": {
+                        "type": "boolean",
+                        "description": "whether the chain has audio input",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_hasAudioOutput",
+            "description": "Get whether the chain has audio output.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasAudioOutput": {
+                        "type": "boolean",
+                        "description": "whether the chain has audio output",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_hasMidiInput",
+            "description": "Get whether the chain has MIDI input.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasMidiInput": {
+                        "type": "boolean",
+                        "description": "whether the chain has MIDI input",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_hasMidiOutput",
+            "description": "Get whether the chain has MIDI output.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasMidiOutput": {
+                        "type": "boolean",
+                        "description": "whether the chain has MIDI output",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_isAutoColored",
+            "description": "Get whether the chain will always have the color of the containing track or chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isAutoColored": {
+                        "type": "boolean",
+                        "description": "whether the chain is auto-colored",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_mute",
+            "description": "Get whether the chain is muted.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mute": {
+                        "type": "boolean",
+                        "description": "whether the chain is muted",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_mutedViaSolo",
+            "description": "Get whether the chain is muted due to another chain being soloed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mutedViaSolo": {
+                        "type": "boolean",
+                        "description": "whether the chain is muted via solo",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_name",
+            "description": "Get the name of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the chain",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_get_solo",
+            "description": "Get whether the chain is soloed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    }
+                },
+                "required": [
+                    "chainId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "solo": {
+                        "type": "boolean",
+                        "description": "whether the chain is soloed",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_set_color",
+            "description": "Set the RGB value of the chain's color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "rGB color value"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether color was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_set_colorIndex",
+            "description": "Set the color index of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "color index value"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether color index was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_set_isAutoColored",
+            "description": "Set whether the chain will always have the color of the containing track or chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "boolean",
+                        "description": "auto-colored setting"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether auto-colored was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_set_mute",
+            "description": "Set whether the chain is muted.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "boolean",
+                        "description": "mute setting"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether mute was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_set_name",
+            "description": "Set the name of the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "new name for the chain"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether name was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_properties_set_solo",
+            "description": "Set whether the chain is soloed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "value": {
+                        "type": "boolean",
+                        "description": "solo setting"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether solo was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chain_functions_deleteDevice",
+            "description": "Delete the device at the given index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainId": {
+                        "type": "string",
+                        "description": "iD of the chain"
+                    },
+                    "index": {
+                        "type": "integer",
+                        "description": "index of the device to delete"
+                    }
+                },
+                "required": [
+                    "chainId",
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether device was deleted successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

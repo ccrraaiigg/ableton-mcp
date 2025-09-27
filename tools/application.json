@@ -1,0 +1,259 @@
+{
+    "tools": [
+        {
+            "name": "application_children_get_controlSurfaces",
+            "description": "Get the list of control surfaces currently selected in Live's Preferences.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurfaces": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of control surface IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_children_get_view",
+            "description": "Get the view child of the Application object.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "viewId": {
+                        "type": "string",
+                        "description": "object ID of the view",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_get_averageProcessUsage",
+            "description": "Get Live's average CPU load. Note that Live's CPU meter shows the audio processing load but not Live's overall CPU usage.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "averageProcessUsage": {
+                        "type": "number",
+                        "description": "average CPU load as percentage",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_get_currentDialogButtonCount",
+            "description": "Get the number of buttons in the current message box.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "currentDialogButtonCount": {
+                        "type": "integer",
+                        "description": "number of buttons in current dialog",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_get_currentDialogMessage",
+            "description": "Get the text of the current message box (empty if no message box is currently shown).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "currentDialogMessage": {
+                        "type": "string",
+                        "description": "text of current dialog message",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_get_openDialogCount",
+            "description": "Get the number of dialog boxes shown.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "openDialogCount": {
+                        "type": "integer",
+                        "description": "number of open dialogs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_properties_get_peakProcessUsage",
+            "description": "Get Live's peak CPU load. Note that Live's CPU meter shows the audio processing load but not Live's overall CPU usage.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "peakProcessUsage": {
+                        "type": "number",
+                        "description": "peak CPU load as percentage",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getBugfixVersion",
+            "description": "Get the bugfix version number (the 2 in Live 9.1.2).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "bugfixVersion": {
+                        "type": "integer",
+                        "description": "bugfix version number"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getDocument",
+            "description": "Get the current Live Set.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "documentId": {
+                        "type": "string",
+                        "description": "object ID of the current Live Set"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getMajorVersion",
+            "description": "Get the major version number (the 9 in Live 9.1.2).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "majorVersion": {
+                        "type": "integer",
+                        "description": "major version number"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getMinorVersion",
+            "description": "Get the minor version number (the 1 in Live 9.1.2).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "minorVersion": {
+                        "type": "integer",
+                        "description": "minor version number"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_getVersionString",
+            "description": "Get the complete version string (e.g., 9.1.2 in Live 9.1.2).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "versionString": {
+                        "type": "string",
+                        "description": "complete version string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "application_functions_pressCurrentDialogButton",
+            "description": "Press the button with the given index in the current dialog box.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "index": {
+                        "type": "integer",
+                        "description": "index of the button to press"
+                    }
+                },
+                "required": [
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the button was pressed successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

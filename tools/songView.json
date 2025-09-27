@@ -1,0 +1,310 @@
+{
+    "tools": [
+        {
+            "name": "songView_children_get_detailClip",
+            "description": "Get the clip currently displayed in the Live application's Detail View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    }
+                },
+                "required": [
+                    "songViewId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "detailClip": {
+                        "type": "string",
+                        "description": "clip ID currently displayed in Detail View",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_children_get_highlightedClipSlot",
+            "description": "Get the slot highlighted in the Session View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    }
+                },
+                "required": [
+                    "songViewId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "highlightedClipSlot": {
+                        "type": "string",
+                        "description": "clip slot ID highlighted in Session View",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_children_get_selectedChain",
+            "description": "Get the highlighted chain, or id 0.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    }
+                },
+                "required": [
+                    "songViewId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedChain": {
+                        "type": "string",
+                        "description": "highlighted chain ID or id 0",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_children_get_selectedParameter",
+            "description": "Get the selected parameter, or id 0.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    }
+                },
+                "required": [
+                    "songViewId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedParameter": {
+                        "type": "string",
+                        "description": "selected parameter ID or id 0",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_children_get_selectedScene",
+            "description": "Get the selected scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    }
+                },
+                "required": [
+                    "songViewId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedScene": {
+                        "type": "string",
+                        "description": "selected scene ID",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_children_get_selectedTrack",
+            "description": "Get the selected track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    }
+                },
+                "required": [
+                    "songViewId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedTrack": {
+                        "type": "string",
+                        "description": "selected track ID",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_properties_get_drawMode",
+            "description": "Get the state of the envelope/automation Draw Mode Switch in the transport bar.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    }
+                },
+                "required": [
+                    "songViewId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "drawMode": {
+                        "type": "boolean",
+                        "description": "draw mode state (0 = breakpoint editing, 1 = drawing)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_properties_get_followSong",
+            "description": "Get the state of the Follow switch in the transport bar.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    }
+                },
+                "required": [
+                    "songViewId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "followSong": {
+                        "type": "boolean",
+                        "description": "follow song state (0 = don't follow, 1 = follow playback position)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_properties_set_drawMode",
+            "description": "Set the state of the envelope/automation Draw Mode Switch in the transport bar.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    },
+                    "drawMode": {
+                        "type": "boolean",
+                        "description": "draw mode state (0 = breakpoint editing, 1 = drawing)"
+                    }
+                },
+                "required": [
+                    "songViewId",
+                    "drawMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether draw mode was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_properties_set_followSong",
+            "description": "Set the state of the Follow switch in the transport bar.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    },
+                    "followSong": {
+                        "type": "boolean",
+                        "description": "follow song state (0 = don't follow, 1 = follow playback position)"
+                    }
+                },
+                "required": [
+                    "songViewId",
+                    "followSong"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether follow song was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "songView_functions_selectDevice",
+            "description": "Select the given device object in its track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "songViewId": {
+                        "type": "string",
+                        "description": "object ID of the song view"
+                    },
+                    "deviceId": {
+                        "type": "string",
+                        "description": "device ID to select"
+                    }
+                },
+                "required": [
+                    "songViewId",
+                    "deviceId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether device was selected successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

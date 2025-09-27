@@ -1,0 +1,639 @@
+{
+    "tools": [
+        {
+            "name": "scene_children_get_clipSlots",
+            "description": "Get the list of clip slots contained within the scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlots": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of clip slot IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_color",
+            "description": "Get the RGB value of the scene's color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "color": {
+                        "type": "integer",
+                        "description": "rGB value in 0x00rrggbb format",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_colorIndex",
+            "description": "Get the color index of the scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "colorIndex": {
+                        "type": "integer",
+                        "description": "color index of the scene",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_isEmpty",
+            "description": "Get whether none of the slots in the scene are filled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isEmpty": {
+                        "type": "boolean",
+                        "description": "whether none of the slots in the scene are filled",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_isTriggered",
+            "description": "Get whether the scene is currently blinking.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isTriggered": {
+                        "type": "boolean",
+                        "description": "whether the scene is currently blinking",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_name",
+            "description": "Get the name of the scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the scene",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_tempo",
+            "description": "Get the scene's tempo.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "tempo": {
+                        "type": "number",
+                        "description": "scene's tempo, returns -1 if scene tempo is disabled",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_tempoEnabled",
+            "description": "Get the active state of the scene tempo.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "tempoEnabled": {
+                        "type": "boolean",
+                        "description": "active state of the scene tempo",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_timeSignatureDenominator",
+            "description": "Get the scene's time signature denominator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "timeSignatureDenominator": {
+                        "type": "integer",
+                        "description": "scene's time signature denominator, returns -1 if disabled",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_timeSignatureEnabled",
+            "description": "Get the active state of the scene time signature.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "timeSignatureEnabled": {
+                        "type": "boolean",
+                        "description": "active state of the scene time signature",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_get_timeSignatureNumerator",
+            "description": "Get the scene's time signature numerator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "timeSignatureNumerator": {
+                        "type": "integer",
+                        "description": "scene's time signature numerator, returns -1 if disabled",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_set_color",
+            "description": "Set the RGB value of the scene's color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "color": {
+                        "type": "integer",
+                        "description": "rGB value in 0x00rrggbb format"
+                    }
+                },
+                "required": [
+                    "sceneId",
+                    "color"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether color was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_set_colorIndex",
+            "description": "Set the color index of the scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "colorIndex": {
+                        "type": "integer",
+                        "description": "color index value"
+                    }
+                },
+                "required": [
+                    "sceneId",
+                    "colorIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether color index was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_set_name",
+            "description": "Set the name of the scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "new name for the scene"
+                    }
+                },
+                "required": [
+                    "sceneId",
+                    "name"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether name was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_set_tempo",
+            "description": "Set the scene's tempo.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "tempo": {
+                        "type": "number",
+                        "description": "tempo value to set"
+                    }
+                },
+                "required": [
+                    "sceneId",
+                    "tempo"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether tempo was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_set_tempoEnabled",
+            "description": "Set the active state of the scene tempo.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "tempoEnabled": {
+                        "type": "boolean",
+                        "description": "whether to enable scene tempo"
+                    }
+                },
+                "required": [
+                    "sceneId",
+                    "tempoEnabled"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether tempo enabled state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_set_timeSignatureDenominator",
+            "description": "Set the scene's time signature denominator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "timeSignatureDenominator": {
+                        "type": "integer",
+                        "description": "time signature denominator value"
+                    }
+                },
+                "required": [
+                    "sceneId",
+                    "timeSignatureDenominator"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether time signature denominator was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_set_timeSignatureEnabled",
+            "description": "Set the active state of the scene time signature.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "timeSignatureEnabled": {
+                        "type": "boolean",
+                        "description": "whether to enable scene time signature"
+                    }
+                },
+                "required": [
+                    "sceneId",
+                    "timeSignatureEnabled"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether time signature enabled state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_properties_set_timeSignatureNumerator",
+            "description": "Set the scene's time signature numerator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "timeSignatureNumerator": {
+                        "type": "integer",
+                        "description": "time signature numerator value"
+                    }
+                },
+                "required": [
+                    "sceneId",
+                    "timeSignatureNumerator"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether time signature numerator was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_functions_fire",
+            "description": "Fire all clip slots contained within the scene and select this scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "forceLegato": {
+                        "type": "boolean",
+                        "description": "whether to launch all clips immediately in Legato",
+                        "default": false
+                    },
+                    "canSelectSceneOnLaunch": {
+                        "type": "boolean",
+                        "description": "whether the scene should be selected when fired",
+                        "default": true
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether scene was fired successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_functions_fireAsSelected",
+            "description": "Fire the selected scene, then select the next scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "forceLegato": {
+                        "type": "boolean",
+                        "description": "whether to launch all clips immediately in Legato",
+                        "default": false
+                    }
+                },
+                "required": [
+                    "sceneId"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether scene was fired as selected successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "scene_functions_setFireButtonState",
+            "description": "Set the fire button state of the scene.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sceneId": {
+                        "type": "string",
+                        "description": "object ID of the scene"
+                    },
+                    "state": {
+                        "type": "boolean",
+                        "description": "fire button state (1 simulates pressing, 0 releases)"
+                    }
+                },
+                "required": [
+                    "sceneId",
+                    "state"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether fire button state was set successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

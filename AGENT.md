@@ -12,7 +12,7 @@ without testing it first.
 ## Workflow: Never Fake Anything. Otherwise, Proceed Without Asking.
 
 Never fake anything. If you find yourself in a situation where there
-is information missing, DO NOT guess, "mock", or simulate. Instead,
+is information missing, DO NOT guess, or "mock", or simulate. Instead,
 STOP and ask the user for clarification. Otherwise, when a code
 analysis or fix is needed, you should proceed directly with the
 analysis and code change, without asking the user for permission
@@ -28,7 +28,7 @@ documents just as much as the official spec design document is.
 
 ## Using TypeScript
 
-Never use TypeScript; use vanilla JavaScript.
+Never use TypeScript; use vanilla JavaScript instead.
 
 ## Using JavaScript
 
@@ -38,9 +38,31 @@ is one line, don't put it in curly braces.
 
 Never bundle sources. Never use webpack or anything like it.
 
-## Live Object Model Class Ordering
+## Editing tools JSON files
 
-When adding new Live Object Model classes, always place them in alphabetical order by class name (Application, ApplicationView, Chain, Song, etc.)
+When editing the tools JSON files:
 
----
+- The tools for a class should be in this order:
+  - children getters
+  - properties getters, then setters
+  - functions
+  
+- Children getter names are of the form: <class>_children_get_<childName>
 
+- Property getter names are of the form: <class>_properties_get_<propertyName>
+
+- Property setter names are of the form: <class>_properties_set_<propertyName>
+
+- Function names are of the form: <class>_functions_<functionName>
+
+- In tool names, underscores are used only to delineate
+  namespaces. The names of children, properties, and functions should
+  be expressed with "camel case". The tools.json file has many correct
+  examples.
+  
+- Tool descriptions are complete sentences, beginning with a
+  capitalized word and ending with a period.
+  
+- Child, property, and return value descriptions are phrases,
+  beginning with a lowercase letter and ending without a period.
+  
