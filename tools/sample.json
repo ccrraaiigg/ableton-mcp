@@ -1,0 +1,1291 @@
+{
+    "tools": [
+        {
+            "name": "sample_functions_summary",
+            "description": "Get a summary of the Sample class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a sample file loaded into Simpler. Canonical path: live_set tracks N devices N sample"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_beatsGranulationResolution",
+            "description": "Get which divisions to preserve in the sample in Beats Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "beatsGranulationResolution": {
+                        "type": "integer",
+                        "description": "divisions to preserve (0=1 Bar, 1=1/2, 2=1/4, 3=1/8, 4=1/16, 5=1/32, 6=Transients)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_beatsTransientEnvelope",
+            "description": "Get the duration of a volume fade applied to each segment of audio in Beats Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "beatsTransientEnvelope": {
+                        "type": "number",
+                        "description": "volume fade duration (0=fastest decay, 100=no fade)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_beatsTransientLoopMode",
+            "description": "Get the Transient Loop Mode applied to each segment of audio in Beats Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "beatsTransientLoopMode": {
+                        "type": "integer",
+                        "description": "transient loop mode (0=Off, 1=Loop Forward, 2=Loop Back-and-Forth)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_complexProEnvelope",
+            "description": "Get the Envelope parameter in Complex Pro Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "complexProEnvelope": {
+                        "type": "number",
+                        "description": "envelope parameter in complex pro mode",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_complexProFormants",
+            "description": "Get the Formants parameter in Complex Pro Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "complexProFormants": {
+                        "type": "number",
+                        "description": "formants parameter in complex pro mode",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_endMarker",
+            "description": "Get the position of the sample's end marker.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "endMarker": {
+                        "type": "integer",
+                        "description": "position of the sample's end marker",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_filePath",
+            "description": "Get the path of the sample file.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "filePath": {
+                        "type": "string",
+                        "description": "path of the sample file",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_gain",
+            "description": "Get the sample gain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "gain": {
+                        "type": "number",
+                        "description": "sample gain value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_length",
+            "description": "Get the length of the sample file in sample frames.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "length": {
+                        "type": "integer",
+                        "description": "length of the sample file in sample frames",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_sampleRate",
+            "description": "Get the sample rate of the loaded sample.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sampleRate": {
+                        "type": "integer",
+                        "description": "sample rate of the loaded sample",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_slices",
+            "description": "Get the positions of all playable slices in the sample, in sample frames.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "slices": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "positions of all playable slices in sample frames",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_slicingSensitivity",
+            "description": "Get the slicing sensitivity.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "slicingSensitivity": {
+                        "type": "number",
+                        "description": "slicing sensitivity (values between 0.0 and 1.0)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_startMarker",
+            "description": "Get the position of the sample's start marker.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "startMarker": {
+                        "type": "integer",
+                        "description": "position of the sample's start marker",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_textureFlux",
+            "description": "Get the Flux parameter in Texture Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "textureFlux": {
+                        "type": "number",
+                        "description": "flux parameter in texture mode",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_textureGrainSize",
+            "description": "Get the Grain Size parameter in Texture Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "textureGrainSize": {
+                        "type": "number",
+                        "description": "grain size parameter in texture mode",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_tonesGrainSize",
+            "description": "Get the Grain Size parameter in Tones Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "tonesGrainSize": {
+                        "type": "number",
+                        "description": "grain size parameter in tones mode",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_warpMarkers",
+            "description": "Get the Sample's Warp Markers as a dict.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "warpMarkers": {
+                        "type": "object",
+                        "description": "warp markers as a dict (includes hidden shadow marker for BPM calculation)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_warpMode",
+            "description": "Get the Warp Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "warpMode": {
+                        "type": "integer",
+                        "description": "warp mode (0=Beats, 1=Tones, 2=Texture, 3=Re-Pitch, 4=Complex, 6=Complex Pro)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_warping",
+            "description": "Get whether warping is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "warping": {
+                        "type": "boolean",
+                        "description": "whether warping is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_slicingStyle",
+            "description": "Get the Slicing Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "slicingStyle": {
+                        "type": "integer",
+                        "description": "slicing mode (0=Transient, 1=Beat, 2=Region, 3=Manual)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_slicingBeatDivision",
+            "description": "Get the slice beat division in Beat Slicing Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "slicingBeatDivision": {
+                        "type": "integer",
+                        "description": "beat division (0=1/16, 1=1/16T, 2=1/8, 3=1/8T, 4=1/4, 5=1/4T, 6=1/2, 7=1/2T, 8=1 Bar, 9=2 Bars, 10=4 Bars)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_get_slicingRegionCount",
+            "description": "Get the number of slice regions in Region Slicing Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "slicingRegionCount": {
+                        "type": "integer",
+                        "description": "number of slice regions in region slicing mode",
+                        "observable": true
+                    }
+                }
+            }
+        },
+    
+    {
+            "name": "sample_properties_set_beatsGranulationResolution",
+            "description": "Set which divisions to preserve in the sample in Beats Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "beatsGranulationResolution": {
+                        "type": "integer",
+                        "description": "divisions to preserve (0=1 Bar, 1=1/2, 2=1/4, 3=1/8, 4=1/16, 5=1/32, 6=Transients)"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "beatsGranulationResolution"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_beatsTransientEnvelope",
+            "description": "Set the duration of a volume fade applied to each segment of audio in Beats Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "beatsTransientEnvelope": {
+                        "type": "number",
+                        "description": "volume fade duration (0=fastest decay, 100=no fade)"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "beatsTransientEnvelope"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_beatsTransientLoopMode",
+            "description": "Set the Transient Loop Mode applied to each segment of audio in Beats Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "beatsTransientLoopMode": {
+                        "type": "integer",
+                        "description": "transient loop mode (0=Off, 1=Loop Forward, 2=Loop Back-and-Forth)"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "beatsTransientLoopMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_complexProEnvelope",
+            "description": "Set the Envelope parameter in Complex Pro Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "complexProEnvelope": {
+                        "type": "number",
+                        "description": "envelope parameter in complex pro mode"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "complexProEnvelope"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_complexProFormants",
+            "description": "Set the Formants parameter in Complex Pro Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "complexProFormants": {
+                        "type": "number",
+                        "description": "formants parameter in complex pro mode"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "complexProFormants"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_endMarker",
+            "description": "Set the position of the sample's end marker.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "endMarker": {
+                        "type": "integer",
+                        "description": "position of the sample's end marker"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "endMarker"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_gain",
+            "description": "Set the sample gain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "gain": {
+                        "type": "number",
+                        "description": "sample gain value"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "gain"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_slicingSensitivity",
+            "description": "Set the slicing sensitivity.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "slicingSensitivity": {
+                        "type": "number",
+                        "description": "slicing sensitivity (values between 0.0 and 1.0)"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "slicingSensitivity"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_startMarker",
+            "description": "Set the position of the sample's start marker.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "startMarker": {
+                        "type": "integer",
+                        "description": "position of the sample's start marker"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "startMarker"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_textureFlux",
+            "description": "Set the Flux parameter in Texture Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "textureFlux": {
+                        "type": "number",
+                        "description": "flux parameter in texture mode"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "textureFlux"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_textureGrainSize",
+            "description": "Set the Grain Size parameter in Texture Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "textureGrainSize": {
+                        "type": "number",
+                        "description": "grain size parameter in texture mode"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "textureGrainSize"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_tonesGrainSize",
+            "description": "Set the Grain Size parameter in Tones Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "tonesGrainSize": {
+                        "type": "number",
+                        "description": "grain size parameter in tones mode"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "tonesGrainSize"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_warpMode",
+            "description": "Set the Warp Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "warpMode": {
+                        "type": "integer",
+                        "description": "warp mode (0=Beats, 1=Tones, 2=Texture, 3=Re-Pitch, 4=Complex, 6=Complex Pro)"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "warpMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_warping",
+            "description": "Set whether warping is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "warping": {
+                        "type": "boolean",
+                        "description": "whether warping is enabled"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "warping"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_slicingStyle",
+            "description": "Set the Slicing Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "slicingStyle": {
+                        "type": "integer",
+                        "description": "slicing mode (0=Transient, 1=Beat, 2=Region, 3=Manual)"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "slicingStyle"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_slicingBeatDivision",
+            "description": "Set the slice beat division in Beat Slicing Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "slicingBeatDivision": {
+                        "type": "integer",
+                        "description": "beat division (0=1/16, 1=1/16T, 2=1/8, 3=1/8T, 4=1/4, 5=1/4T, 6=1/2, 7=1/2T, 8=1 Bar, 9=2 Bars, 10=4 Bars)"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "slicingBeatDivision"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_properties_set_slicingRegionCount",
+            "description": "Set the number of slice regions in Region Slicing Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "slicingRegionCount": {
+                        "type": "integer",
+                        "description": "number of slice regions in region slicing mode"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "slicingRegionCount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_functions_gainDisplayString",
+            "description": "Returns the sample's gain value as a string.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "gainDisplayString": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "sample's gain value as a string (e.g. \"0.0 dB\")"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_functions_insertSlice",
+            "description": "Insert a new slice at the specified time if there is none.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "sliceTime": {
+                        "type": "integer",
+                        "description": "time position to insert slice"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "sliceTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the slice was inserted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_functions_moveSlice",
+            "description": "Move an existing slice to a specified time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "sourceTime": {
+                        "type": "integer",
+                        "description": "current time position of the slice"
+                    },
+                    "destinationTime": {
+                        "type": "integer",
+                        "description": "new time position for the slice"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "sourceTime",
+                    "destinationTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the slice was moved successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_functions_removeSlice",
+            "description": "Remove a slice at the specified time if it exists.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    },
+                    "sliceTime": {
+                        "type": "integer",
+                        "description": "time position of the slice to remove"
+                    }
+                },
+                "required": [
+                    "sample",
+                    "sliceTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the slice was removed successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_functions_clearSlices",
+            "description": "Clear all slices created in Manual Slicing Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether all slices were cleared successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "sample_functions_resetSlices",
+            "description": "Reset all edited slices to their original positions.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the sample"
+                    }
+                },
+                "required": [
+                    "sample"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether all slices were reset successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

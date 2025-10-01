@@ -1,0 +1,611 @@
+{
+    "tools": [
+        {
+            "name": "wavetableDevice_functions_summary",
+            "description": "Get a summary of the WavetableDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a Wavetable instrument."
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_filterRouting",
+            "description": "Get the current filter routing setting.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "filterRouting": {
+                        "type": "integer",
+                        "description": "current filter routing (0=serial, 1=parallel, 2=split)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_monoPoly",
+            "description": "Get Wavetable's Poly/Mono switch setting.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "monoPoly": {
+                        "type": "integer",
+                        "description": "poly/mono switch setting (0=mono, 1=poly)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_oscillator1EffectMode",
+            "description": "Get oscillator 1's effect mode setting.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "oscillator1EffectMode": {
+                        "type": "integer",
+                        "description": "oscillator 1 effect mode (0=none, 1=fm, 2=classic, 3=modern)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_oscillator2EffectMode",
+            "description": "Get oscillator 2's effect mode setting.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "oscillator2EffectMode": {
+                        "type": "integer",
+                        "description": "oscillator 2 effect mode",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_oscillator1WavetableCategory",
+            "description": "Get oscillator 1's wavetable category selector.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "oscillator1WavetableCategory": {
+                        "type": "string",
+                        "description": "oscillator 1 wavetable category selector",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_oscillator2WavetableCategory",
+            "description": "Get oscillator 2's wavetable category selector.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "oscillator2WavetableCategory": {
+                        "type": "string",
+                        "description": "oscillator 2 wavetable category selector",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_oscillator1WavetableIndex",
+            "description": "Get oscillator 1's wavetable index selector.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "oscillator1WavetableIndex": {
+                        "type": "string",
+                        "description": "oscillator 1 wavetable index selector",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_oscillator2WavetableIndex",
+            "description": "Get oscillator 2's wavetable index selector.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "oscillator2WavetableIndex": {
+                        "type": "string",
+                        "description": "oscillator 2 wavetable index selector",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_oscillator1Wavetables",
+            "description": "Get the list of wavetables currently available for oscillator 1.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "oscillator1Wavetables": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of wavetable names available for oscillator 1",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_oscillator2Wavetables",
+            "description": "Get the list of wavetables currently available for oscillator 2.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "oscillator2Wavetables": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of wavetable names available for oscillator 2",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_oscillatorWavetableCategories",
+            "description": "Get the list of available wavetable categories.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "oscillatorWavetableCategories": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of available wavetable category names",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_polyVoices",
+            "description": "Get the current number of polyphonic voices.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "polyVoices": {
+                        "type": "integer",
+                        "description": "current number of polyphonic voices",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_unisonMode",
+            "description": "Get Wavetable's unison mode parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "unisonMode": {
+                        "type": "integer",
+                        "description": "unison mode (0=none, 1=classic, 2=shimmer, 3=noise, 4=phase sync, 5=position spread, 6=random note)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_unisonVoiceCount",
+            "description": "Get the number of unison voices.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "unisonVoiceCount": {
+                        "type": "integer",
+                        "description": "number of unison voices",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_properties_get_visibleModulationTargetNames",
+            "description": "Get the list of modulation targets currently visible in the modulation matrix.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "visibleModulationTargetNames": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of modulation target names visible in modulation matrix",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_functions_addParameterToModulationMatrix",
+            "description": "Add an instrument parameter to the modulation matrix.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    },
+                    "parameterToAdd": {
+                        "type": "string",
+                        "description": "device parameter ID to add to modulation matrix"
+                    }
+                },
+                "required": [
+                    "device",
+                    "parameterToAdd"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_functions_getModulationTargetParameterName",
+            "description": "Return the modulation target parameter name at index in the modulation matrix.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    },
+                    "index": {
+                        "type": "integer",
+                        "description": "index in the modulation matrix"
+                    }
+                },
+                "required": [
+                    "device",
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "parameterName": {
+                        "type": "string",
+                        "description": "modulation target parameter name as symbol"
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_functions_getModulationValue",
+            "description": "Return the amount of modulation of a parameter by a modulation source in Wavetable's modulation matrix.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    },
+                    "modulationTargetIndex": {
+                        "type": "integer",
+                        "description": "index of the modulation target parameter"
+                    },
+                    "modulationSourceIndex": {
+                        "type": "integer",
+                        "description": "index of the modulation source"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modulationTargetIndex",
+                    "modulationSourceIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modulationValue": {
+                        "type": "number",
+                        "description": "amount of modulation"
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_functions_isParameterModulatable",
+            "description": "Check if a parameter can be modulated.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    },
+                    "parameter": {
+                        "type": "string",
+                        "description": "device parameter ID to check"
+                    }
+                },
+                "required": [
+                    "device",
+                    "parameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isModulatable": {
+                        "type": "boolean",
+                        "description": "whether parameter can be modulated (1=yes, 0=no)"
+                    }
+                }
+            }
+        },
+        {
+            "name": "wavetableDevice_functions_setModulationValue",
+            "description": "Set the amount of modulation of a parameter by a modulation source in Wavetable's modulation matrix.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the wavetable device"
+                    },
+                    "modulationTargetIndex": {
+                        "type": "integer",
+                        "description": "index of the modulation target parameter"
+                    },
+                    "modulationSourceIndex": {
+                        "type": "integer",
+                        "description": "index of the modulation source"
+                    },
+                    "modulationValue": {
+                        "type": "number",
+                        "description": "amount of modulation to set"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modulationTargetIndex",
+                    "modulationSourceIndex",
+                    "modulationValue"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

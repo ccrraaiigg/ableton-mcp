@@ -1,0 +1,173 @@
+{
+    "tools": [
+        {
+            "name": "roardevice_functions_summary",
+            "description": "Get a summary of the RoarDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the roar device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an instance of a Roar device in Live. A RoarDevice has all the properties, functions and children of a Roar Device."
+                    }
+                }
+            }
+        },
+        {
+            "name": "roardevice_properties_get_routingModeIndex",
+            "description": "Get the index of the routing mode utilized by Roar.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the roar device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "routingModeIndex": {
+                        "type": "integer",
+                        "description": "index of the routing mode utilized by roar",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "roardevice_properties_get_routingModeList",
+            "description": "Get the list of available routing modes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the roar device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "routingModeList": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of available routing modes",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "roardevice_properties_get_envListen",
+            "description": "Get the Envelope Input Listen toggle state.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the roar device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "envListen": {
+                        "type": "boolean",
+                        "description": "envelope input listen toggle state",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "roardevice_properties_set_routingModeIndex",
+            "description": "Set the index of the routing mode utilized by Roar.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the roar device"
+                    },
+                    "routingModeIndex": {
+                        "type": "integer",
+                        "description": "new routing mode index"
+                    }
+                },
+                "required": [
+                    "device",
+                    "routingModeIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "roardevice_properties_set_envListen",
+            "description": "Set the Envelope Input Listen toggle state.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the roar device"
+                    },
+                    "envListen": {
+                        "type": "boolean",
+                        "description": "new envelope input listen toggle state"
+                    }
+                },
+                "required": [
+                    "device",
+                    "envListen"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "tools": [
+        {
+            "name": "thisDevice_functions_summary",
+            "description": "Get a summary of the this_device class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This root path represents the device containing the live.path object to which the goto this_device message is sent. The class of this object is Device. Canonical paths: this_device, live_set tracks N devices M"
+                    }
+                }
+            }
+        }
+    ]
+}

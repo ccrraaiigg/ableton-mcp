@@ -1,14 +1,32 @@
 {
     "tools": [
         {
+            "name": "live_functions_summary",
+            "description": "Get a summary of the Live Object Model utility functions.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This collection provides utility functions for introspecting the Live Object Model (LOM) structure, including querying class definitions, object properties, and API metadata."
+                    }
+                }
+            }
+        },
+        {
             "name": "live_get_child_attributes",
             "description": "Get the read-only and observable attributes for a specific child of any Ableton Live object.",
             "inputSchema": {
                 "type": "object",
                 "properties": {
-                    "objectId": {
+                    "object": {
                         "type": "string",
-                        "description": "object ID of the parent object"
+                        "description": "object ID or canonical path of the parent object"
                     },
                     "childName": {
                         "type": "string",
@@ -16,7 +34,7 @@
                     }
                 },
                 "required": [
-                    "objectId",
+                    "object",
                     "childName"
                 ]
             },
@@ -141,19 +159,19 @@
             "inputSchema": {
                 "type": "object",
                 "properties": {
-                    "objectId": {
+                    "object": {
                         "type": "string",
                         "description": "object ID to query"
                     }
                 },
                 "required": [
-                    "objectId"
+                    "object"
                 ]
             },
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "objectId": {
+                    "object": {
                         "type": "string",
                         "description": "object ID"
                     },
@@ -181,19 +199,19 @@
             "inputSchema": {
                 "type": "object",
                 "properties": {
-                    "objectId": {
+                    "object": {
                         "type": "string",
                         "description": "object ID to query"
                     }
                 },
                 "required": [
-                    "objectId"
+                    "object"
                 ]
             },
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "objectId": {
+                    "object": {
                         "type": "string",
                         "description": "object ID"
                     },
@@ -221,9 +239,9 @@
             "inputSchema": {
                 "type": "object",
                 "properties": {
-                    "objectId": {
+                    "object": {
                         "type": "string",
-                        "description": "object ID of the object"
+                        "description": "object ID or canonical path of the object"
                     },
                     "propertyName": {
                         "type": "string",
@@ -231,7 +249,7 @@
                     }
                 },
                 "required": [
-                    "objectId",
+                    "object",
                     "propertyName"
                 ]
             },

@@ -1,0 +1,195 @@
+{
+    "tools": [
+        {
+            "name": "trackView_functions_summary",
+            "description": "Get a summary of the TrackView class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track view"
+                    }
+                },
+                "required": [
+                    "trackView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "Representing the view aspects of a track. Canonical path: live_set tracks N view"
+                    }
+                }
+            }
+        },
+        {
+            "name": "trackView_children_get_selectedDevice",
+            "description": "Get the selected device or the first selected device in case of multi/group selection.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track view"
+                    }
+                },
+                "required": [
+                    "trackView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedDevice": {
+                        "type": "string",
+                        "description": "selected device ID or first selected device ID",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "trackView_properties_get_deviceInsertMode",
+            "description": "Get where a device will be inserted when loaded from the browser.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track view"
+                    }
+                },
+                "required": [
+                    "trackView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceInsertMode": {
+                        "type": "integer",
+                        "description": "device insert mode (0 = add at end, 1 = add left of selected, 2 = add right of selected)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "trackView_properties_get_isCollapsed",
+            "description": "Get whether the track is collapsed in Arrangement View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track view"
+                    }
+                },
+                "required": [
+                    "trackView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isCollapsed": {
+                        "type": "boolean",
+                        "description": "whether track is collapsed in Arrangement View (1 = collapsed, 0 = opened)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "trackView_properties_set_deviceInsertMode",
+            "description": "Set where a device will be inserted when loaded from the browser.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track view"
+                    },
+                    "deviceInsertMode": {
+                        "type": "integer",
+                        "description": "device insert mode (0 = add at end, 1 = add left of selected, 2 = add right of selected)"
+                    }
+                },
+                "required": [
+                    "trackView",
+                    "deviceInsertMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether device insert mode was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "trackView_properties_set_isCollapsed",
+            "description": "Set whether the track is collapsed in Arrangement View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track view"
+                    },
+                    "isCollapsed": {
+                        "type": "boolean",
+                        "description": "whether track should be collapsed in Arrangement View (1 = collapsed, 0 = opened)"
+                    }
+                },
+                "required": [
+                    "trackView",
+                    "isCollapsed"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether collapsed state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "trackView_functions_selectInstrument",
+            "description": "Select track's instrument or first device, make it visible and focus on it.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track view"
+                    }
+                },
+                "required": [
+                    "trackView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether instrument selection was successful (false if there are no devices to select)"
+                    }
+                }
+            }
+        }
+    ]
+}

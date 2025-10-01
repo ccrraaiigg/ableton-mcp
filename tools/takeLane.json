@@ -1,0 +1,155 @@
+{
+    "tools": [
+        {
+            "name": "takeLane_functions_summary",
+            "description": "Get a summary of the TakeLane class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "takeLane": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the take lane"
+                    }
+                },
+                "required": [
+                    "takeLane"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a take lane in Live. Tracks in Live can have take lanes in Arrangement View, which are used for comping. If take lanes exist for a track, they can be shown by right-clicking on a track and choosing Show Take Lanes. Canonical path: live_set tracks N take_lanes M"
+                    }
+                }
+            }
+        },
+        {
+            "name": "takeLane_children_get_arrangementClips",
+            "description": "Get the list of this take lane's Arrangement View clip IDs.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "takeLane": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the take lane"
+                    }
+                },
+                "required": [
+                    "takeLane"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "arrangementClips": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of arrangement clip IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "takeLane_properties_get_name",
+            "description": "Get the name as shown in the take lane header.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "takeLane": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the take lane"
+                    }
+                },
+                "required": [
+                    "takeLane"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name as shown in the take lane header",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "takeLane_functions_createAudioClip",
+            "description": "Create an audio clip referencing a file in the arrangement view at the specified start time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "takeLane": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the take lane"
+                    },
+                    "filePath": {
+                        "type": "string",
+                        "description": "absolute path to a valid audio file in a supported format"
+                    },
+                    "startTime": {
+                        "type": "number",
+                        "description": "start time in beats (must be within range [0., 1576800])"
+                    }
+                },
+                "required": [
+                    "takeLane",
+                    "filePath",
+                    "startTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the audio clip was created successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "takeLane_functions_createMidiClip",
+            "description": "Create an empty MIDI clip with the specified length and insert it into the arrangement at the specified start time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "takeLane": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the take lane"
+                    },
+                    "startTime": {
+                        "type": "number",
+                        "description": "start time in beats (must be within range [0., 1576800])"
+                    },
+                    "length": {
+                        "type": "number",
+                        "description": "length of the clip in beats"
+                    }
+                },
+                "required": [
+                    "takeLane",
+                    "startTime",
+                    "length"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the MIDI clip was created successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

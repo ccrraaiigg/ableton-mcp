@@ -4,6 +4,47 @@
 
 In a new conversation, read the README before doing anything else.
 
+## Using MCP
+
+- First step: Check what MCP tools are actually available from
+  connected servers (not the JSON schemas). DO NOT ATTEMPT to use a
+  tool that you have not confirmed is available from a connected MCP
+  server.
+
+- If the needed tool is missing: Suggest that the user implement it,
+  referencing the JSON schema files as specifications.
+
+The JSON schema files in the tools directory describe MCP tools that
+we are developing. They aren't necessarily active in any MCP servers
+to which you are connected. The ONLY source of truth about which MCP
+tools you can call is provided by connected MCP servers. Do not take
+the existence of a tool in a JSON schema file, on its own, as evidence
+that you can call that tool. You should check the real tools list
+first.
+
+When it seems like an Ableton MCP tool is missing from the Ableton MCP
+server during conversation, suggest that the user implement it. The
+complete space of possible tools is covered by the JSON schema files
+in the tools directory.
+
+Usually, if a tool call times out, it's because the user is debugging
+the tool call on the MCP server side.
+
+## Using Canonical Paths for Ableton Objects in MCP tool calls
+
+IMPORTANT: Many Ableton Live objects can be referenced by their
+canonical path instead of requiring object ID lookups. This is
+especially useful for predictable objects like scenes:
+
+- First scene: `live_set scenes 0`
+- Second scene: `live_set scenes 1`
+- First track: `live_set tracks 0`
+
+Always prefer canonical paths when possible, instead of suggesting
+tools to look up object IDs first. For example, to rename the first
+scene, you only need `scene_properties_set_name` with the canonical
+path `live_set scenes 0`.
+
 ## On Testing ##
 
 Something untested is never successful. You cannot declare success
@@ -33,14 +74,14 @@ Never use TypeScript; use vanilla JavaScript instead.
 ## Using JavaScript
 
 In every function, declare all variables used in the function at the
-beginning of the function. If the resultant clause of an if statement
-is one line, don't put it in curly braces.
+beginning of the function. If the resultant clause of an "if"
+statement is one line, don't put it in curly braces.
 
 Never bundle sources. Never use webpack or anything like it.
 
-## Editing tools JSON files
+## Editing tools JSON schema files
 
-When editing the tools JSON files:
+When editing the tools JSON schema files:
 
 - The tools for a class should be in this order:
   - children getters
@@ -57,12 +98,12 @@ When editing the tools JSON files:
 
 - In tool names, underscores are used only to delineate
   namespaces. The names of children, properties, and functions should
-  be expressed with "camel case". The tools.json file has many correct
+  be expressed with "camel case". The JSON files have many correct
   examples.
   
 - Tool descriptions are complete sentences, beginning with a
   capitalized word and ending with a period.
   
 - Child, property, and return value descriptions are phrases,
-  beginning with a lowercase letter and ending without a period.
+  beginning with an uncapitalized word and ending without a period.
   

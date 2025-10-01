@@ -1,0 +1,86 @@
+{
+    "tools": [
+        {
+            "name": "simplerDeviceView_functions_summary",
+            "description": "Get a summary of the SimplerDevice.View class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDeviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device view"
+                    }
+                },
+                "required": [
+                    "simplerDeviceView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "Represents the view aspects of a SimplerDevice. A SimplerDevice.View is a type of Device.View, meaning that it has all the properties that a Device.View has. Listed below are the members unique to SimplerDevice.View."
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDeviceView_properties_get_selectedSlice",
+            "description": "Get the currently selected slice, identified by its slice time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDeviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device view"
+                    }
+                },
+                "required": [
+                    "simplerDeviceView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedSlice": {
+                        "type": "integer",
+                        "description": "currently selected slice identified by slice time",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDeviceView_properties_set_selectedSlice",
+            "description": "Set the currently selected slice, identified by its slice time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDeviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device view"
+                    },
+                    "selectedSlice": {
+                        "type": "integer",
+                        "description": "slice time to select"
+                    }
+                },
+                "required": [
+                    "simplerDeviceView",
+                    "selectedSlice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

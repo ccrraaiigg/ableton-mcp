@@ -1,0 +1,86 @@
+{
+    "tools": [
+        {
+            "name": "deviceView_functions_summary",
+            "description": "Get a summary of the Device.View class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device view"
+                    }
+                },
+                "required": [
+                    "deviceView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "Representing the view aspects of a Device. Canonical paths: live_set tracks N devices M view, live_set tracks N devices M chains L devices K view, or live_set tracks N devices M return_chains L devices K view"
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceView_properties_get_isCollapsed",
+            "description": "Get whether the device is shown collapsed in the device chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device view"
+                    }
+                },
+                "required": [
+                    "deviceView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isCollapsed": {
+                        "type": "boolean",
+                        "description": "whether device is shown collapsed in device chain",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceView_properties_set_isCollapsed",
+            "description": "Set whether the device is shown collapsed in the device chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device view"
+                    },
+                    "isCollapsed": {
+                        "type": "boolean",
+                        "description": "whether device should be shown collapsed in device chain"
+                    }
+                },
+                "required": [
+                    "deviceView",
+                    "isCollapsed"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

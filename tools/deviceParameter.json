@@ -1,0 +1,496 @@
+{
+    "tools": [
+        {
+            "name": "deviceParameter_functions_summary",
+            "description": "Get a summary of the DeviceParameter class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an (automatable) parameter within a MIDI or audio device. To modify a device parameter, set its value property or send its object ID to live.remote~. Canonical path: live_set tracks N devices M parameters L"
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_automationState",
+            "description": "Get the automation state of the parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "automationState": {
+                        "type": "integer",
+                        "description": "automation state (0=no automation, 1=automation active, 2=automation overridden)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_defaultValue",
+            "description": "Get the default value for this parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "defaultValue": {
+                        "type": "number",
+                        "description": "default value for this parameter (only available for parameters that aren't quantized)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_isEnabled",
+            "description": "Get whether the parameter value can be modified.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isEnabled": {
+                        "type": "boolean",
+                        "description": "whether parameter value can be modified directly by user, automation, or MIDI",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_isQuantized",
+            "description": "Get whether the parameter is quantized.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isQuantized": {
+                        "type": "boolean",
+                        "description": "whether parameter is quantized (1 for booleans and enums, 0 for int/float parameters)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_max",
+            "description": "Get the largest allowed value.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "max": {
+                        "type": "number",
+                        "description": "largest allowed value",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_min",
+            "description": "Get the lowest allowed value.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "min": {
+                        "type": "number",
+                        "description": "lowest allowed value",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_name",
+            "description": "Get the short parameter name as shown in the automation chooser.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "short parameter name as shown in automation chooser",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_originalName",
+            "description": "Get the name of a Macro parameter before its assignment.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "originalName": {
+                        "type": "string",
+                        "description": "name of macro parameter before assignment",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_state",
+            "description": "Get the active state of the parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "state": {
+                        "type": "integer",
+                        "description": "active state (0=active and changeable, 1=changeable but not active, 2=cannot be changed)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_value",
+            "description": "Get the internal value between min and max.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "number",
+                        "description": "internal value between min and max",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_displayValue",
+            "description": "Get the value as visible in the GUI.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "displayValue": {
+                        "type": "number",
+                        "description": "value as visible in the GUI",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_get_valueItems",
+            "description": "Get a list of the possible values for this parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "valueItems": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of possible values (only available for quantized parameters)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_set_value",
+            "description": "Set the internal value between min and max.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    },
+                    "value": {
+                        "type": "number",
+                        "description": "new internal value between min and max"
+                    }
+                },
+                "required": [
+                    "deviceParameter",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_properties_set_displayValue",
+            "description": "Set the value as visible in the GUI.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    },
+                    "displayValue": {
+                        "type": "number",
+                        "description": "new value as visible in the GUI"
+                    }
+                },
+                "required": [
+                    "deviceParameter",
+                    "displayValue"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_functions_reEnableAutomation",
+            "description": "Re-enable automation for this parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_functions_strForValue",
+            "description": "Get string representation of the specified value.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    },
+                    "value": {
+                        "type": "number",
+                        "description": "value to get string representation for"
+                    }
+                },
+                "required": [
+                    "deviceParameter",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "stringValue": {
+                        "type": "string",
+                        "description": "string representation of the specified value"
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceParameter_functions___str__",
+            "description": "Get string representation of the current parameter value.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device parameter"
+                    }
+                },
+                "required": [
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "stringValue": {
+                        "type": "string",
+                        "description": "string representation of the current parameter value"
+                    }
+                }
+            }
+        }
+    ]
+}

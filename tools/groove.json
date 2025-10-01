@@ -1,0 +1,359 @@
+{
+    "tools": [
+        {
+            "name": "groove_functions_summary",
+            "description": "Get a summary of the Groove class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a groove in Live. Available since Live 11.0. All grooves are stored in Live's groove pool. Canonical paths: live_set groove_pool grooves N or live_set tracks N clip_slots M clip groove"
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_get_base",
+            "description": "Get the groove's base grid (index based).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    }
+                },
+                "required": [
+                    "groove"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "base": {
+                        "type": "integer",
+                        "description": "base grid index (0=1/4, 1=1/8, 2=1/8T, 3=1/16, 4=1/16T, 5=1/32)"
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_set_base",
+            "description": "Set the groove's base grid (index based).",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    },
+                    "base": {
+                        "type": "integer",
+                        "description": "base grid index (0=1/4, 1=1/8, 2=1/8T, 3=1/16, 4=1/16T, 5=1/32)",
+                        "minimum": 0,
+                        "maximum": 5
+                    }
+                },
+                "required": [
+                    "groove",
+                    "base"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the base grid was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_get_name",
+            "description": "Get the name of the groove.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    }
+                },
+                "required": [
+                    "groove"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the groove",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_set_name",
+            "description": "Set the name of the groove.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "new name for the groove"
+                    }
+                },
+                "required": [
+                    "groove",
+                    "name"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the name was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_get_quantizationAmount",
+            "description": "Get the groove's quantization amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    }
+                },
+                "required": [
+                    "groove"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "quantizationAmount": {
+                        "type": "number",
+                        "description": "quantization amount value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_set_quantizationAmount",
+            "description": "Set the groove's quantization amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    },
+                    "quantizationAmount": {
+                        "type": "number",
+                        "description": "quantization amount value"
+                    }
+                },
+                "required": [
+                    "groove",
+                    "quantizationAmount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the quantization amount was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_get_randomAmount",
+            "description": "Get the groove's random amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    }
+                },
+                "required": [
+                    "groove"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "randomAmount": {
+                        "type": "number",
+                        "description": "random amount value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_set_randomAmount",
+            "description": "Set the groove's random amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    },
+                    "randomAmount": {
+                        "type": "number",
+                        "description": "random amount value"
+                    }
+                },
+                "required": [
+                    "groove",
+                    "randomAmount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the random amount was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_get_timingAmount",
+            "description": "Get the groove's timing amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    }
+                },
+                "required": [
+                    "groove"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "timingAmount": {
+                        "type": "number",
+                        "description": "timing amount value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_set_timingAmount",
+            "description": "Set the groove's timing amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    },
+                    "timingAmount": {
+                        "type": "number",
+                        "description": "timing amount value"
+                    }
+                },
+                "required": [
+                    "groove",
+                    "timingAmount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the timing amount was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_get_velocityAmount",
+            "description": "Get the groove's velocity amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    }
+                },
+                "required": [
+                    "groove"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "velocityAmount": {
+                        "type": "number",
+                        "description": "velocity amount value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "groove_properties_set_velocityAmount",
+            "description": "Set the groove's velocity amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "ID of the groove object"
+                    },
+                    "velocityAmount": {
+                        "type": "number",
+                        "description": "velocity amount value"
+                    }
+                },
+                "required": [
+                    "groove",
+                    "velocityAmount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the velocity amount was set successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

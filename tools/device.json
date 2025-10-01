@@ -1,0 +1,503 @@
+{
+    "tools": [
+        {
+            "name": "device_functions_summary",
+            "description": "Get a summary of the Device class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a MIDI or audio device in Live. Canonical paths: live_set tracks N devices M, live_set tracks N devices M chains L devices K, or live_set tracks N devices M return_chains L devices K"
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_children_get_parameters",
+            "description": "Get the list of automatable parameters.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "parameters": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of device parameter IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_children_get_view",
+            "description": "Get the device view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "view": {
+                        "type": "string",
+                        "description": "device view ID",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_canHaveChains",
+            "description": "Get whether the device can have chains.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canHaveChains": {
+                        "type": "boolean",
+                        "description": "whether device can have chains (0 for single device, 1 for device rack)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_canHaveDrumPads",
+            "description": "Get whether the device can have drum pads.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canHaveDrumPads": {
+                        "type": "boolean",
+                        "description": "whether device can have drum pads (1 for drum racks)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_classDisplayName",
+            "description": "Get the original name of the device.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "classDisplayName": {
+                        "type": "string",
+                        "description": "original device name (e.g. Operator, Auto Filter)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_className",
+            "description": "Get the Live device type.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "className": {
+                        "type": "string",
+                        "description": "live device type such as MidiChord, Operator, Limiter, MxDeviceAudioEffect, or PluginDevice",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_isActive",
+            "description": "Get whether the device is active.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isActive": {
+                        "type": "boolean",
+                        "description": "whether device is active (0 if device or enclosing rack is off)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_name",
+            "description": "Get the device name shown in the title bar.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "device name shown in title bar",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_type",
+            "description": "Get the type of the device.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "integer",
+                        "description": "device type (0=undefined, 1=instrument, 2=audio_effect, 4=midi_effect)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_latencyInSamples",
+            "description": "Get the device latency in samples.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "latencyInSamples": {
+                        "type": "integer",
+                        "description": "device latency in samples",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_latencyInMs",
+            "description": "Get the device latency in milliseconds.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "latencyInMs": {
+                        "type": "number",
+                        "description": "device latency in milliseconds",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_canCompareAb",
+            "description": "Get whether the device supports AB Compare feature.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canCompareAb": {
+                        "type": "boolean",
+                        "description": "whether device supports AB compare feature",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_get_isUsingComparePresetB",
+            "description": "Get whether the device has compare preset B loaded.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isUsingComparePresetB": {
+                        "type": "boolean",
+                        "description": "whether device has compare preset B loaded",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_set_name",
+            "description": "Set the device name shown in the title bar.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "new device name"
+                    }
+                },
+                "required": [
+                    "device",
+                    "name"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_properties_set_isUsingComparePresetB",
+            "description": "Set whether the device has compare preset B loaded.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    },
+                    "isUsingComparePresetB": {
+                        "type": "boolean",
+                        "description": "whether to load compare preset B"
+                    }
+                },
+                "required": [
+                    "device",
+                    "isUsingComparePresetB"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_functions_storeChosenBank",
+            "description": "Store chosen bank for hardware control surfaces.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    },
+                    "scriptIndex": {
+                        "type": "integer",
+                        "description": "script index parameter"
+                    },
+                    "bankIndex": {
+                        "type": "integer",
+                        "description": "bank index parameter"
+                    }
+                },
+                "required": [
+                    "device",
+                    "scriptIndex",
+                    "bankIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "device_functions_savePresetToCompareAbSlot",
+            "description": "Save the device state to the other compare AB slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

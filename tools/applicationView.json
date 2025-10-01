@@ -41,6 +41,24 @@
             }
         },
         {
+            "name": "applicationView_functions_summary",
+            "description": "Get a summary of the ApplicationView class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents the aspects of the Live application related to viewing the application. Canonical path: live_app view"
+                    }
+                }
+            }
+        },
+        {
             "name": "applicationView_functions_availableMainViews",
             "description": "Get a list of available main view names.",
             "inputSchema": {

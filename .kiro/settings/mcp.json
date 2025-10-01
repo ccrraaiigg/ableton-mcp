@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "ableton": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://melody.tail5eadd6.ts.net/mcp/ableton",
+        "--header",
+        "Authorization: Bearer ${AUTH_TOKEN}"
+      ],
+      "env": {
+        "AUTH_TOKEN": "aab3d25b-0eaf-40ca-ab52-346f2de7ca0f"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "applicationView_functions_focusView",
+        "scene_properties_set_name"
+      ]
+    },
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "fetch"
+      ],
+      "disabledTools": []
+    }
+  }
+}

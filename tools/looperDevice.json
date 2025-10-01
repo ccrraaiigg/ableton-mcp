@@ -1,0 +1,507 @@
+{
+    "tools": [
+        {
+            "name": "looperDevice_functions_summary",
+            "description": "Get a summary of the LooperDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an instance of a Looper device in Live. An LooperDevice has all the properties, functions and children of a Device. Listed below are members unique to LooperDevice."
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_properties_get_loopLength",
+            "description": "Get the length of Looper's buffer.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "loopLength": {
+                        "type": "number",
+                        "description": "length of looper's buffer",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_properties_get_overdubAfterRecord",
+            "description": "Get whether Looper will switch to overdub after recording.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "overdubAfterRecord": {
+                        "type": "boolean",
+                        "description": "whether looper switches to overdub after recording (1=overdub, 0=playback)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_properties_get_recordLengthIndex",
+            "description": "Get the Record Length chooser entry index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "recordLengthIndex": {
+                        "type": "integer",
+                        "description": "record length chooser entry index",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_properties_get_recordLengthList",
+            "description": "Get the list of Record Length chooser entry strings.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "recordLengthList": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of record length chooser entry strings",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_properties_get_tempo",
+            "description": "Get the tempo of Looper's buffer.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "tempo": {
+                        "type": "number",
+                        "description": "tempo of looper's buffer",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_properties_set_overdubAfterRecord",
+            "description": "Set whether Looper will switch to overdub after recording.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    },
+                    "overdubAfterRecord": {
+                        "type": "boolean",
+                        "description": "whether to switch to overdub after recording (true=overdub, false=playback)"
+                    }
+                },
+                "required": [
+                    "looperDevice",
+                    "overdubAfterRecord"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_properties_set_recordLengthIndex",
+            "description": "Set the Record Length chooser entry index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    },
+                    "recordLengthIndex": {
+                        "type": "integer",
+                        "description": "record length chooser entry index"
+                    }
+                },
+                "required": [
+                    "looperDevice",
+                    "recordLengthIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_clear",
+            "description": "Erase Looper's recorded content.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_doubleSpeed",
+            "description": "Double the speed of Looper's playback.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_halfSpeed",
+            "description": "Halve the speed of Looper's playback.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_doubleLength",
+            "description": "Double the length of Looper's buffer.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_halfLength",
+            "description": "Halve the length of Looper's buffer.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_record",
+            "description": "Record incoming audio.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_overdub",
+            "description": "Play back while adding additional layers of incoming audio.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_play",
+            "description": "Play back without overdubbing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_stop",
+            "description": "Stop Looper's playback.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_undo",
+            "description": "Erase everything that was recorded since the last time Overdub was enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    }
+                },
+                "required": [
+                    "looperDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "looperDevice_functions_exportToClipSlot",
+            "description": "Export Looper's content to a clip in the specified clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "looperDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the looper device"
+                    },
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the target clip slot"
+                    }
+                },
+                "required": [
+                    "looperDevice",
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

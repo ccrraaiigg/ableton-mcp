@@ -1,0 +1,196 @@
+{
+  "tools": [
+    {
+      "name": "eq8Device_properties_get_editMode",
+      "description": "Get EQ Eight's edit mode, which toggles the channel currently available for editing.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "unique identifier for the Eq8Device object"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "editMode": {
+            "type": "boolean",
+            "description": "edit mode state - in L/R mode: 0 = L, 1 = R; in M/S mode: 0 = M, 1 = S; in Stereo mode: 0 = A, 1 = B (inactive)"
+          },
+          "readOnly": {
+            "type": "boolean",
+            "description": "false"
+          },
+          "observable": {
+            "type": "boolean", 
+            "description": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "eq8Device_properties_set_editMode",
+      "description": "Set EQ Eight's edit mode, which toggles the channel currently available for editing.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "unique identifier for the Eq8Device object"
+          },
+          "editMode": {
+            "type": "boolean",
+            "description": "edit mode state - in L/R mode: 0 = L, 1 = R; in M/S mode: 0 = M, 1 = S; in Stereo mode: 0 = A, 1 = B (inactive)"
+          }
+        },
+        "required": ["device", "editMode"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "indicates whether the operation was successful"
+          }
+        }
+      }
+    },
+    {
+      "name": "eq8Device_properties_get_globalMode",
+      "description": "Get EQ Eight's global mode.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "unique identifier for the Eq8Device object"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "globalMode": {
+            "type": "integer",
+            "description": "global mode - 0 = Stereo, 1 = L/R, 2 = M/S"
+          },
+          "readOnly": {
+            "type": "boolean",
+            "description": "false"
+          },
+          "observable": {
+            "type": "boolean",
+            "description": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "eq8Device_properties_set_globalMode",
+      "description": "Set EQ Eight's global mode.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "unique identifier for the Eq8Device object"
+          },
+          "globalMode": {
+            "type": "integer",
+            "description": "global mode - 0 = Stereo, 1 = L/R, 2 = M/S"
+          }
+        },
+        "required": ["device", "globalMode"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "indicates whether the operation was successful"
+          }
+        }
+      }
+    },
+    {
+      "name": "eq8Device_properties_get_oversample",
+      "description": "Get EQ Eight's Oversampling parameter.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "unique identifier for the Eq8Device object"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "oversample": {
+            "type": "boolean",
+            "description": "oversampling state - 0 = Off, 1 = On"
+          },
+          "readOnly": {
+            "type": "boolean",
+            "description": "false"
+          },
+          "observable": {
+            "type": "boolean",
+            "description": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "eq8Device_properties_set_oversample",
+      "description": "Set EQ Eight's Oversampling parameter.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "unique identifier for the Eq8Device object"
+          },
+          "oversample": {
+            "type": "boolean",
+            "description": "oversampling state - 0 = Off, 1 = On"
+          }
+        },
+        "required": ["device", "oversample"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "indicates whether the operation was successful"
+          }
+        }
+      }
+    },
+    {
+      "name": "eq8Device_functions_summary",
+      "description": "Get a summary of the Eq8Device class from the Live Object Model API documentation.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "summary of the Eq8Device class"
+          }
+        }
+      }
+    }
+  ]
+}

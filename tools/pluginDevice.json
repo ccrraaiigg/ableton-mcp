@@ -1,0 +1,116 @@
+{
+    "tools": [
+        {
+            "name": "pluginDevice_functions_summary",
+            "description": "Get a summary of the PluginDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "pluginDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the plugin device"
+                    }
+                },
+                "required": [
+                    "pluginDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a plug-in device."
+                    }
+                }
+            }
+        },
+        {
+            "name": "pluginDevice_properties_get_presets",
+            "description": "Get the list of the plug-in's presets.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "pluginDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the plugin device"
+                    }
+                },
+                "required": [
+                    "pluginDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "presets": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of plugin presets",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "pluginDevice_properties_get_selectedPresetIndex",
+            "description": "Get the index of the currently selected preset.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "pluginDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the plugin device"
+                    }
+                },
+                "required": [
+                    "pluginDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedPresetIndex": {
+                        "type": "integer",
+                        "description": "index of currently selected preset",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "pluginDevice_properties_set_selectedPresetIndex",
+            "description": "Set the index of the currently selected preset.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "pluginDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the plugin device"
+                    },
+                    "selectedPresetIndex": {
+                        "type": "integer",
+                        "description": "index of preset to select"
+                    }
+                },
+                "required": [
+                    "pluginDevice",
+                    "selectedPresetIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

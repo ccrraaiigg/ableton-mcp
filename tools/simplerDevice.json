@@ -1,0 +1,658 @@
+{
+    "tools": [
+        {
+            "name": "simplerDevice_functions_summary",
+            "description": "Get a summary of the SimplerDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an instance of Simpler. A SimplerDevice is a type of device, meaning that it has all the children, properties and functions that a device has. Listed below are members unique to SimplerDevice."
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_children_get_sample",
+            "description": "Get the sample currently loaded into Simpler.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sample": {
+                        "type": "string",
+                        "description": "sample ID currently loaded into simpler",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_canWarpAs",
+            "description": "Get whether warp_as is available.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canWarpAs": {
+                        "type": "boolean",
+                        "description": "whether warp_as is available",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_canWarpDouble",
+            "description": "Get whether warp_double is available.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canWarpDouble": {
+                        "type": "boolean",
+                        "description": "whether warp_double is available",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_canWarpHalf",
+            "description": "Get whether warp_half is available.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canWarpHalf": {
+                        "type": "boolean",
+                        "description": "whether warp_half is available",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_multiSampleMode",
+            "description": "Get whether Simpler is in multisample mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "multiSampleMode": {
+                        "type": "boolean",
+                        "description": "whether simpler is in multisample mode",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_padSlicing",
+            "description": "Get whether slices can be added in Slicing Mode by playing notes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "padSlicing": {
+                        "type": "boolean",
+                        "description": "whether slices can be added in slicing mode by playing notes",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_playbackMode",
+            "description": "Get Simpler's playback mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "playbackMode": {
+                        "type": "integer",
+                        "description": "playback mode (0=classic, 1=one-shot, 2=slicing)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_playingPosition",
+            "description": "Get the current playing position in the sample.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "playingPosition": {
+                        "type": "number",
+                        "description": "current playing position in sample (0.0 to 1.0)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_playingPositionEnabled",
+            "description": "Get whether Simpler is playing back and showing the playing position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "playingPositionEnabled": {
+                        "type": "boolean",
+                        "description": "whether simpler is playing back and showing playing position",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_retrigger",
+            "description": "Get whether Retrigger is enabled in Simpler.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "retrigger": {
+                        "type": "boolean",
+                        "description": "whether retrigger is enabled",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_slicingPlaybackMode",
+            "description": "Get Simpler's Slicing Playback Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "slicingPlaybackMode": {
+                        "type": "integer",
+                        "description": "slicing playback mode (0=mono, 1=poly, 2=thru)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_get_voices",
+            "description": "Get the number of Voices.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "voices": {
+                        "type": "integer",
+                        "description": "number of voices",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_set_padSlicing",
+            "description": "Set whether slices can be added in Slicing Mode by playing notes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    },
+                    "padSlicing": {
+                        "type": "boolean",
+                        "description": "whether to enable pad slicing"
+                    }
+                },
+                "required": [
+                    "simplerDevice",
+                    "padSlicing"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_set_playbackMode",
+            "description": "Set Simpler's playback mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    },
+                    "playbackMode": {
+                        "type": "integer",
+                        "description": "playback mode (0=classic, 1=one-shot, 2=slicing)"
+                    }
+                },
+                "required": [
+                    "simplerDevice",
+                    "playbackMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_set_retrigger",
+            "description": "Set whether Retrigger is enabled in Simpler.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    },
+                    "retrigger": {
+                        "type": "boolean",
+                        "description": "whether to enable retrigger"
+                    }
+                },
+                "required": [
+                    "simplerDevice",
+                    "retrigger"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_set_slicingPlaybackMode",
+            "description": "Set Simpler's Slicing Playback Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    },
+                    "slicingPlaybackMode": {
+                        "type": "integer",
+                        "description": "slicing playback mode (0=mono, 1=poly, 2=thru)"
+                    }
+                },
+                "required": [
+                    "simplerDevice",
+                    "slicingPlaybackMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_properties_set_voices",
+            "description": "Set the number of Voices.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    },
+                    "voices": {
+                        "type": "integer",
+                        "description": "number of voices"
+                    }
+                },
+                "required": [
+                    "simplerDevice",
+                    "voices"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_functions_crop",
+            "description": "Crop the loaded sample to the active region between the start and end markers.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_functions_guessPlaybackLength",
+            "description": "Get an estimated beat time for the playback length between the start and end markers.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "playbackLength": {
+                        "type": "number",
+                        "description": "estimated beat time for playback length"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_functions_reverse",
+            "description": "Reverse the loaded sample.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_functions_warpAs",
+            "description": "Warp the active region between the start and end markers as the specified number of beats.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    },
+                    "beats": {
+                        "type": "integer",
+                        "description": "number of beats to warp as"
+                    }
+                },
+                "required": [
+                    "simplerDevice",
+                    "beats"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_functions_warpDouble",
+            "description": "Double the playback tempo of the active region between the start and end markers.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "simplerDevice_functions_warpHalf",
+            "description": "Halve the playback tempo for the active region between the start and end markers.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "simplerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the simpler device"
+                    }
+                },
+                "required": [
+                    "simplerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,431 @@
+{
+    "tools": [
+        {
+            "name": "hybridReverbDevice_functions_summary",
+            "description": "Get a summary of the HybridReverbDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an instance of a Hybrid Reverb device in Live. A HybridReverbDevice has all the properties, functions and children of a Device. Listed below are members unique to HybridReverbDevice."
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_get_irAttackTime",
+            "description": "Get the attack time of the amplitude envelope for the impulse response.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "irAttackTime": {
+                        "type": "number",
+                        "description": "attack time of the amplitude envelope for the impulse response, in seconds",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_get_irCategoryIndex",
+            "description": "Get the index of the selected impulse response category.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "irCategoryIndex": {
+                        "type": "integer",
+                        "description": "index of the selected impulse response category",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_get_irCategoryList",
+            "description": "Get the list of impulse response categories.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "irCategoryList": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of impulse response categories",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_get_irDecayTime",
+            "description": "Get the decay time of the amplitude envelope for the impulse response.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "irDecayTime": {
+                        "type": "number",
+                        "description": "decay time of the amplitude envelope for the impulse response, in seconds",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_get_irFileIndex",
+            "description": "Get the index of the selected impulse response files from the current category.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "irFileIndex": {
+                        "type": "integer",
+                        "description": "index of the selected impulse response files from the current category",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_get_irFileList",
+            "description": "Get the list of impulse response files from the selected category.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "irFileList": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of impulse response files from the selected category",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_get_irSizeFactor",
+            "description": "Get the relative size of the impulse response.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "irSizeFactor": {
+                        "type": "number",
+                        "description": "relative size of the impulse response, 0.0 to 1.0",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_get_irTimeShapingOn",
+            "description": "Get whether transforming the current selected impulse response with an amplitude envelope and size parameter is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "irTimeShapingOn": {
+                        "type": "boolean",
+                        "description": "whether transforming the current selected impulse response with an amplitude envelope and size parameter is enabled (1 = enabled)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_set_irAttackTime",
+            "description": "Set the attack time of the amplitude envelope for the impulse response.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    },
+                    "irAttackTime": {
+                        "type": "number",
+                        "description": "attack time of the amplitude envelope for the impulse response, in seconds"
+                    }
+                },
+                "required": [
+                    "device",
+                    "irAttackTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_set_irCategoryIndex",
+            "description": "Set the index of the selected impulse response category.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    },
+                    "irCategoryIndex": {
+                        "type": "integer",
+                        "description": "index of the selected impulse response category"
+                    }
+                },
+                "required": [
+                    "device",
+                    "irCategoryIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_set_irDecayTime",
+            "description": "Set the decay time of the amplitude envelope for the impulse response.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    },
+                    "irDecayTime": {
+                        "type": "number",
+                        "description": "decay time of the amplitude envelope for the impulse response, in seconds"
+                    }
+                },
+                "required": [
+                    "device",
+                    "irDecayTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_set_irFileIndex",
+            "description": "Set the index of the selected impulse response files from the current category.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    },
+                    "irFileIndex": {
+                        "type": "integer",
+                        "description": "index of the selected impulse response files from the current category"
+                    }
+                },
+                "required": [
+                    "device",
+                    "irFileIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_set_irSizeFactor",
+            "description": "Set the relative size of the impulse response.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    },
+                    "irSizeFactor": {
+                        "type": "number",
+                        "description": "relative size of the impulse response, 0.0 to 1.0"
+                    }
+                },
+                "required": [
+                    "device",
+                    "irSizeFactor"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "hybridReverbDevice_properties_set_irTimeShapingOn",
+            "description": "Set whether transforming the current selected impulse response with an amplitude envelope and size parameter is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the hybrid reverb device"
+                    },
+                    "irTimeShapingOn": {
+                        "type": "boolean",
+                        "description": "whether to enable transforming the current selected impulse response with an amplitude envelope and size parameter (1 = enabled)"
+                    }
+                },
+                "required": [
+                    "device",
+                    "irTimeShapingOn"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

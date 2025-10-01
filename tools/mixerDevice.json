@@ -1,0 +1,389 @@
+{
+    "tools": [
+        {
+            "name": "mixerDevice_functions_summary",
+            "description": "Get a summary of the MixerDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a mixer device in Live. It provides access to volume, panning and other DeviceParameter objects. Canonical path: live_set tracks N mixer_device"
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_children_get_sends",
+            "description": "Get the list of send parameters.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sends": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of device parameter IDs (one send per return track)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_children_get_cueVolume",
+            "description": "Get the cue volume parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "cueVolume": {
+                        "type": "string",
+                        "description": "device parameter ID for cue volume (master track only)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_children_get_crossfader",
+            "description": "Get the crossfader parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "crossfader": {
+                        "type": "string",
+                        "description": "device parameter ID for crossfader (master track only)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_children_get_leftSplitStereo",
+            "description": "Get the left split stereo pan parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "leftSplitStereo": {
+                        "type": "string",
+                        "description": "device parameter ID for left split stereo pan",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_children_get_panning",
+            "description": "Get the panning parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "panning": {
+                        "type": "string",
+                        "description": "device parameter ID for panning",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_children_get_rightSplitStereo",
+            "description": "Get the right split stereo pan parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "rightSplitStereo": {
+                        "type": "string",
+                        "description": "device parameter ID for right split stereo pan",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_children_get_songTempo",
+            "description": "Get the song tempo parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "songTempo": {
+                        "type": "string",
+                        "description": "device parameter ID for song tempo (master track only)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_children_get_trackActivator",
+            "description": "Get the track activator parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "trackActivator": {
+                        "type": "string",
+                        "description": "device parameter ID for track activator",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_children_get_volume",
+            "description": "Get the volume parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "volume": {
+                        "type": "string",
+                        "description": "device parameter ID for volume",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_properties_get_crossfadeAssign",
+            "description": "Get the crossfade assignment.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "crossfadeAssign": {
+                        "type": "integer",
+                        "description": "crossfade assignment (0=A, 1=none, 2=B, not in master track)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_properties_get_panningMode",
+            "description": "Get the panning mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    }
+                },
+                "required": [
+                    "mixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "panningMode": {
+                        "type": "integer",
+                        "description": "track mixer pan mode (0=Stereo, 1=Split Stereo)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_properties_set_crossfadeAssign",
+            "description": "Set the crossfade assignment.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    },
+                    "crossfadeAssign": {
+                        "type": "integer",
+                        "description": "crossfade assignment (0=A, 1=none, 2=B)"
+                    }
+                },
+                "required": [
+                    "mixerDevice",
+                    "crossfadeAssign"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "mixerDevice_properties_set_panningMode",
+            "description": "Set the panning mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the mixer device"
+                    },
+                    "panningMode": {
+                        "type": "integer",
+                        "description": "track mixer pan mode (0=Stereo, 1=Split Stereo)"
+                    }
+                },
+                "required": [
+                    "mixerDevice",
+                    "panningMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

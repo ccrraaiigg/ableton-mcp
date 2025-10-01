@@ -1,0 +1,190 @@
+{
+    "tools": [
+        {
+            "name": "drumChain_properties_get_inNote",
+            "description": "Get the MIDI note that will trigger this chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumChain": {
+                        "type": "string",
+                        "description": "iD of the drum chain"
+                    }
+                },
+                "required": [
+                    "drumChain"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "inNote": {
+                        "type": "integer",
+                        "description": "mIDI note that triggers this chain (-1 for All Notes)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumChain_properties_get_outNote",
+            "description": "Get the MIDI note sent to the devices in the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumChain": {
+                        "type": "string",
+                        "description": "iD of the drum chain"
+                    }
+                },
+                "required": [
+                    "drumChain"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "outNote": {
+                        "type": "integer",
+                        "description": "mIDI note sent to devices in the chain",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumChain_properties_get_chokeGroup",
+            "description": "Get the chain's choke group.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumChain": {
+                        "type": "string",
+                        "description": "iD of the drum chain"
+                    }
+                },
+                "required": [
+                    "drumChain"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "chokeGroup": {
+                        "type": "integer",
+                        "description": "choke group of the chain",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumChain_properties_set_inNote",
+            "description": "Set the MIDI note that will trigger this chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumChain": {
+                        "type": "string",
+                        "description": "iD of the drum chain"
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "mIDI note value (-1 for All Notes)"
+                    }
+                },
+                "required": [
+                    "drumChain",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether in note was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumChain_properties_set_outNote",
+            "description": "Set the MIDI note sent to the devices in the chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumChain": {
+                        "type": "string",
+                        "description": "iD of the drum chain"
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "mIDI note value"
+                    }
+                },
+                "required": [
+                    "drumChain",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether out note was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumChain_properties_set_chokeGroup",
+            "description": "Set the chain's choke group.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumChain": {
+                        "type": "string",
+                        "description": "iD of the drum chain"
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "choke group value"
+                    }
+                },
+                "required": [
+                    "drumChain",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether choke group was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumChain_functions_summary",
+            "description": "Get a summary of the DrumChain class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a Drum Rack device chain in Live."
+                    }
+                }
+            }
+        }
+    ]
+}

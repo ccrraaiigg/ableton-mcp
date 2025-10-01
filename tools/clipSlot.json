@@ -1,0 +1,580 @@
+{
+    "tools": [
+        {
+            "name": "clipSlot_functions_summary",
+            "description": "Get a summary of the ClipSlot class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an entry in Live's Session View matrix. Canonical path: live_set tracks N clip_slots M"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_children_get_clip",
+            "description": "Get the clip contained in this clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "clip ID, returns id 0 if slot is empty",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_color",
+            "description": "Get the color of the first clip in the Group Track if the clip slot is a Group Track slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "color": {
+                        "type": "integer",
+                        "description": "color of the first clip in the Group Track if this is a Group Track slot",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_colorIndex",
+            "description": "Get the color index of the first clip in the Group Track if the clip slot is a Group Track slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "colorIndex": {
+                        "type": "integer",
+                        "description": "color index of the first clip in the Group Track if this is a Group Track slot",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_controlsOtherClips",
+            "description": "Get whether this Group Track slot has non-deactivated clips in the tracks within its group.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlsOtherClips": {
+                        "type": "boolean",
+                        "description": "whether this Group Track slot has non-deactivated clips in the tracks within its group",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_hasClip",
+            "description": "Get whether a clip exists in this clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasClip": {
+                        "type": "boolean",
+                        "description": "whether a clip exists in this clip slot",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_hasStopButton",
+            "description": "Get whether this clip stops its track or tracks within a Group Track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasStopButton": {
+                        "type": "boolean",
+                        "description": "whether this clip stops its track or tracks within a Group Track",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_isGroupSlot",
+            "description": "Get whether this clip slot is a Group Track slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isGroupSlot": {
+                        "type": "boolean",
+                        "description": "whether this clip slot is a Group Track slot",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_isPlaying",
+            "description": "Get whether the clip slot is playing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isPlaying": {
+                        "type": "boolean",
+                        "description": "whether the clip slot is playing (playing_status != 0)",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_isRecording",
+            "description": "Get whether the clip slot is recording.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isRecording": {
+                        "type": "boolean",
+                        "description": "whether the clip slot is recording (playing_status == 2)",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_isTriggered",
+            "description": "Get whether the clip slot button or contained clip button is blinking.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isTriggered": {
+                        "type": "boolean",
+                        "description": "whether the clip slot button or contained clip button is blinking",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_playingStatus",
+            "description": "Get the playing status of clips in tracks within a Group Track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "playingStatus": {
+                        "type": "integer",
+                        "description": "playing status (0=stopped/empty, 1=playing, 2=playing/recording, 0 if not Group Track)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_get_willRecordOnStart",
+            "description": "Get whether the clip slot will record on start.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "willRecordOnStart": {
+                        "type": "boolean",
+                        "description": "whether the clip slot will record on start",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_properties_set_hasStopButton",
+            "description": "Set whether this clip stops its track or tracks within a Group Track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    },
+                    "hasStopButton": {
+                        "type": "boolean",
+                        "description": "whether this clip should stop its track or tracks within a Group Track"
+                    }
+                },
+                "required": [
+                    "clipSlot",
+                    "hasStopButton"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether stop button state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_functions_createAudioClip",
+            "description": "Create an audio clip from a file path in this clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "absolute path to a valid audio file in a supported format"
+                    }
+                },
+                "required": [
+                    "clipSlot",
+                    "path"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether audio clip was created successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_functions_createClip",
+            "description": "Create a MIDI clip with specified length in this empty clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    },
+                    "length": {
+                        "type": "number",
+                        "description": "length in beats, must be greater than 0.0"
+                    }
+                },
+                "required": [
+                    "clipSlot",
+                    "length"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether MIDI clip was created successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_functions_deleteClip",
+            "description": "Delete the contained clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether clip was deleted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_functions_duplicateClipTo",
+            "description": "Duplicate this slot's clip to the given target clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the source clip slot"
+                    },
+                    "targetClipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the target clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot",
+                    "targetClipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether clip was duplicated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_functions_fire",
+            "description": "Fire the clip, trigger the Stop Button, or start recording if slot is empty and track is armed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    },
+                    "recordLength": {
+                        "type": "number",
+                        "description": "optional recording length in beats"
+                    },
+                    "launchQuantization": {
+                        "type": "integer",
+                        "description": "optional launch quantization override"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether clip slot was fired successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_functions_setFireButtonState",
+            "description": "Set the fire button state of the clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    },
+                    "state": {
+                        "type": "boolean",
+                        "description": "fire button state (true simulates pressing, false releases)"
+                    }
+                },
+                "required": [
+                    "clipSlot",
+                    "state"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether fire button state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipSlot_functions_stop",
+            "description": "Stop playing or recording clips in this track or the tracks within the group.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlot": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip slot"
+                    }
+                },
+                "required": [
+                    "clipSlot"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether clips were stopped successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,334 @@
+{
+    "tools": [
+        {
+            "name": "controlSurface_properties_get_padLayout",
+            "description": "Get the active pad layout.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    }
+                },
+                "required": [
+                    "controlSurface"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "padLayout": {
+                        "type": "string",
+                        "description": "active pad layout (e.g., note.melodic.64_notes, note.drums.64_pads, session)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_summary",
+            "description": "Get a summary of the ControlSurface class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "A ControlSurface can be reached either directly by the root path `control_surfaces N` or by getting a list of active control surface IDs, via calling *get control_surfaces* on an Application object. A control surface can be thought of as a software layer between the Live API and, in this case, Max for Live. Individual controls on the surface are represented by objects that can be grabbed and released via Max for Live, to obtain and give back exclusive control."
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_getControl",
+            "description": "Return the control with the given name.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "name of the control to retrieve"
+                    }
+                },
+                "required": [
+                    "controlSurface",
+                    "name"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "control": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control"
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_getControlNames",
+            "description": "Return the list of all control names.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    }
+                },
+                "required": [
+                    "controlSurface"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlNames": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of all control names"
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_grabControl",
+            "description": "Take ownership of the control. This releases all standard functionality of the control, so that it can be used exclusively via Max for Live.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    },
+                    "control": {
+                        "type": "string",
+                        "description": "control to grab"
+                    }
+                },
+                "required": [
+                    "controlSurface",
+                    "control"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the control was grabbed successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_grabMidi",
+            "description": "Forward MIDI messages received by the control surface script from the control surface to Max for Live.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    }
+                },
+                "required": [
+                    "controlSurface"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether MIDI forwarding was enabled successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_registerMidiControl",
+            "description": "(MaxForLive control surface only) Register a MIDI control defined by status and number. Supported status codes are 144 (note on), 176 (continuous control) and 224 (pitchbend). Returns the LOM ID associated with the control.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "name of the MIDI control"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "MIDI status code (144=note on, 176=continuous control, 224=pitchbend)"
+                    },
+                    "number": {
+                        "type": "integer",
+                        "description": "MIDI control number"
+                    }
+                },
+                "required": [
+                    "controlSurface",
+                    "name",
+                    "status",
+                    "number"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "lom": {
+                        "type": "string",
+                        "description": "LOM ID associated with the control"
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_releaseControl",
+            "description": "Re-establish the standard functionality for the control.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    },
+                    "control": {
+                        "type": "string",
+                        "description": "control to release"
+                    }
+                },
+                "required": [
+                    "controlSurface",
+                    "control"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the control was released successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_releaseMidi",
+            "description": "Stop forwarding MIDI messages received from the control surface to Max for Live.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    }
+                },
+                "required": [
+                    "controlSurface"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether MIDI forwarding was disabled successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_sendMidi",
+            "description": "Send MIDI message to the control surface.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    },
+                    "midiMessage": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "MIDI message as list of integers"
+                    }
+                },
+                "required": [
+                    "controlSurface",
+                    "midiMessage"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the MIDI message was sent successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "controlSurface_functions_sendReceiveSysex",
+            "description": "Send sysex message to the control surface and await a response. If the message is followed by the word timeout and a float, this sets the response timeout accordingly. The default timeout value is 0.2.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "controlSurface": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the control surface"
+                    },
+                    "sysexMessage": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "sysex message as list of integers"
+                    },
+                    "timeout": {
+                        "type": "number",
+                        "description": "response timeout in seconds (default: 0.2)"
+                    }
+                },
+                "required": [
+                    "controlSurface",
+                    "sysexMessage"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "sysex response message"
+                    },
+                    "timedOut": {
+                        "type": "boolean",
+                        "description": "whether the response timed out"
+                    }
+                }
+            }
+        }
+    ]
+}

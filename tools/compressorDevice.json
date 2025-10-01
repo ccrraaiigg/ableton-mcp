@@ -1,0 +1,261 @@
+{
+    "tools": [
+        {
+            "name": "compressorDevice_functions_summary",
+            "description": "Get a summary of the CompressorDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "compressorDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the compressor device"
+                    }
+                },
+                "required": [
+                    "compressorDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a Compressor device in Live. A CompressorDevice shares all of the children, functions and properties of a Device; listed below are the members unique to it."
+                    }
+                }
+            }
+        },
+        {
+            "name": "compressorDevice_properties_get_availableInputRoutingChannels",
+            "description": "Get the list of available source channels for the compressor's input routing in the sidechain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "compressorDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the compressor device"
+                    }
+                },
+                "required": [
+                    "compressorDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "availableInputRoutingChannels": {
+                        "type": "object",
+                        "properties": {
+                            "available_input_routing_channels": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "display_name": {
+                                            "type": "string"
+                                        },
+                                        "identifier": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "dictionary containing list of available input routing channels",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "compressorDevice_properties_get_availableInputRoutingTypes",
+            "description": "Get the list of available source types for the compressor's input routing in the sidechain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "compressorDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the compressor device"
+                    }
+                },
+                "required": [
+                    "compressorDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "availableInputRoutingTypes": {
+                        "type": "object",
+                        "properties": {
+                            "available_input_routing_types": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "display_name": {
+                                            "type": "string"
+                                        },
+                                        "identifier": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "dictionary containing list of available input routing types",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "compressorDevice_properties_get_inputRoutingChannel",
+            "description": "Get the currently selected source channel for the compressor's input routing in the sidechain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "compressorDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the compressor device"
+                    }
+                },
+                "required": [
+                    "compressorDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "inputRoutingChannel": {
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "currently selected source channel for sidechain input routing",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "compressorDevice_properties_get_inputRoutingType",
+            "description": "Get the currently selected source type for the compressor's input routing in the sidechain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "compressorDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the compressor device"
+                    }
+                },
+                "required": [
+                    "compressorDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "inputRoutingType": {
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "currently selected source type for sidechain input routing",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "compressorDevice_properties_set_inputRoutingChannel",
+            "description": "Set the source channel for the compressor's input routing in the sidechain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "compressorDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the compressor device"
+                    },
+                    "inputRoutingChannel": {
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "source channel configuration (must be from available_input_routing_channels)"
+                    }
+                },
+                "required": [
+                    "compressorDevice",
+                    "inputRoutingChannel"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "compressorDevice_properties_set_inputRoutingType",
+            "description": "Set the source type for the compressor's input routing in the sidechain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "compressorDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the compressor device"
+                    },
+                    "inputRoutingType": {
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "source type configuration (must be from available_input_routing_types)"
+                    }
+                },
+                "required": [
+                    "compressorDevice",
+                    "inputRoutingType"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

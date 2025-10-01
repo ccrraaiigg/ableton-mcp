@@ -1,0 +1,2103 @@
+{
+    "tools": [
+        {
+            "name": "track_functions_summary",
+            "description": "Get a summary of the Track class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a track in Live. It can either be an audio track, a MIDI track, a return track or the master track. The master track and at least one Audio or MIDI track will be always present. Return tracks are optional. Canonical path: live_set tracks N"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_children_get_takeLanes",
+            "description": "Get the list of this track's take lanes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "takeLanes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of take lane IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_children_get_clipSlots",
+            "description": "Get the list of this track's clip slots.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipSlots": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of clip slot IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_children_get_arrangementClips",
+            "description": "Get the list of this track's Arrangement View clip IDs.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "arrangementClips": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of arrangement clip IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_children_get_devices",
+            "description": "Get the list of devices in this track, including mixer device.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "devices": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of device IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_children_get_groupTrack",
+            "description": "Get the Group Track, if the Track is grouped.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "groupTrack": {
+                        "type": "string",
+                        "description": "group track ID or id 0 if not grouped",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_children_get_mixerDevice",
+            "description": "Get the mixer device of the track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mixerDevice": {
+                        "type": "string",
+                        "description": "mixer device ID",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_children_get_view",
+            "description": "Get the view object for the track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "view": {
+                        "type": "string",
+                        "description": "track view ID",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_arm",
+            "description": "Get whether track is armed for recording.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "arm": {
+                        "type": "boolean",
+                        "description": "whether track is armed for recording",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_availableInputRoutingChannels",
+            "description": "Get list of available source channels for input routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "availableInputRoutingChannels": {
+                        "type": "object",
+                        "description": "list of available source channels for input routing",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_availableInputRoutingTypes",
+            "description": "Get list of available source types for input routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "availableInputRoutingTypes": {
+                        "type": "object",
+                        "description": "list of available source types for input routing",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_availableOutputRoutingChannels",
+            "description": "Get list of available target channels for output routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "availableOutputRoutingChannels": {
+                        "type": "object",
+                        "description": "list of available target channels for output routing",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_availableOutputRoutingTypes",
+            "description": "Get list of available target types for output routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "availableOutputRoutingTypes": {
+                        "type": "object",
+                        "description": "list of available target types for output routing",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_backToArranger",
+            "description": "Get state of the Single Track Back to Arrangement button.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "backToArranger": {
+                        "type": "boolean",
+                        "description": "state of the Single Track Back to Arrangement button",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_canBeArmed",
+            "description": "Get whether the track can be armed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canBeArmed": {
+                        "type": "boolean",
+                        "description": "whether the track can be armed (0 for return/master tracks)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_canBeFrozen",
+            "description": "Get whether the track can be frozen.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canBeFrozen": {
+                        "type": "boolean",
+                        "description": "whether the track can be frozen",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_canShowChains",
+            "description": "Get whether the track contains an Instrument Rack device that can show chains in Session View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canShowChains": {
+                        "type": "boolean",
+                        "description": "whether the track can show chains in Session View",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_color",
+            "description": "Get the RGB value of the track's color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "color": {
+                        "type": "integer",
+                        "description": "rGB value of the track's color",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_colorIndex",
+            "description": "Get the color index of the track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "colorIndex": {
+                        "type": "integer",
+                        "description": "color index of the track",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_firedSlotIndex",
+            "description": "Get the index of the blinking clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "firedSlotIndex": {
+                        "type": "integer",
+                        "description": "index of the blinking clip slot (-1 = no slot fired, -2 = Clip Stop Button fired)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_foldState",
+            "description": "Get the state of folding for group tracks.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "foldState": {
+                        "type": "integer",
+                        "description": "fold state for group tracks (0 = visible, 1 = hidden)",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_hasAudioInput",
+            "description": "Get whether the track has audio input.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasAudioInput": {
+                        "type": "boolean",
+                        "description": "whether the track has audio input (1 for audio tracks)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_hasAudioOutput",
+            "description": "Get whether the track has audio output.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasAudioOutput": {
+                        "type": "boolean",
+                        "description": "whether the track has audio output (1 for audio tracks and MIDI tracks with instruments)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_hasMidiInput",
+            "description": "Get whether the track has MIDI input.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasMidiInput": {
+                        "type": "boolean",
+                        "description": "whether the track has MIDI input (1 for MIDI tracks)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_hasMidiOutput",
+            "description": "Get whether the track has MIDI output.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasMidiOutput": {
+                        "type": "boolean",
+                        "description": "whether the track has MIDI output (1 for MIDI tracks with no instruments and no audio effects)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_implicitArm",
+            "description": "Get the implicit arm state, used by Push.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "implicitArm": {
+                        "type": "boolean",
+                        "description": "implicit arm state, used by Push",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_inputMeterLeft",
+            "description": "Get smoothed momentary peak value of the left channel input meter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "inputMeterLeft": {
+                        "type": "number",
+                        "description": "smoothed momentary peak value of left channel input meter",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_inputMeterLevel",
+            "description": "Get hold peak value of input meters.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "inputMeterLevel": {
+                        "type": "number",
+                        "description": "hold peak value of input meters",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_inputMeterRight",
+            "description": "Get smoothed momentary peak value of the right channel input meter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "inputMeterRight": {
+                        "type": "number",
+                        "description": "smoothed momentary peak value of right channel input meter",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_inputRoutingChannel",
+            "description": "Get currently selected source channel for input routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "inputRoutingChannel": {
+                        "type": "object",
+                        "description": "currently selected source channel for input routing",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_inputRoutingType",
+            "description": "Get currently selected source type for input routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "inputRoutingType": {
+                        "type": "object",
+                        "description": "currently selected source type for input routing",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_isFoldable",
+            "description": "Get whether the track can be folded.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isFoldable": {
+                        "type": "boolean",
+                        "description": "whether the track can be folded (1 = Group Tracks)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_isFrozen",
+            "description": "Get whether the track is currently frozen.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isFrozen": {
+                        "type": "boolean",
+                        "description": "whether the track is currently frozen",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_isGrouped",
+            "description": "Get whether the track is contained within a Group Track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isGrouped": {
+                        "type": "boolean",
+                        "description": "whether the track is contained within a Group Track",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_isPartOfSelection",
+            "description": "Get whether the track is part of the current selection.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isPartOfSelection": {
+                        "type": "boolean",
+                        "description": "whether the track is part of the current selection",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_isShowingChains",
+            "description": "Get whether a track with an Instrument Rack is showing its chains in Session View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isShowingChains": {
+                        "type": "boolean",
+                        "description": "whether track is showing its chains in Session View",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_isVisible",
+            "description": "Get whether the track is visible.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isVisible": {
+                        "type": "boolean",
+                        "description": "whether the track is visible (0 = hidden in a folded Group Track)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_mute",
+            "description": "Get mute state of the track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mute": {
+                        "type": "boolean",
+                        "description": "mute state of the track",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_mutedViaSolo",
+            "description": "Get whether the track is muted due to Solo being active on another track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mutedViaSolo": {
+                        "type": "boolean",
+                        "description": "whether the track is muted due to Solo being active on another track",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_name",
+            "description": "Get name of the track as shown in the track header.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the track as shown in the track header",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_outputMeterLeft",
+            "description": "Get smoothed momentary peak value of the left channel output meter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "outputMeterLeft": {
+                        "type": "number",
+                        "description": "smoothed momentary peak value of left channel output meter",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_outputMeterLevel",
+            "description": "Get hold peak value of output meters.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "outputMeterLevel": {
+                        "type": "number",
+                        "description": "hold peak value of output meters",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_outputMeterRight",
+            "description": "Get smoothed momentary peak value of the right channel output meter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "outputMeterRight": {
+                        "type": "number",
+                        "description": "smoothed momentary peak value of right channel output meter",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_outputRoutingChannel",
+            "description": "Get currently selected target channel for output routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "outputRoutingChannel": {
+                        "type": "object",
+                        "description": "currently selected target channel for output routing",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_outputRoutingType",
+            "description": "Get currently selected target type for output routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "outputRoutingType": {
+                        "type": "object",
+                        "description": "currently selected target type for output routing",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_performanceImpact",
+            "description": "Get the performance impact of this track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "performanceImpact": {
+                        "type": "number",
+                        "description": "performance impact of this track",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_playingSlotIndex",
+            "description": "Get index of the currently playing clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "playingSlotIndex": {
+                        "type": "integer",
+                        "description": "index of the currently playing clip slot (-2 = Clip Stop slot fired, -1 = Arrangement recording with no Session clip playing)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_get_solo",
+            "description": "Get solo state of the track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "solo": {
+                        "type": "boolean",
+                        "description": "solo state of the track",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_arm",
+            "description": "Set whether track is armed for recording.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "arm": {
+                        "type": "boolean",
+                        "description": "whether to arm track for recording"
+                    }
+                },
+                "required": [
+                    "track",
+                    "arm"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether arm state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_backToArranger",
+            "description": "Set state of the Single Track Back to Arrangement button.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "backToArranger": {
+                        "type": "boolean",
+                        "description": "state of the Single Track Back to Arrangement button"
+                    }
+                },
+                "required": [
+                    "track",
+                    "backToArranger"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether back to arranger state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_color",
+            "description": "Set the RGB value of the track's color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "color": {
+                        "type": "integer",
+                        "description": "rGB value of the track's color"
+                    }
+                },
+                "required": [
+                    "track",
+                    "color"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether color was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_colorIndex",
+            "description": "Set the color index of the track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "colorIndex": {
+                        "type": "integer",
+                        "description": "color index of the track"
+                    }
+                },
+                "required": [
+                    "track",
+                    "colorIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether color index was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_foldState",
+            "description": "Set the state of folding for group tracks.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "foldState": {
+                        "type": "integer",
+                        "description": "fold state for group tracks (0 = visible, 1 = hidden)"
+                    }
+                },
+                "required": [
+                    "track",
+                    "foldState"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether fold state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_implicitArm",
+            "description": "Set the implicit arm state, used by Push.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "implicitArm": {
+                        "type": "boolean",
+                        "description": "implicit arm state, used by Push"
+                    }
+                },
+                "required": [
+                    "track",
+                    "implicitArm"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether implicit arm state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_inputRoutingChannel",
+            "description": "Set currently selected source channel for input routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "inputRoutingChannel": {
+                        "type": "object",
+                        "description": "source channel for input routing"
+                    }
+                },
+                "required": [
+                    "track",
+                    "inputRoutingChannel"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether input routing channel was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_inputRoutingType",
+            "description": "Set currently selected source type for input routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "inputRoutingType": {
+                        "type": "object",
+                        "description": "source type for input routing"
+                    }
+                },
+                "required": [
+                    "track",
+                    "inputRoutingType"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether input routing type was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_isFrozen",
+            "description": "Set whether the track is frozen.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "isFrozen": {
+                        "type": "boolean",
+                        "description": "whether to freeze the track"
+                    }
+                },
+                "required": [
+                    "track",
+                    "isFrozen"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether freeze state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_isPartOfSelection",
+            "description": "Set whether the track is part of the current selection.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "isPartOfSelection": {
+                        "type": "boolean",
+                        "description": "whether the track should be part of the current selection"
+                    }
+                },
+                "required": [
+                    "track",
+                    "isPartOfSelection"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether selection state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_isShowingChains",
+            "description": "Set whether a track with an Instrument Rack is showing its chains in Session View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "isShowingChains": {
+                        "type": "boolean",
+                        "description": "whether track should show its chains in Session View"
+                    }
+                },
+                "required": [
+                    "track",
+                    "isShowingChains"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether showing chains state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_mute",
+            "description": "Set mute state of the track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "mute": {
+                        "type": "boolean",
+                        "description": "mute state of the track"
+                    }
+                },
+                "required": [
+                    "track",
+                    "mute"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether mute state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_name",
+            "description": "Set name of the track as shown in the track header.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "name of the track as shown in the track header"
+                    }
+                },
+                "required": [
+                    "track",
+                    "name"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether name was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_outputRoutingChannel",
+            "description": "Set currently selected target channel for output routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "outputRoutingChannel": {
+                        "type": "object",
+                        "description": "target channel for output routing"
+                    }
+                },
+                "required": [
+                    "track",
+                    "outputRoutingChannel"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether output routing channel was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_outputRoutingType",
+            "description": "Set currently selected target type for output routing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "outputRoutingType": {
+                        "type": "object",
+                        "description": "target type for output routing"
+                    }
+                },
+                "required": [
+                    "track",
+                    "outputRoutingType"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether output routing type was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_properties_set_solo",
+            "description": "Set solo state of the track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "solo": {
+                        "type": "boolean",
+                        "description": "solo state of the track"
+                    }
+                },
+                "required": [
+                    "track",
+                    "solo"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether solo state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_createAudioClip",
+            "description": "Create an audio clip referencing a file in the arrangement view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "filePath": {
+                        "type": "string",
+                        "description": "path to the audio file"
+                    },
+                    "position": {
+                        "type": "number",
+                        "description": "position in the arrangement view"
+                    }
+                },
+                "required": [
+                    "track",
+                    "filePath",
+                    "position"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "ID of the created audio clip"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_createMidiClip",
+            "description": "Create an empty MIDI clip in the arrangement.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "startTime": {
+                        "type": "number",
+                        "description": "start time of the clip"
+                    },
+                    "length": {
+                        "type": "number",
+                        "description": "length of the clip"
+                    }
+                },
+                "required": [
+                    "track",
+                    "startTime",
+                    "length"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "ID of the created MIDI clip"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_createTakeLane",
+            "description": "Create a take lane for this track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "takeLane": {
+                        "type": "string",
+                        "description": "ID of the created take lane"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_deleteClip",
+            "description": "Delete the given clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "clip": {
+                        "type": "string",
+                        "description": "ID of the clip to delete"
+                    }
+                },
+                "required": [
+                    "track",
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether clip was deleted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_deleteDevice",
+            "description": "Delete the device at the given index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "index": {
+                        "type": "integer",
+                        "description": "index of the device to delete"
+                    }
+                },
+                "required": [
+                    "track",
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether device was deleted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_duplicateClipSlot",
+            "description": "Duplicate a clip slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "index": {
+                        "type": "integer",
+                        "description": "index of the clip slot to duplicate"
+                    }
+                },
+                "required": [
+                    "track",
+                    "index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether clip slot was duplicated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_duplicateClipToArrangement",
+            "description": "Duplicate a clip to the Arrangement view at a specified time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "clip": {
+                        "type": "string",
+                        "description": "ID of the clip to duplicate"
+                    },
+                    "destinationTime": {
+                        "type": "number",
+                        "description": "destination time in the arrangement view"
+                    }
+                },
+                "required": [
+                    "track",
+                    "clip",
+                    "destinationTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "ID of the duplicated clip"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_insertDevice",
+            "description": "Attempt to insert a device into the track's device chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "deviceName": {
+                        "type": "string",
+                        "description": "name of the device to insert"
+                    },
+                    "targetIndex": {
+                        "type": "integer",
+                        "description": "target index for insertion (optional)"
+                    }
+                },
+                "required": [
+                    "track",
+                    "deviceName"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether device was inserted successfully"
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "ID of the inserted device"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_jumpInRunningSessionClip",
+            "description": "Modify the playback position in a running Session clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    },
+                    "beats": {
+                        "type": "number",
+                        "description": "number of beats to jump by"
+                    }
+                },
+                "required": [
+                    "track",
+                    "beats"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether jump was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "track_functions_stopAllClips",
+            "description": "Stop all playing and fired clips in this track.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "track": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the track"
+                    }
+                },
+                "required": [
+                    "track"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether all clips were stopped successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

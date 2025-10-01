@@ -1,0 +1,86 @@
+{
+    "tools": [
+        {
+            "name": "drumCellDevice_functions_summary",
+            "description": "Get a summary of the DrumCellDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumCellDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drum cell device"
+                    }
+                },
+                "required": [
+                    "drumCellDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an instance of a Drum Sampler device in Live. A DrumCell has all the properties, functions and children of a Device. Listed below are members unique to DrumCell Device."
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumCellDevice_properties_get_gain",
+            "description": "Get the sample gain as normalized value.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumCellDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drum cell device"
+                    }
+                },
+                "required": [
+                    "drumCellDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "gain": {
+                        "type": "number",
+                        "description": "sample gain as normalized value",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumCellDevice_properties_set_gain",
+            "description": "Set the sample gain as normalized value.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumCellDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drum cell device"
+                    },
+                    "gain": {
+                        "type": "number",
+                        "description": "new sample gain as normalized value"
+                    }
+                },
+                "required": [
+                    "drumCellDevice",
+                    "gain"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

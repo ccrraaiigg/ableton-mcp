@@ -1,0 +1,242 @@
+{
+    "tools": [
+        {
+            "name": "drumPad_children_get_chains",
+            "description": "Get all chains in the drum pad.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPad": {
+                        "type": "string",
+                        "description": "iD of the drum pad"
+                    }
+                },
+                "required": [
+                    "drumPad"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "chains": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of chain IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumPad_properties_get_mute",
+            "description": "Get whether the drum pad is muted.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPad": {
+                        "type": "string",
+                        "description": "iD of the drum pad"
+                    }
+                },
+                "required": [
+                    "drumPad"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "mute": {
+                        "type": "boolean",
+                        "description": "whether the drum pad is muted (1 = muted)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumPad_properties_get_name",
+            "description": "Get the name of the drum pad.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPad": {
+                        "type": "string",
+                        "description": "iD of the drum pad"
+                    }
+                },
+                "required": [
+                    "drumPad"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the drum pad",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumPad_properties_get_note",
+            "description": "Get the MIDI note of the drum pad.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPad": {
+                        "type": "string",
+                        "description": "iD of the drum pad"
+                    }
+                },
+                "required": [
+                    "drumPad"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "note": {
+                        "type": "integer",
+                        "description": "mIDI note of the drum pad",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumPad_properties_get_solo",
+            "description": "Get whether the drum pad is soloed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPad": {
+                        "type": "string",
+                        "description": "iD of the drum pad"
+                    }
+                },
+                "required": [
+                    "drumPad"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "solo": {
+                        "type": "boolean",
+                        "description": "whether the drum pad is soloed (1 = soloed, Solo switch on)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumPad_properties_set_mute",
+            "description": "Set whether the drum pad is muted.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPad": {
+                        "type": "string",
+                        "description": "iD of the drum pad"
+                    },
+                    "value": {
+                        "type": "boolean",
+                        "description": "mute setting (1 = muted)"
+                    }
+                },
+                "required": [
+                    "drumPad",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether mute was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumPad_properties_set_solo",
+            "description": "Set whether the drum pad is soloed.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPad": {
+                        "type": "string",
+                        "description": "iD of the drum pad"
+                    },
+                    "value": {
+                        "type": "boolean",
+                        "description": "solo setting (1 = soloed, does not automatically turn Solo off in other chains)"
+                    }
+                },
+                "required": [
+                    "drumPad",
+                    "value"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether solo was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumPad_functions_deleteAllChains",
+            "description": "Delete all chains in the drum pad.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPad": {
+                        "type": "string",
+                        "description": "iD of the drum pad"
+                    }
+                },
+                "required": [
+                    "drumPad"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether all chains were deleted successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "drumPad_functions_summary",
+            "description": "Get a summary of the DrumPad class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a Drum Rack pad in Live. Canonical path: live_set tracks N devices M drum_pads L"
+                    }
+                }
+            }
+        }
+    ]
+}

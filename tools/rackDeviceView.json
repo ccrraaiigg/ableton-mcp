@@ -1,0 +1,137 @@
+{
+    "tools": [
+        {
+            "name": "rackDeviceView_functions_summary",
+            "description": "Get a summary of the RackDevice.View class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDeviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device view"
+                    }
+                },
+                "required": [
+                    "rackDeviceView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "Represents the view aspects of a Rack Device. A RackDevice.View is a type of Device.View, meaning that it has all the properties that a Device.View has."
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDeviceView_children_get_selectedDrumPad",
+            "description": "Get the currently selected Drum Rack pad.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDeviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device view"
+                    }
+                },
+                "required": [
+                    "rackDeviceView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedDrumPad": {
+                        "type": "string",
+                        "description": "drum pad ID of the currently selected drum rack pad (only available for drum racks)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDeviceView_children_get_selectedChain",
+            "description": "Get the currently selected chain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDeviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device view"
+                    }
+                },
+                "required": [
+                    "rackDeviceView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedChain": {
+                        "type": "string",
+                        "description": "chain ID of the currently selected chain",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDeviceView_properties_get_drumPadsScrollPosition",
+            "description": "Get the lowest row of pads visible.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDeviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device view"
+                    }
+                },
+                "required": [
+                    "rackDeviceView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPadsScrollPosition": {
+                        "type": "integer",
+                        "description": "lowest row of pads visible, range 0-28 (only available for drum racks)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDeviceView_properties_get_isShowingChainDevices",
+            "description": "Get whether the devices in the currently selected chain are visible.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDeviceView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device view"
+                    }
+                },
+                "required": [
+                    "rackDeviceView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isShowingChainDevices": {
+                        "type": "boolean",
+                        "description": "whether the devices in the currently selected chain are visible",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        }
+    ]
+}

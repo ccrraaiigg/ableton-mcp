@@ -1,0 +1,2885 @@
+{
+    "tools": [
+        {
+            "name": "clip_functions_summary",
+            "description": "Get a summary of the Clip class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a clip in Live. It can be either an audio clip or a MIDI clip in the Arrangement or Session View, depending on the track / slot it lives in. Canonical paths: live_set tracks N clip_slots M clip (Session View) or live_set tracks N arrangement_clips M (Arrangement View)"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_children_get_view",
+            "description": "Get the clip view.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "view": {
+                        "type": "string",
+                        "description": "clip view ID",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_availableWarpModes",
+            "description": "Get available warp modes for this audio clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "availableWarpModes": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "list of available warp modes (audio clips only)",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_color",
+            "description": "Get the clip color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "color": {
+                        "type": "integer",
+                        "description": "clip color value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_colorIndex",
+            "description": "Get the clip color index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "colorIndex": {
+                        "type": "integer",
+                        "description": "clip color index value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_endMarker",
+            "description": "Get the clip end marker position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "endMarker": {
+                        "type": "number",
+                        "description": "end marker position in beats",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_endTime",
+            "description": "Get the clip end time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "endTime": {
+                        "type": "number",
+                        "description": "end time in beats",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_gain",
+            "description": "Get the clip gain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "gain": {
+                        "type": "number",
+                        "description": "gain value (audio clips only)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_gainDisplayString",
+            "description": "Get the clip gain display string.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "gainDisplayString": {
+                        "type": "string",
+                        "description": "gain display string (audio clips only)",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_filePath",
+            "description": "Get the audio file path.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "filePath": {
+                        "type": "string",
+                        "description": "file path (audio clips only)",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_groove",
+            "description": "Get the clip groove.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "groove": {
+                        "type": "string",
+                        "description": "groove ID",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_hasEnvelopes",
+            "description": "Get whether the clip has envelopes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasEnvelopes": {
+                        "type": "boolean",
+                        "description": "whether the clip has envelopes",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_hasGroove",
+            "description": "Get whether the clip has a groove applied.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasGroove": {
+                        "type": "boolean",
+                        "description": "whether the clip has a groove",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_isSessionClip",
+            "description": "Get whether this is a session clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isSessionClip": {
+                        "type": "boolean",
+                        "description": "whether this is a session clip",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_isArrangementClip",
+            "description": "Get whether this is an arrangement clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isArrangementClip": {
+                        "type": "boolean",
+                        "description": "whether this is an arrangement clip",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_isTakeLaneClip",
+            "description": "Get whether this is a take lane clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isTakeLaneClip": {
+                        "type": "boolean",
+                        "description": "whether this is a take lane clip",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_isAudioClip",
+            "description": "Get whether this is an audio clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isAudioClip": {
+                        "type": "boolean",
+                        "description": "whether this is an audio clip",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_isMidiClip",
+            "description": "Get whether this is a MIDI clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isMidiClip": {
+                        "type": "boolean",
+                        "description": "whether this is a MIDI clip",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_isOverdubbing",
+            "description": "Get whether the clip is overdubbing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isOverdubbing": {
+                        "type": "boolean",
+                        "description": "whether the clip is overdubbing",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_isPlaying",
+            "description": "Get whether the clip is playing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isPlaying": {
+                        "type": "boolean",
+                        "description": "whether the clip is playing",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_isRecording",
+            "description": "Get whether the clip is recording.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isRecording": {
+                        "type": "boolean",
+                        "description": "whether the clip is recording",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_isTriggered",
+            "description": "Get whether the clip is triggered.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isTriggered": {
+                        "type": "boolean",
+                        "description": "whether the clip is triggered",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_launchMode",
+            "description": "Get the clip launch mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "launchMode": {
+                        "type": "integer",
+                        "description": "launch mode value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_launchQuantization",
+            "description": "Get the clip launch quantization.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "launchQuantization": {
+                        "type": "integer",
+                        "description": "launch quantization value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_legato",
+            "description": "Get whether legato mode is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "legato": {
+                        "type": "boolean",
+                        "description": "whether legato is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_length",
+            "description": "Get the clip length.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "length": {
+                        "type": "number",
+                        "description": "clip length in beats",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_loopEnd",
+            "description": "Get the clip loop end position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "loopEnd": {
+                        "type": "number",
+                        "description": "loop end position in beats",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_loopJump",
+            "description": "Get the clip loop jump event.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "loopJump": {
+                        "type": "object",
+                        "description": "loop jump event",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_loopStart",
+            "description": "Get the clip loop start position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "loopStart": {
+                        "type": "number",
+                        "description": "loop start position in beats",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_looping",
+            "description": "Get whether the clip is looping.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "looping": {
+                        "type": "boolean",
+                        "description": "whether the clip is looping",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_muted",
+            "description": "Get whether the clip is muted.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "muted": {
+                        "type": "boolean",
+                        "description": "whether the clip is muted",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_name",
+            "description": "Get the clip name.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "clip name",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_notes",
+            "description": "Get the clip notes event.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "notes": {
+                        "type": "object",
+                        "description": "notes event (MIDI clips only)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_warpMarkers",
+            "description": "Get the clip warp markers.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "warpMarkers": {
+                        "type": "object",
+                        "description": "warp markers (audio clips only)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_pitchCoarse",
+            "description": "Get the clip coarse pitch adjustment.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "pitchCoarse": {
+                        "type": "integer",
+                        "description": "coarse pitch in semitones (audio clips only)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_pitchFine",
+            "description": "Get the clip fine pitch adjustment.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "pitchFine": {
+                        "type": "number",
+                        "description": "fine pitch in cents (audio clips only)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_playingPosition",
+            "description": "Get the clip playing position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "playingPosition": {
+                        "type": "number",
+                        "description": "playing position in beats",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_playingStatus",
+            "description": "Get the clip playing status event.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "playingStatus": {
+                        "type": "object",
+                        "description": "playing status event",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_position",
+            "description": "Get the clip position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "position": {
+                        "type": "number",
+                        "description": "position in beats",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_ramMode",
+            "description": "Get whether RAM mode is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "ramMode": {
+                        "type": "boolean",
+                        "description": "whether RAM mode is enabled",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_sampleLength",
+            "description": "Get the sample length.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sampleLength": {
+                        "type": "integer",
+                        "description": "sample length in frames",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_sampleRate",
+            "description": "Get the sample rate.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sampleRate": {
+                        "type": "number",
+                        "description": "sample rate in Hz",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_signatureDenominator",
+            "description": "Get the clip time signature denominator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "signatureDenominator": {
+                        "type": "integer",
+                        "description": "time signature denominator",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_signatureNumerator",
+            "description": "Get the clip time signature numerator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "signatureNumerator": {
+                        "type": "integer",
+                        "description": "time signature numerator",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_startMarker",
+            "description": "Get the clip start marker position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "startMarker": {
+                        "type": "number",
+                        "description": "start marker position in beats",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_startTime",
+            "description": "Get the clip start time.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "startTime": {
+                        "type": "number",
+                        "description": "start time in beats",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_velocityAmount",
+            "description": "Get the clip velocity amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "velocityAmount": {
+                        "type": "number",
+                        "description": "velocity amount value",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_warpMode",
+            "description": "Get the clip warp mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "warpMode": {
+                        "type": "integer",
+                        "description": "warp mode value (audio clips only)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_warping",
+            "description": "Get whether warping is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "warping": {
+                        "type": "boolean",
+                        "description": "whether warping is enabled (audio clips only)",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_get_willRecordOnStart",
+            "description": "Get whether the clip will record on start.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "willRecordOnStart": {
+                        "type": "boolean",
+                        "description": "whether the clip will record on start",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_color",
+            "description": "Set the clip color.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "color": {
+                        "type": "integer",
+                        "description": "clip color value"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "color"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the color was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_colorIndex",
+            "description": "Set the clip color index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "colorIndex": {
+                        "type": "integer",
+                        "description": "clip color index value"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "colorIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the color index was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_endMarker",
+            "description": "Set the clip end marker position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "endMarker": {
+                        "type": "number",
+                        "description": "end marker position in beats"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "endMarker"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the end marker was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_gain",
+            "description": "Set the clip gain.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "gain": {
+                        "type": "number",
+                        "description": "gain value"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "gain"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the gain was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_groove",
+            "description": "Set the clip groove.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "groove": {
+                        "type": "string",
+                        "description": "groove ID"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "groove"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the groove was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_launchMode",
+            "description": "Set the clip launch mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "launchMode": {
+                        "type": "integer",
+                        "description": "launch mode value"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "launchMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the launch mode was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_launchQuantization",
+            "description": "Set the clip launch quantization.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "launchQuantization": {
+                        "type": "integer",
+                        "description": "launch quantization value"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "launchQuantization"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the launch quantization was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_legato",
+            "description": "Set whether legato mode is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "legato": {
+                        "type": "boolean",
+                        "description": "whether legato is enabled"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "legato"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether legato was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_loopEnd",
+            "description": "Set the clip loop end position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "loopEnd": {
+                        "type": "number",
+                        "description": "loop end position in beats"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "loopEnd"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the loop end was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_loopStart",
+            "description": "Set the clip loop start position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "loopStart": {
+                        "type": "number",
+                        "description": "loop start position in beats"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "loopStart"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the loop start was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_looping",
+            "description": "Set whether the clip is looping.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "looping": {
+                        "type": "boolean",
+                        "description": "whether the clip is looping"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "looping"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether looping was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_muted",
+            "description": "Set whether the clip is muted.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "muted": {
+                        "type": "boolean",
+                        "description": "whether the clip is muted"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "muted"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether muted was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_name",
+            "description": "Set the clip name.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "clip name"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "name"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the name was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_pitchCoarse",
+            "description": "Set the clip coarse pitch adjustment.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "pitchCoarse": {
+                        "type": "integer",
+                        "description": "coarse pitch in semitones"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "pitchCoarse"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the coarse pitch was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_pitchFine",
+            "description": "Set the clip fine pitch adjustment.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "pitchFine": {
+                        "type": "number",
+                        "description": "fine pitch in cents"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "pitchFine"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the fine pitch was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_position",
+            "description": "Set the clip position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "position": {
+                        "type": "number",
+                        "description": "position in beats"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "position"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the position was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_ramMode",
+            "description": "Set whether RAM mode is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "ramMode": {
+                        "type": "boolean",
+                        "description": "whether RAM mode is enabled"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "ramMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether RAM mode was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_signatureDenominator",
+            "description": "Set the clip time signature denominator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "signatureDenominator": {
+                        "type": "integer",
+                        "description": "time signature denominator"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "signatureDenominator"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the signature denominator was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_signatureNumerator",
+            "description": "Set the clip time signature numerator.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "signatureNumerator": {
+                        "type": "integer",
+                        "description": "time signature numerator"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "signatureNumerator"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the signature numerator was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_startMarker",
+            "description": "Set the clip start marker position.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "startMarker": {
+                        "type": "number",
+                        "description": "start marker position in beats"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "startMarker"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the start marker was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_velocityAmount",
+            "description": "Set the clip velocity amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "velocityAmount": {
+                        "type": "number",
+                        "description": "velocity amount value"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "velocityAmount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the velocity amount was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_warpMode",
+            "description": "Set the clip warp mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "warpMode": {
+                        "type": "integer",
+                        "description": "warp mode value"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "warpMode"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the warp mode was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_properties_set_warping",
+            "description": "Set whether warping is enabled.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "warping": {
+                        "type": "boolean",
+                        "description": "whether warping is enabled"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "warping"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether warping was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_addNewNotes",
+            "description": "Add new notes to the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "notes": {
+                        "type": "object",
+                        "description": "dict containing notes list"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "notes"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether notes were added successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_addWarpMarker",
+            "description": "Add a warp marker to the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "beatTime": {
+                        "type": "number",
+                        "description": "beat time for the warp marker"
+                    },
+                    "sampleTime": {
+                        "type": "number",
+                        "description": "optional sample time"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "beatTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether warp marker was added successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_applyNoteModifications",
+            "description": "Apply note modifications to the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "notes": {
+                        "type": "object",
+                        "description": "dict containing notes list"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "notes"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether note modifications were applied successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_clearAllEnvelopes",
+            "description": "Clear all envelopes in the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether all envelopes were cleared successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_clearEnvelope",
+            "description": "Clear a specific envelope in the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "device parameter ID"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the envelope was cleared successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_crop",
+            "description": "Crop the clip to the current loop region.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the clip was cropped successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_deselectAllNotes",
+            "description": "Deselect all notes in the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether all notes were deselected successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_duplicateLoop",
+            "description": "Duplicate the current loop region.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the loop was duplicated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_duplicateNotesById",
+            "description": "Duplicate notes by their IDs.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "noteIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of note IDs to duplicate"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "noteIds"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether notes were duplicated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_duplicateRegion",
+            "description": "Duplicate a region of the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "regionStart": {
+                        "type": "number",
+                        "description": "region start position in beats"
+                    },
+                    "regionLength": {
+                        "type": "number",
+                        "description": "region length in beats"
+                    },
+                    "destinationTime": {
+                        "type": "number",
+                        "description": "destination time in beats"
+                    },
+                    "pitch": {
+                        "type": "integer",
+                        "description": "optional pitch for duplication"
+                    },
+                    "transpositionAmount": {
+                        "type": "integer",
+                        "description": "optional transposition amount in semitones"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "regionStart",
+                    "regionLength",
+                    "destinationTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the region was duplicated successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_fire",
+            "description": "Fire the clip to start playback.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the clip was fired successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_getAllNotesExtended",
+            "description": "Get all notes in the clip with extended information.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "returnList": {
+                        "type": "object",
+                        "description": "optional dict with return list"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "notes": {
+                        "type": "array",
+                        "description": "list of all notes with extended information"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_getNotesById",
+            "description": "Get notes by their IDs.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "noteIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of note IDs"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "noteIds"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "notes": {
+                        "type": "array",
+                        "description": "list of notes"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_getNotesExtended",
+            "description": "Get notes in a specific region with extended information.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "fromPitch": {
+                        "type": "integer",
+                        "description": "starting pitch"
+                    },
+                    "pitchSpan": {
+                        "type": "integer",
+                        "description": "pitch span"
+                    },
+                    "fromTime": {
+                        "type": "number",
+                        "description": "starting time in beats"
+                    },
+                    "timeSpan": {
+                        "type": "number",
+                        "description": "time span in beats"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "fromPitch",
+                    "pitchSpan",
+                    "fromTime",
+                    "timeSpan"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "notes": {
+                        "type": "array",
+                        "description": "list of notes with extended information"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_getSelectedNotesExtended",
+            "description": "Get selected notes with extended information.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "returnList": {
+                        "type": "object",
+                        "description": "optional dict with return list"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "notes": {
+                        "type": "array",
+                        "description": "list of selected notes with extended information"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_movePlayingPos",
+            "description": "Move the playing position by a specified amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "beats": {
+                        "type": "number",
+                        "description": "amount to move in beats"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "beats"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the playing position was moved successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_moveWarpMarker",
+            "description": "Move a warp marker by a specified distance.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "beatTime": {
+                        "type": "number",
+                        "description": "beat time of the warp marker"
+                    },
+                    "beatTimeDistance": {
+                        "type": "number",
+                        "description": "distance to move in beats"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "beatTime",
+                    "beatTimeDistance"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the warp marker was moved successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_quantize",
+            "description": "Quantize notes in the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "quantizationGrid": {
+                        "type": "integer",
+                        "description": "quantization grid value"
+                    },
+                    "amount": {
+                        "type": "number",
+                        "description": "quantization amount (0.0 to 1.0)"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "quantizationGrid",
+                    "amount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether notes were quantized successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_quantizePitch",
+            "description": "Quantize pitch of notes in the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "pitch": {
+                        "type": "integer",
+                        "description": "target pitch"
+                    },
+                    "quantizationGrid": {
+                        "type": "integer",
+                        "description": "quantization grid value"
+                    },
+                    "amount": {
+                        "type": "number",
+                        "description": "quantization amount (0.0 to 1.0)"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "pitch",
+                    "quantizationGrid",
+                    "amount"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether pitch was quantized successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_removeNotesById",
+            "description": "Remove notes by their IDs.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "noteIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of note IDs to remove"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "noteIds"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether notes were removed successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_removeNotesExtended",
+            "description": "Remove notes in a specific region.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "fromPitch": {
+                        "type": "integer",
+                        "description": "starting pitch"
+                    },
+                    "pitchSpan": {
+                        "type": "integer",
+                        "description": "pitch span"
+                    },
+                    "fromTime": {
+                        "type": "number",
+                        "description": "starting time in beats"
+                    },
+                    "timeSpan": {
+                        "type": "number",
+                        "description": "time span in beats"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "fromPitch",
+                    "pitchSpan",
+                    "fromTime",
+                    "timeSpan"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether notes were removed successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_removeWarpMarker",
+            "description": "Remove a warp marker from the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "beatTime": {
+                        "type": "number",
+                        "description": "beat time of the warp marker to remove"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "beatTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the warp marker was removed successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_scrub",
+            "description": "Scrub to a specific beat time in the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "beatTime": {
+                        "type": "number",
+                        "description": "beat time to scrub to"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "beatTime"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether scrub was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_selectAllNotes",
+            "description": "Select all notes in the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether all notes were selected successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_selectNotesById",
+            "description": "Select notes by their IDs.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "noteIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of note IDs to select"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "noteIds"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether notes were selected successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_setFireButtonState",
+            "description": "Set the fire button state.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    },
+                    "state": {
+                        "type": "boolean",
+                        "description": "fire button state"
+                    }
+                },
+                "required": [
+                    "clip",
+                    "state"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the fire button state was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_stop",
+            "description": "Stop the clip playback.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the clip was stopped successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clip_functions_stopScrub",
+            "description": "Stop scrubbing the clip.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clip": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip"
+                    }
+                },
+                "required": [
+                    "clip"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether scrub was stopped successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

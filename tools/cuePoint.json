@@ -1,0 +1,130 @@
+{
+    "tools": [
+        {
+            "name": "cuePoint_properties_get_name",
+            "description": "Get the name of the cue point.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "cuePoint": {
+                        "type": "string",
+                        "description": "ID of the cue point object"
+                    }
+                },
+                "required": [
+                    "cuePoint"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the cue point",
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "cuePoint_properties_set_name",
+            "description": "Set the name of the cue point.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "cuePoint": {
+                        "type": "string",
+                        "description": "ID of the cue point object"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "new name for the cue point"
+                    }
+                },
+                "required": [
+                    "cuePoint",
+                    "name"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the name was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "cuePoint_properties_get_time",
+            "description": "Get the arrangement position of the cue point marker in beats.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "cuePoint": {
+                        "type": "string",
+                        "description": "ID of the cue point object"
+                    }
+                },
+                "required": [
+                    "cuePoint"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "time": {
+                        "type": "number",
+                        "description": "arrangement position of the marker in beats",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "cuePoint_functions_jump",
+            "description": "Set current Arrangement playback position to marker, quantized if song is playing.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "cuePoint": {
+                        "type": "string",
+                        "description": "ID of the cue point object"
+                    }
+                },
+                "required": [
+                    "cuePoint"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the jump was executed successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "cuePoint_functions_summary",
+            "description": "Get a summary of the CuePoint class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "Represents a locator in the Arrangement View. Canonical path: live_set cue_points N"
+                    }
+                }
+            }
+        }
+    ]
+}

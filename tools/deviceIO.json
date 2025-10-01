@@ -1,0 +1,318 @@
+{
+    "tools": [
+        {
+            "name": "deviceIO_functions_summary",
+            "description": "Get a summary of the DeviceIO class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceIO": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device IO"
+                    }
+                },
+                "required": [
+                    "deviceIO"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an input or output bus of a Live device."
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceIO_properties_get_availableRoutingChannels",
+            "description": "Get the available channels for this input/output bus.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceIO": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device IO"
+                    }
+                },
+                "required": [
+                    "deviceIO"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "availableRoutingChannels": {
+                        "type": "object",
+                        "properties": {
+                            "available_routing_channels": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "display_name": {
+                                            "type": "string"
+                                        },
+                                        "identifier": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "available channels for this input/output bus",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceIO_properties_get_availableRoutingTypes",
+            "description": "Get the available types for this input/output bus.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceIO": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device IO"
+                    }
+                },
+                "required": [
+                    "deviceIO"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "availableRoutingTypes": {
+                        "type": "object",
+                        "properties": {
+                            "available_routing_types": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "display_name": {
+                                            "type": "string"
+                                        },
+                                        "identifier": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "available types for this input/output bus",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceIO_properties_get_defaultExternalRoutingChannelIsNone",
+            "description": "Get whether the default routing channel for External routing types is none.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceIO": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device IO"
+                    }
+                },
+                "required": [
+                    "deviceIO"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "defaultExternalRoutingChannelIsNone": {
+                        "type": "boolean",
+                        "description": "1 = the default routing channel for External routing types is none",
+                        "readOnly": false,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceIO_properties_get_routingChannel",
+            "description": "Get the current routing channel for this input/output bus.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceIO": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device IO"
+                    }
+                },
+                "required": [
+                    "deviceIO"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "routingChannel": {
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "current routing channel for this input/output bus",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceIO_properties_get_routingType",
+            "description": "Get the current routing type for this input/output bus.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceIO": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device IO"
+                    }
+                },
+                "required": [
+                    "deviceIO"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "routingType": {
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "current routing type for this input/output bus",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceIO_properties_set_defaultExternalRoutingChannelIsNone",
+            "description": "Set whether the default routing channel for External routing types is none.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceIO": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device IO"
+                    },
+                    "defaultExternalRoutingChannelIsNone": {
+                        "type": "boolean",
+                        "description": "whether the default routing channel for External routing types is none"
+                    }
+                },
+                "required": [
+                    "deviceIO",
+                    "defaultExternalRoutingChannelIsNone"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceIO_properties_set_routingChannel",
+            "description": "Set the current routing channel for this input/output bus.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceIO": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device IO"
+                    },
+                    "routingChannel": {
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "routing channel to set (must be from available_routing_channels)"
+                    }
+                },
+                "required": [
+                    "deviceIO",
+                    "routingChannel"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "deviceIO_properties_set_routingType",
+            "description": "Set the current routing type for this input/output bus.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "deviceIO": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the device IO"
+                    },
+                    "routingType": {
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "routing type to set (must be from available_routing_types)"
+                    }
+                },
+                "required": [
+                    "deviceIO",
+                    "routingType"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

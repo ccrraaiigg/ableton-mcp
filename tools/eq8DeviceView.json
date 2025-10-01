@@ -1,0 +1,74 @@
+{
+  "tools": [
+    {
+      "name": "eq8DeviceView_properties_get_selectedBand",
+      "description": "Get the index of the currently selected filter band.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "eq8DeviceView": {
+            "type": "string",
+            "description": "unique identifier for the Eq8Device.View object"
+          }
+        },
+        "required": ["eq8DeviceView"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "selectedBand": {
+            "type": "integer",
+            "description": "index of the currently selected filter band",
+            "readOnly": false,
+            "observable": true
+          }
+        }
+      }
+    },
+    {
+      "name": "eq8DeviceView_properties_set_selectedBand",
+      "description": "Set the index of the currently selected filter band.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "eq8DeviceView": {
+            "type": "string",
+            "description": "unique identifier for the Eq8Device.View object"
+          },
+          "selectedBand": {
+            "type": "integer",
+            "description": "index of the filter band to select"
+          }
+        },
+        "required": ["eq8DeviceView", "selectedBand"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "indicates whether the operation was successful"
+          }
+        }
+      }
+    },
+    {
+      "name": "eq8DeviceView_functions_summary",
+      "description": "Get a summary of the Eq8Device.View class from the Live Object Model API documentation.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "summary of the Eq8Device.View class"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+    "tools": [
+        {
+            "name": "chainMixerDevice_functions_summary",
+            "description": "Get a summary of the ChainMixerDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainMixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the chain mixer device"
+                    }
+                },
+                "required": [
+                    "chainMixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a chain's mixer device in Live. Canonical paths: live_set tracks N devices M chains L mixer_device or live_set tracks N devices M return_chains L mixer_device"
+                    }
+                }
+            }
+        },
+        {
+            "name": "chainMixerDevice_children_get_chainActivator",
+            "description": "Get the chain activator parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainMixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the chain mixer device"
+                    }
+                },
+                "required": [
+                    "chainMixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainActivator": {
+                        "type": "string",
+                        "description": "chain activator parameter ID",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "chainMixerDevice_children_get_panning",
+            "description": "Get the panning parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainMixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the chain mixer device"
+                    }
+                },
+                "required": [
+                    "chainMixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "panning": {
+                        "type": "string",
+                        "description": "panning parameter ID (applicable only in Audio Effect Racks and Instrument Racks)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "chainMixerDevice_children_get_sends",
+            "description": "Get the list of send parameters.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainMixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the chain mixer device"
+                    }
+                },
+                "required": [
+                    "chainMixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "sends": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of send parameter IDs (applicable only in Audio Effect Racks and Instrument Racks, empty for Drum Racks)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "chainMixerDevice_children_get_volume",
+            "description": "Get the volume parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainMixerDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the chain mixer device"
+                    }
+                },
+                "required": [
+                    "chainMixerDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "volume": {
+                        "type": "string",
+                        "description": "volume parameter ID (applicable only in Audio Effect Racks and Instrument Racks)",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        }
+    ]
+}

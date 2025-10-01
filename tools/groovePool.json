@@ -1,0 +1,55 @@
+{
+    "tools": [
+        {
+            "name": "groovePool_children_get_grooves",
+            "description": "Get the list of grooves in the groove pool from top to bottom.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "grooves": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "unique identifier for the groove"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "description": "object type (Groove)"
+                                }
+                            }
+                        },
+                        "description": "list of grooves in the groove pool from top to bottom, can be accessed via index",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "groovePool_functions_summary",
+            "description": "Get a summary of the GroovePool class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents the groove pool in Live. It provides access to the current set's list of grooves. Canonical path: live_set groove_pool"
+                    }
+                }
+            }
+        }
+    ]
+}

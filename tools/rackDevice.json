@@ -1,0 +1,664 @@
+{
+    "tools": [
+        {
+            "name": "rackDevice_functions_summary",
+            "description": "Get a summary of the RackDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a Live Rack Device. A RackDevice is a type of Device, meaning that it has all the children, properties and functions that a Device has."
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_children_get_chainSelector",
+            "description": "Get the convenience accessor for the Rack's chain selector.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "chainSelector": {
+                        "type": "string",
+                        "description": "device parameter ID for the rack's chain selector",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_children_get_chains",
+            "description": "Get the Rack's chains.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "chains": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of chain IDs for the rack's chains",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_children_get_drumPads",
+            "description": "Get all 128 Drum Pads for the topmost Drum Rack.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "drumPads": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of drum pad IDs (all 128 drum pads for topmost drum rack, empty list for inner drum racks)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_children_get_returnChains",
+            "description": "Get the Rack's return chains.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "returnChains": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of chain IDs for the rack's return chains",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_children_get_visibleDrumPads",
+            "description": "Get all 16 visible DrumPads for the topmost Drum Rack.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "visibleDrumPads": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of drum pad IDs (all 16 visible drum pads for topmost drum rack, empty list for inner drum racks)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_properties_get_canShowChains",
+            "description": "Get whether the Rack contains an instrument device that is capable of showing its chains in Session View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "canShowChains": {
+                        "type": "boolean",
+                        "description": "whether the rack contains an instrument device capable of showing chains in session view",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_properties_get_hasDrumPads",
+            "description": "Get whether the device is a Drum Rack with pads.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasDrumPads": {
+                        "type": "boolean",
+                        "description": "whether the device is a drum rack with pads (nested drum rack is a drum rack without pads)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_properties_get_hasMacroMappings",
+            "description": "Get whether any of a Rack's Macros are mapped to a parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "hasMacroMappings": {
+                        "type": "boolean",
+                        "description": "whether any of the rack's macros are mapped to a parameter",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_properties_get_isShowingChains",
+            "description": "Get whether the Rack contains an instrument device that is showing its chains in Session View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "isShowingChains": {
+                        "type": "boolean",
+                        "description": "whether the rack contains an instrument device showing chains in session view",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_properties_get_variationCount",
+            "description": "Get the number of currently stored macro variations.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "variationCount": {
+                        "type": "integer",
+                        "description": "number of currently stored macro variations",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_properties_get_selectedVariationIndex",
+            "description": "Get the currently selected variation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedVariationIndex": {
+                        "type": "integer",
+                        "description": "currently selected variation index",
+                        "readOnly": false,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_properties_get_visibleMacroCount",
+            "description": "Get the number of currently visible macros.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "visibleMacroCount": {
+                        "type": "integer",
+                        "description": "number of currently visible macros",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_properties_set_isShowingChains",
+            "description": "Set whether the Rack contains an instrument device that is showing its chains in Session View.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    },
+                    "isShowingChains": {
+                        "type": "boolean",
+                        "description": "whether to show chains in session view"
+                    }
+                },
+                "required": [
+                    "rackDevice",
+                    "isShowingChains"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_properties_set_selectedVariationIndex",
+            "description": "Set the currently selected variation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    },
+                    "selectedVariationIndex": {
+                        "type": "integer",
+                        "description": "variation index to select"
+                    }
+                },
+                "required": [
+                    "rackDevice",
+                    "selectedVariationIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_functions_copyPad",
+            "description": "Copy all content of a Drum Rack pad from a source pad to a destination pad.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    },
+                    "sourceIndex": {
+                        "type": "integer",
+                        "description": "source pad index inside the drum rack"
+                    },
+                    "destinationIndex": {
+                        "type": "integer",
+                        "description": "destination pad index inside the drum rack"
+                    }
+                },
+                "required": [
+                    "rackDevice",
+                    "sourceIndex",
+                    "destinationIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_functions_addMacro",
+            "description": "Increase the number of visible macro controls.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_functions_insertChain",
+            "description": "Attempt to insert a new chain at the given index, or at the end of the chain list if no index is provided.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    },
+                    "index": {
+                        "type": "integer",
+                        "description": "index to insert chain at (optional, defaults to end of list)"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_functions_removeMacro",
+            "description": "Decrease the number of visible macro controls.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_functions_randomizeMacros",
+            "description": "Randomize the values of eligible macro controls.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_functions_storeVariation",
+            "description": "Store a new variation of the values of all currently mapped macros.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_functions_recallSelectedVariation",
+            "description": "Recall the currently selected macro variation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_functions_recallLastUsedVariation",
+            "description": "Recall the macro variation that was recalled most recently.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "rackDevice_functions_deleteSelectedVariation",
+            "description": "Delete the currently selected macro variation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "rackDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the rack device"
+                    }
+                },
+                "required": [
+                    "rackDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

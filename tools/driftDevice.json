@@ -1,0 +1,1305 @@
+{
+    "tools": [
+        {
+            "name": "driftDevice_functions_summary",
+            "description": "Get a summary of the DriftDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an instance of a Drift device in Live. A DriftDevice has all the properties, functions and children of a Device."
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixFilterSource1Index",
+            "description": "Get the index of the available sources for modulating the Filter Frequency for the first modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixFilterSource1Index": {
+                        "type": "integer",
+                        "description": "index of the available sources for modulating the filter frequency for the first modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixFilterSource1List",
+            "description": "Get the list of the available sources for modulating the Filter Frequency for the first modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixFilterSource1List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available sources for modulating the filter frequency for the first modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixFilterSource2Index",
+            "description": "Get the index of the available sources for modulating the Filter Frequency for the second modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixFilterSource2Index": {
+                        "type": "integer",
+                        "description": "index of the available sources for modulating the filter frequency for the second modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixFilterSource2List",
+            "description": "Get the list of the available sources for modulating the Filter Frequency for the second modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixFilterSource2List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available sources for modulating the filter frequency for the second modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixLfoSourceIndex",
+            "description": "Get the index of the available sources for modulating the LFO Amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixLfoSourceIndex": {
+                        "type": "integer",
+                        "description": "index of the available sources for modulating the lfo amount",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixLfoSourceList",
+            "description": "Get the list of the available sources for modulating the LFO Amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixLfoSourceList": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available sources for modulating the lfo amount",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixPitchSource1Index",
+            "description": "Get the index of the available sources for modulating the Pitch for the first modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixPitchSource1Index": {
+                        "type": "integer",
+                        "description": "index of the available sources for modulating the pitch for the first modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixPitchSource1List",
+            "description": "Get the list of the available sources for modulating the Pitch for the first modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixPitchSource1List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available sources for modulating the pitch for the first modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixPitchSource2Index",
+            "description": "Get the index of the available sources for modulating the Pitch for the second modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixPitchSource2Index": {
+                        "type": "integer",
+                        "description": "index of the available sources for modulating the pitch for the second modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixPitchSource2List",
+            "description": "Get the list of the available sources for modulating the Pitch for the second modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixPitchSource2List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available sources for modulating the pitch for the second modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixShapeSourceIndex",
+            "description": "Get the index of the available sources for modulating Shape.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixShapeSourceIndex": {
+                        "type": "integer",
+                        "description": "index of the available sources for modulating shape",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixShapeSourceList",
+            "description": "Get the list of the available sources for modulating Shape.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixShapeSourceList": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available sources for modulating shape",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixSource1Index",
+            "description": "Get the index of the available sources for the first custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixSource1Index": {
+                        "type": "integer",
+                        "description": "index of the available sources for the first custom modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixSource1List",
+            "description": "Get the list of the available sources for the first custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixSource1List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available sources for the first custom modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixSource2Index",
+            "description": "Get the index of the available sources for the second custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixSource2Index": {
+                        "type": "integer",
+                        "description": "index of the available sources for the second custom modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixSource2List",
+            "description": "Get the list of the available sources for the second custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixSource2List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available sources for the second custom modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixSource3Index",
+            "description": "Get the index of the available sources for the third custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixSource3Index": {
+                        "type": "integer",
+                        "description": "index of the available sources for the third custom modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixSource3List",
+            "description": "Get the list of the available sources for the third custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixSource3List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available sources for the third custom modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixTarget1Index",
+            "description": "Get the index of the available targets for the first custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixTarget1Index": {
+                        "type": "integer",
+                        "description": "index of the available targets for the first custom modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixTarget1List",
+            "description": "Get the list of the available targets for the first custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixTarget1List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available targets for the first custom modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixTarget2Index",
+            "description": "Get the index of the available targets for the second custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixTarget2Index": {
+                        "type": "integer",
+                        "description": "index of the available targets for the second custom modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixTarget2List",
+            "description": "Get the list of the available targets for the second custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixTarget2List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available targets for the second custom modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixTarget3Index",
+            "description": "Get the index of the available targets for the third custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixTarget3Index": {
+                        "type": "integer",
+                        "description": "index of the available targets for the third custom modulation slot",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_modMatrixTarget3List",
+            "description": "Get the list of the available targets for the third custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "modMatrixTarget3List": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of the available targets for the third custom modulation slot",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_pitchBendRange",
+            "description": "Get the amount for the MIDI Pitch Bend range in semitones.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "pitchBendRange": {
+                        "type": "integer",
+                        "description": "amount for the midi pitch bend range in semitones",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_voiceCountIndex",
+            "description": "Get the index of the voice count parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "voiceCountIndex": {
+                        "type": "integer",
+                        "description": "index of the voice count parameter",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_voiceCountList",
+            "description": "Get the list of available voice count settings.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "voiceCountList": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of available voice count settings",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_voiceModeIndex",
+            "description": "Get the index of the voice mode utilized by Drift.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "voiceModeIndex": {
+                        "type": "integer",
+                        "description": "index of the voice mode utilized by drift",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_get_voiceModeList",
+            "description": "Get the list of available voice modes.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "voiceModeList": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of available voice modes",
+                        "readOnly": true,
+                        "observable": false
+                    }
+                }
+            }
+        },
+
+        {
+            "name": "driftDevice_properties_set_modMatrixFilterSource1Index",
+            "description": "Set the index of the available sources for modulating the Filter Frequency for the first modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixFilterSource1Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixFilterSource1Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixFilterSource2Index",
+            "description": "Set the index of the available sources for modulating the Filter Frequency for the second modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixFilterSource2Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixFilterSource2Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixLfoSourceIndex",
+            "description": "Set the index of the available sources for modulating the LFO Amount.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixLfoSourceIndex": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixLfoSourceIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixPitchSource1Index",
+            "description": "Set the index of the available sources for modulating the Pitch for the first modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixPitchSource1Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixPitchSource1Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixPitchSource2Index",
+            "description": "Set the index of the available sources for modulating the Pitch for the second modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixPitchSource2Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixPitchSource2Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixShapeSourceIndex",
+            "description": "Set the index of the available sources for modulating Shape.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixShapeSourceIndex": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixShapeSourceIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixSource1Index",
+            "description": "Set the index of the available sources for the first custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixSource1Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixSource1Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixSource2Index",
+            "description": "Set the index of the available sources for the second custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixSource2Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixSource2Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixSource3Index",
+            "description": "Set the index of the available sources for the third custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixSource3Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixSource3Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixTarget1Index",
+            "description": "Set the index of the available targets for the first custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixTarget1Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixTarget1Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixTarget2Index",
+            "description": "Set the index of the available targets for the second custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixTarget2Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixTarget2Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_modMatrixTarget3Index",
+            "description": "Set the index of the available targets for the third custom modulation slot.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "modMatrixTarget3Index": {
+                        "type": "integer",
+                        "description": "new index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "modMatrixTarget3Index"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_pitchBendRange",
+            "description": "Set the amount for the MIDI Pitch Bend range in semitones.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "pitchBendRange": {
+                        "type": "integer",
+                        "description": "new pitch bend range value in semitones"
+                    }
+                },
+                "required": [
+                    "device",
+                    "pitchBendRange"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_voiceCountIndex",
+            "description": "Set the index of the voice count parameter.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "voiceCountIndex": {
+                        "type": "integer",
+                        "description": "new voice count index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "voiceCountIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        },
+        {
+            "name": "driftDevice_properties_set_voiceModeIndex",
+            "description": "Set the index of the voice mode utilized by Drift.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the drift device"
+                    },
+                    "voiceModeIndex": {
+                        "type": "integer",
+                        "description": "new voice mode index value"
+                    }
+                },
+                "required": [
+                    "device",
+                    "voiceModeIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the operation was successful"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "tools": [
+        {
+            "name": "shifterDevice_functions_summary",
+            "description": "Get a summary of the ShifterDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the shifter device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an instance of the Shifter audio effect."
+                    }
+                }
+            }
+        },
+        {
+            "name": "shifterDevice_properties_get_pitchBendRange",
+            "description": "Get the pitch bend range used in MIDI Pitch Mode.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the shifter device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "pitchBendRange": {
+                        "type": "integer",
+                        "description": "pitch bend range used in MIDI pitch mode",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "shifterDevice_properties_get_pitchModeIndex",
+            "description": "Get the current pitch mode index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the shifter device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "pitchModeIndex": {
+                        "type": "integer",
+                        "description": "current pitch mode index (0 = Internal, 1 = MIDI)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        }
+    ]
+}

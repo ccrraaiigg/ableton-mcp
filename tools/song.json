@@ -1,6 +1,24 @@
 {
     "tools": [
         {
+            "name": "song_functions_summary",
+            "description": "Get a summary of the Song class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a Live Set. The current Live Set is reachable by the root path `live_set`."
+                    }
+                }
+            }
+        },
+        {
             "name": "song_children_get_cuePoints",
             "description": "Get all cue points in the song.",
             "inputSchema": {
@@ -2025,7 +2043,7 @@
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "trackId": {
+                    "track": {
                         "type": "string",
                         "description": "iD of the created audio track"
                     }
@@ -2050,7 +2068,7 @@
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "trackId": {
+                    "track": {
                         "type": "string",
                         "description": "iD of the created MIDI track"
                     }
@@ -2068,7 +2086,7 @@
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "trackId": {
+                    "track": {
                         "type": "string",
                         "description": "iD of the created return track"
                     }
@@ -2093,7 +2111,7 @@
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "sceneId": {
+                    "scene": {
                         "type": "string",
                         "description": "iD of the created scene"
                     }
@@ -2193,7 +2211,7 @@
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "sceneId": {
+                    "scene": {
                         "type": "string",
                         "description": "iD of the duplicated scene"
                     }
@@ -2218,7 +2236,7 @@
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "trackId": {
+                    "track": {
                         "type": "string",
                         "description": "iD of the duplicated track"
                     }
@@ -2231,13 +2249,13 @@
             "inputSchema": {
                 "type": "object",
                 "properties": {
-                    "deviceId": {
+                    "device": {
                         "type": "string",
                         "description": "iD of the device to find"
                     }
                 },
                 "required": [
-                    "deviceId"
+                    "device"
                 ]
             },
             "outputSchema": {
@@ -2436,7 +2454,7 @@
             "inputSchema": {
                 "type": "object",
                 "properties": {
-                    "deviceId": {
+                    "device": {
                         "type": "string",
                         "description": "iD of the device to move"
                     },
@@ -2450,7 +2468,7 @@
                     }
                 },
                 "required": [
-                    "deviceId",
+                    "device",
                     "targetTrackIndex",
                     "targetDeviceIndex"
                 ]

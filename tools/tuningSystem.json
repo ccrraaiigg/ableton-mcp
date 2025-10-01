@@ -1,0 +1,266 @@
+{
+    "tools": [
+        {
+            "name": "tuningSystem_functions_summary",
+            "description": "Get a summary of the TuningSystem class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a tuning system in Live. Canonical path: live_set tuning_system"
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_get_name",
+            "description": "Get the name of the currently active tuning system.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the currently active tuning system",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_set_name",
+            "description": "Set the name of the currently active tuning system.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the tuning system to set"
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the name was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_get_pseudoOctaveInCents",
+            "description": "Get the pseudo octave in cents of the currently active tuning system.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "pseudoOctaveInCents": {
+                        "type": "number",
+                        "description": "pseudo octave in cents of the currently active tuning system",
+                        "readOnly": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_get_lowestNote",
+            "description": "Get the note index within the pseudo octave and octave of the lowest note.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "lowestNote": {
+                        "type": "object",
+                        "description": "note index within the pseudo octave and octave of the lowest note",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_set_lowestNote",
+            "description": "Set the note index within the pseudo octave and octave of the lowest note.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "lowestNote": {
+                        "type": "object",
+                        "description": "note index within the pseudo octave and octave of the lowest note to set"
+                    }
+                },
+                "required": [
+                    "lowestNote"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the lowest note was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_get_highestNote",
+            "description": "Get the note index within the pseudo octave and octave of the highest note.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "highestNote": {
+                        "type": "object",
+                        "description": "note index within the pseudo octave and octave of the highest note",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_set_highestNote",
+            "description": "Set the note index within the pseudo octave and octave of the highest note.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "highestNote": {
+                        "type": "object",
+                        "description": "note index within the pseudo octave and octave of the highest note to set"
+                    }
+                },
+                "required": [
+                    "highestNote"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the highest note was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_get_referencePitch",
+            "description": "Get the reference pitch of the current tuning system.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "referencePitch": {
+                        "type": "object",
+                        "description": "reference pitch of the current tuning system",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_set_referencePitch",
+            "description": "Set the reference pitch of the current tuning system.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "referencePitch": {
+                        "type": "object",
+                        "description": "reference pitch of the tuning system to set"
+                    }
+                },
+                "required": [
+                    "referencePitch"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the reference pitch was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_get_noteTunings",
+            "description": "Get the relative note tunings of the Tuning System in cents. Provided as a single-element dictionary holding an array.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "noteTunings": {
+                        "type": "object",
+                        "description": "relative note tunings of the tuning system in cents",
+                        "readOnly": false,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "tuningSystem_properties_set_noteTunings",
+            "description": "Set the relative note tunings of the Tuning System in cents. Provided as a single-element dictionary holding an array.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "noteTunings": {
+                        "type": "object",
+                        "description": "relative note tunings of the tuning system in cents to set"
+                    }
+                },
+                "required": [
+                    "noteTunings"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether the note tunings were set successfully"
+                    }
+                }
+            }
+        }
+    ]
+}

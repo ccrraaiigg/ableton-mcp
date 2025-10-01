@@ -1,0 +1,137 @@
+{
+    "tools": [
+        {
+            "name": "meldDevice_functions_summary",
+            "description": "Get a summary of the MeldDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the meld device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents an instance of a Meld device in Live. A MeldDevice has all the properties, functions and children of a Device."
+                    }
+                }
+            }
+        },
+        {
+            "name": "meldDevice_properties_get_selectedEngine",
+            "description": "Get Meld's oscillator engine selector.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the meld device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "selectedEngine": {
+                        "type": "integer",
+                        "description": "oscillator engine selector (0=Engine A, 1=Engine B)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "meldDevice_properties_get_unisonVoices",
+            "description": "Get the Unison voice count selector.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the meld device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "unisonVoices": {
+                        "type": "integer",
+                        "description": "unison voice count (0=off, 1=two, 2=three, 3=four)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "meldDevice_properties_get_monoPoly",
+            "description": "Get the polyphony mode selector.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the meld device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "monoPoly": {
+                        "type": "integer",
+                        "description": "polyphony mode (0=mono, 1=poly)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "meldDevice_properties_get_polyVoices",
+            "description": "Get the polyphony voice count selector.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the meld device"
+                    }
+                },
+                "required": [
+                    "device"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "polyVoices": {
+                        "type": "integer",
+                        "description": "polyphony voice count (0=two, 1=three, 2=four, 3=five, 4=six, 5=eight, 6=twelve)",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        }
+    ]
+}

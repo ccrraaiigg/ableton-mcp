@@ -34,9 +34,9 @@
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "viewId": {
+                    "view": {
                         "type": "string",
-                        "description": "object ID of the view",
+                        "description": "object ID or canonical path of the view",
                         "readOnly": true
                     }
                 }
@@ -141,6 +141,24 @@
             }
         },
         {
+            "name": "application_functions_summary",
+            "description": "Get a summary of the Application class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents the Live application. It is reachable by the root path `live_app`."
+                    }
+                }
+            }
+        },
+        {
             "name": "application_functions_getBugfixVersion",
             "description": "Get the bugfix version number (the 2 in Live 9.1.2).",
             "inputSchema": {
@@ -169,9 +187,9 @@
             "outputSchema": {
                 "type": "object",
                 "properties": {
-                    "documentId": {
+                    "document": {
                         "type": "string",
-                        "description": "object ID of the current Live Set"
+                        "description": "object ID or canonical path of the current Live Set"
                     }
                 }
             }

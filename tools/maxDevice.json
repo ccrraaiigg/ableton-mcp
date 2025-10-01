@@ -1,0 +1,240 @@
+{
+    "tools": [
+        {
+            "name": "maxDevice_functions_summary",
+            "description": "Get a summary of the MaxDevice class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "maxDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the max device"
+                    }
+                },
+                "required": [
+                    "maxDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "This class represents a Max for Live device in Live."
+                    }
+                }
+            }
+        },
+        {
+            "name": "maxDevice_properties_get_audioInputs",
+            "description": "Get the list of audio inputs that the MaxDevice offers.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "maxDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the max device"
+                    }
+                },
+                "required": [
+                    "maxDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "audioInputs": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of audio input device IO IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "maxDevice_properties_get_audioOutputs",
+            "description": "Get the list of audio outputs that the MaxDevice offers.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "maxDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the max device"
+                    }
+                },
+                "required": [
+                    "maxDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "audioOutputs": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of audio output device IO IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "maxDevice_properties_get_midiInputs",
+            "description": "Get the list of midi inputs that the MaxDevice offers.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "maxDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the max device"
+                    }
+                },
+                "required": [
+                    "maxDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "midiInputs": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of midi input device IO IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "maxDevice_properties_get_midiOutputs",
+            "description": "Get the list of midi outputs that the MaxDevice offers.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "maxDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the max device"
+                    }
+                },
+                "required": [
+                    "maxDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "midiOutputs": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "list of midi output device IO IDs",
+                        "readOnly": true,
+                        "observable": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "maxDevice_functions_getBankCount",
+            "description": "Get the number of parameter banks.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "maxDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the max device"
+                    }
+                },
+                "required": [
+                    "maxDevice"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "bankCount": {
+                        "type": "integer",
+                        "description": "number of parameter banks"
+                    }
+                }
+            }
+        },
+        {
+            "name": "maxDevice_functions_getBankName",
+            "description": "Get the name of the parameter bank specified by bank index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "maxDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the max device"
+                    },
+                    "bankIndex": {
+                        "type": "integer",
+                        "description": "index of the parameter bank"
+                    }
+                },
+                "required": [
+                    "maxDevice",
+                    "bankIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "bankName": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "name of the parameter bank as list of symbols"
+                    }
+                }
+            }
+        },
+        {
+            "name": "maxDevice_functions_getBankParameters",
+            "description": "Get the indices of the parameters contained in the bank specified by bank index.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "maxDevice": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the max device"
+                    },
+                    "bankIndex": {
+                        "type": "integer",
+                        "description": "index of the parameter bank (-1 refers to the 'Best of' bank)"
+                    }
+                },
+                "required": [
+                    "maxDevice",
+                    "bankIndex"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "parameterIndices": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "indices of parameters in the bank (empty slots marked as -1)"
+                    }
+                }
+            }
+        }
+    ]
+}

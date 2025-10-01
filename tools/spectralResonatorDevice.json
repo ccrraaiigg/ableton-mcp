@@ -1,0 +1,372 @@
+{
+  "tools": [
+    {
+      "name": "spectralResonatorDevice_properties_get_frequencyDialMode",
+      "description": "Get the Freq control's mode for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "frequencyDialMode": {
+            "type": "integer",
+            "description": "freq control mode (0 = Hertz, 1 = MIDI note values)"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_set_frequencyDialMode",
+      "description": "Set the Freq control's mode for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          },
+          "frequencyDialMode": {
+            "type": "integer",
+            "description": "freq control mode (0 = Hertz, 1 = MIDI note values)"
+          }
+        },
+        "required": ["device", "frequencyDialMode"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "operation success status"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_get_midiGate",
+      "description": "Get the MIDI gate switch's state for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "midiGate": {
+            "type": "integer",
+            "description": "midi gate switch state (0 = Off, 1 = On)"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_set_midiGate",
+      "description": "Set the MIDI gate switch's state for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          },
+          "midiGate": {
+            "type": "integer",
+            "description": "midi gate switch state (0 = Off, 1 = On)"
+          }
+        },
+        "required": ["device", "midiGate"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "operation success status"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_get_modMode",
+      "description": "Get the Modulation Mode for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "modMode": {
+            "type": "integer",
+            "description": "modulation mode (0 = None, 1 = Chorus, 2 = Wander, 3 = Granular)"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_set_modMode",
+      "description": "Set the Modulation Mode for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          },
+          "modMode": {
+            "type": "integer",
+            "description": "modulation mode (0 = None, 1 = Chorus, 2 = Wander, 3 = Granular)"
+          }
+        },
+        "required": ["device", "modMode"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "operation success status"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_get_monoPoly",
+      "description": "Get the Mono/Poly switch's state for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "monoPoly": {
+            "type": "integer",
+            "description": "mono/poly switch state (0 = Mono, 1 = Poly)"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_set_monoPoly",
+      "description": "Set the Mono/Poly switch's state for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          },
+          "monoPoly": {
+            "type": "integer",
+            "description": "mono/poly switch state (0 = Mono, 1 = Poly)"
+          }
+        },
+        "required": ["device", "monoPoly"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "operation success status"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_get_pitchMode",
+      "description": "Get the Pitch Mode for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "pitchMode": {
+            "type": "integer",
+            "description": "pitch mode (0 = Internal, 1 = MIDI)"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_set_pitchMode",
+      "description": "Set the Pitch Mode for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          },
+          "pitchMode": {
+            "type": "integer",
+            "description": "pitch mode (0 = Internal, 1 = MIDI)"
+          }
+        },
+        "required": ["device", "pitchMode"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "operation success status"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_get_pitchBendRange",
+      "description": "Get the Pitch Bend Range for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "pitchBendRange": {
+            "type": "integer",
+            "description": "pitch bend range value"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_set_pitchBendRange",
+      "description": "Set the Pitch Bend Range for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          },
+          "pitchBendRange": {
+            "type": "integer",
+            "description": "pitch bend range value"
+          }
+        },
+        "required": ["device", "pitchBendRange"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "operation success status"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_get_polyphony",
+      "description": "Get the Polyphony setting for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          }
+        },
+        "required": ["device"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "polyphony": {
+            "type": "integer",
+            "description": "polyphony setting (0 = 2, 1 = 4, 2 = 8, 3 = 16 voices)"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_properties_set_polyphony",
+      "description": "Set the Polyphony setting for the Spectral Resonator device.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "spectral resonator device identifier"
+          },
+          "polyphony": {
+            "type": "integer",
+            "description": "polyphony setting (0 = 2, 1 = 4, 2 = 8, 3 = 16 voices)"
+          }
+        },
+        "required": ["device", "polyphony"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "operation success status"
+          }
+        }
+      }
+    },
+    {
+      "name": "spectralResonatorDevice_functions_summary",
+      "description": "Get a summary of the SpectralResonatorDevice class from the Live Object Model API documentation.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "summary of the SpectralResonatorDevice class"
+          }
+        }
+      }
+    }
+  ]
+}

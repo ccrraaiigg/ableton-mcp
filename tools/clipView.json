@@ -1,0 +1,244 @@
+{
+    "tools": [
+        {
+            "name": "clipView_functions_summary",
+            "description": "Get a summary of the Clip.View class from the Live Object Model API documentation.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip view"
+                    }
+                },
+                "required": [
+                    "clipView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string",
+                        "description": "Representing the view aspects of a Clip. Canonical path: live_set tracks N clip_slots M clip view"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipView_properties_get_gridIsTriplet",
+            "description": "Get whether the clip is displayed with a triplet grid.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip view"
+                    }
+                },
+                "required": [
+                    "clipView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "gridIsTriplet": {
+                        "type": "boolean",
+                        "description": "whether the clip is displayed with a triplet grid"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipView_properties_get_gridQuantization",
+            "description": "Get the grid quantization.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip view"
+                    }
+                },
+                "required": [
+                    "clipView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "gridQuantization": {
+                        "type": "integer",
+                        "description": "grid quantization value"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipView_properties_set_gridIsTriplet",
+            "description": "Set whether the clip is displayed with a triplet grid.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip view"
+                    },
+                    "gridIsTriplet": {
+                        "type": "boolean",
+                        "description": "whether the clip is displayed with a triplet grid"
+                    }
+                },
+                "required": [
+                    "clipView",
+                    "gridIsTriplet"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether grid triplet setting was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipView_properties_set_gridQuantization",
+            "description": "Set the grid quantization.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip view"
+                    },
+                    "gridQuantization": {
+                        "type": "integer",
+                        "description": "grid quantization value"
+                    }
+                },
+                "required": [
+                    "clipView",
+                    "gridQuantization"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether grid quantization was set successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipView_functions_hideEnvelope",
+            "description": "Hide the Envelopes box.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip view"
+                    }
+                },
+                "required": [
+                    "clipView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether envelope was hidden successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipView_functions_selectEnvelopeParameter",
+            "description": "Select the specified device parameter in the Envelopes box.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip view"
+                    },
+                    "deviceParameter": {
+                        "type": "string",
+                        "description": "device parameter ID to select in the Envelopes box"
+                    }
+                },
+                "required": [
+                    "clipView",
+                    "deviceParameter"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether envelope parameter was selected successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipView_functions_showEnvelope",
+            "description": "Show the Envelopes box.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip view"
+                    }
+                },
+                "required": [
+                    "clipView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether envelope was shown successfully"
+                    }
+                }
+            }
+        },
+        {
+            "name": "clipView_functions_showLoop",
+            "description": "If the clip is visible in Live's Detail View, this function will make the current loop visible there.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "clipView": {
+                        "type": "string",
+                        "description": "object ID or canonical path of the clip view"
+                    }
+                },
+                "required": [
+                    "clipView"
+                ]
+            },
+            "outputSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "whether loop was shown successfully"
+                    }
+                }
+            }
+        }
+    ]
+}
